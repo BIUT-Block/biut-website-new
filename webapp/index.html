@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+
+  <link rel="shortcut icon" href="./static/favicon.ico">
+  <!--[if lt IE 9]>
+	    <script type="text/javascript">
+	        var str = "您的浏览器版本太低了 :(";
+	        var str2 = "推荐使用:<a href='https://www.baidu.com/s?ie=UTF-8&wd=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8' target='_blank' style='color:blue;'>谷歌</a>,"
+	                + "<a href='https://www.baidu.com/s?ie=UTF-8&wd=%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8' target='_blank' style='color:blue;'>火狐</a>,"
+	                + "其他双核极速模式";
+	        document.writeln("<pre style='text-align:center;color:#fff;background-color:#0088ff; height:100%;border:0;position:fixed;top:0;left:0;width:100%;z-index:1234'>" +
+	                "<h2 style='padding-top:200px;margin:0;line-height:30px'><strong>" + str + "<br/></strong></h2><h2>" +
+	                str2 + "</h2><h2 style='margin:0'><strong>如果您的使用的是双核浏览器,请切换到极速模式访问<br/></strong></h2></pre>");
+	        document.execCommand("Stop");
+	    </script>
+  <![endif]-->
+  <title>BIUT - 社交电子商务链</title>
+  <link href="./dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./css/reset.css" rel="stylesheet">
+  <link href="./css/public.css" rel="stylesheet">
+  <link href="./css/animate.css" rel="stylesheet">
+  <style>
+    .titanimate {
+      animation-name: bounceInUp;
+    }
+    @keyframes bounceInUp {
+      0% {
+        filter: blur(20px);
+        opacity: 0;
+        transform-origin: 0% 0%;
+        transform: skew(10deg, 15deg);
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+        transform-origin: 0% 0%;
+        transform: skew(0deg, 0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="zoom-message" id="zoomMessage">
+    <span data-locale="zoom">
+      Your browser is currently zoomed, and the page may be misplaced. It is recommended to display 100% size.
+    </span>
+  </section>
+
+  <main class='head-content'>
+    <main class="head-container">
+      <!-- 头部导航 -->
+      <header class="public-head" id="header-nav" >
+        <!-- logo -->
+        <figure id="toggle-head">
+          <img src="./images/nav-logo.png" alt="BIUT" title="BIUT">
+          <figcaption id="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </figcaption>
+        </figure>
+  
+        <!-- nav导航条 -->
+        <nav id="tabNav">
+          <ul>
+            <li class="check-color check-img">
+              <img src="./images/index/nav-check.png" alt="">
+              <span data-locale="nav-home">Home</span>
+            </li>
+            <li>
+              <!-- About -->
+              <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf" class="whitepaper" target="_blank" data-locale="nav-about">WhitePaper</a>
+            </li>
+            <li>
+              <!-- Dynamic -->
+              <a href="http://scan.biut.io/" target="_blank" data-locale="nav-dynamic">Explorer</a>
+            </li>
+            <li>
+              <!-- Gitter -->
+              <a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="nav-gitter">Wallet</a>
+            </li>
+            <li>
+              <span id="i18nZh"> 中文 </span>
+              <span class="head-line"> / </span>
+              <span id="i18nEn"> EN </span>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      
+      <!-- 主体内容 -->
+      <section class="container">
+        <!-- 带logo的头部内容 -->
+        <section class="content-head">
+          <figure class="head-logo">
+            <img src="./images/index/logo.png" alt="BIUT" title="BIUT">
+            <figcaption>
+              <img src="./images/index/symbol1.png" alt="">
+              <p data-locale="h-banner-name1">No Need For Trust/</p>
+              <p data-locale="h-banner-name2"> Free To Trade !</p>
+              <img src="./images/index/symbol2.png" alt="">
+            </figcaption>
+          </figure>
+  
+          <ul class="head-list">
+            <li data-locale="h-banner-list-txt1">Main network on-line</li>
+            <li>
+              <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf" class="whitepaper" target="_blank" data-locale="h-banner-list-txt2">
+                white paper
+              </a>
+            </li>
+            <li data-locale="h-banner-list-txt3">Watch Video</li>
+          </ul>
+  
+          <figure class="head-down">
+            <img src="./images/index/header-down.png" alt="BIUT-down" title="">
+          </figure>
+        </section>
+
+        <!-- about project  -->
+        <section class="about-project">
+          <!-- 功能 子导航栏 -->
+          <article class="public-title">
+            <h3 data-locale="h-proj-tit" class="wow titanimate">About the project</h3>
+            <!-- <figure>
+              <figcaption data-locale="more">
+                understand more
+              </figcaption>
+              <img src="./images/index/more.png" alt="BIUT-more" title="more">
+            </figure> -->
+          </article>
+          
+          <ul class="row project-list">
+            <li class="col-md-3 col-sm-6 col-xs-6">
+              <section>
+                <figure>
+                  <img src="./images/index/project1.png" alt="BIUT-TPS" title="TPS">
+                  <figcaption>
+                    <p class="font-bold">TPS</p>
+                    <p data-locale="h-proj-tps-txt1">Test network up</p>
+                    <p> 
+                      <span data-locale="h-proj-tps-txt2-1">to</span>
+                      <span class="font-bold"  data-locale="h-proj-tps-txt2-2"> 33000 </span>
+                      <span data-locale="h-proj-tps-txt2-3">TPS</span>
+                    </p>
+                  </figcaption>
+                </figure>
+              </section>
+            </li>
+            <li class="col-md-3 col-sm-6 col-xs-6">
+              <section>
+                <figure>
+                  <img src="./images/index/project2.png" alt="BIUT-decentralization" title="Excellent decentralization">
+                  <figcaption>
+                    <p data-locale="h-proj-center-tit">Excellent decentralization</p>
+                    <p class="font-bold" data-locale="h-proj-center-txt1">Breaking through a</p>
+                    <p class="font-bold" data-locale="h-proj-center-txt2">distributed system is</p>
+                    <p class="font-bold" data-locale="h-proj-center-txt3">impossible Triangular law</p>
+                  </figcaption>
+                </figure>
+              </section>
+            </li>
+            <li class="col-md-3 col-sm-6 col-xs-6">
+              <section>
+                <figure>
+                  <img src="./images/index/project3.png" alt="BIUT-Consensus algorithm" title="Consensus algorithm">
+                  <figcaption>
+                    <p class="font-bold" data-locale="h-proj-algorithm-tit">Consensus algorithm</p>
+                    <p>
+                      <span data-locale="h-proj-algorithm-txt1">PGPOW: </span>
+                      <span data-locale="h-proj-algorithm-txt2-1">Fusion </span>
+                      <span class="font-bold" data-locale="h-proj-algorithm-txt2-2">pos</span>
+                    </p>
+                    <p>
+                      <span data-locale="h-proj-algorithm-txt2-3">and</span>
+                      <span class="font-bold" data-locale="h-proj-algorithm-txt2-4"> pow </span> 
+                      <span data-locale="h-proj-algorithm-txt2-5">consensus</span>
+                    </p>
+                    <p data-locale="h-proj-algorithm-txt3">Algorithm advantage</p>
+                  </figcaption>
+                </figure>
+              </section>
+            </li>
+            <li class="col-md-3 col-sm-6 col-xs-6">
+              <section>
+                <figure>
+                  <img src="./images/index/project4.png" alt="BIUT-technology" title="technology">
+                  <figcaption>
+                    <p class="proj-tit font-bold" data-locale="h-proj-public-tit">New generation of public chain technology</p>
+                    <p class="font-top" data-locale="h-proj-public-txt1">Modular design guarantees</p>
+                    <p class="font-bold" data-locale="h-proj-public-txt2">Scalability</p>
+                  </figcaption>
+                </figure> 
+              </section>
+            </li>
+          </ul>
+        </section>
+
+        <!-- PRICE -->
+        <section  class="price">
+          <!-- 功能 子导航栏 -->
+          <article class="public-title price-title">
+            <h3 data-locale="h-pr-tit" class="wow titanimate">PRICE</h3>
+            <section>
+              <span data-locale="h-pr-txt1">Ten minutes or more delay in quotation</span>
+              <p> 
+                <span data-locale="h-pr-txt2">As of </span>
+                <span id="indexTime"></span>
+              </p>
+              <span data-locale="h-pr-txt3">Data source: Eggs and coins</span>
+            </section>
+          </article>
+  
+          <ul class="row price-list">
+            <li class="col-md-4 col-sm-12 col-xs-12">
+              <section>
+                <section class="price-txt price-txt-margin">
+                  <span>BIUT/BTC</span>
+                  <!-- <span>3 day</span> -->
+                </section>
+                <section class="price-txt">
+                  <span class="price-txt-font1 price-txt-color1" id="btcPrice"></span>
+                  <p>
+                    <span class="price-txt-font2 price-txt-color1 btnRiseFall"></span>(24h)
+                  </p>
+                </section>
+                <figure class="price-img">
+                  <figcaption class="btnRiseFalls"></figcaption>
+                  <img src="./images/index/price-bg1.png" alt="BIUT-down" title=""/>
+                </figure>
+              </section>
+            </li>
+            <li class="col-md-4 col-sm-12 col-xs-12">
+              <section>
+                <section class="price-txt price-txt-margin">
+                  <span>BIUT/ETH</span>
+                  <!-- <span>3 day</span> -->
+                </section>
+                <section class="price-txt">
+                  <span class="price-txt-font1 price-txt-color2" id="ethPrice"></span>
+                  <p>
+                    <span class="price-txt-font2 price-txt-color2 ethRiseFall"></span>(24h)
+                  </p>
+                </section>
+                <figure class="price-img">
+                  <figcaption class="ethRiseFalls"></figcaption>
+                  <img src="./images/index/price-bg2.png" alt="BIUT-down" title=""/>
+                </figure>
+              </section>
+            </li>
+            <li class="col-md-4 col-sm-12 col-xs-12">
+              <section>
+                <section class="price-txt price-txt-margin">
+                  <span>BIUT/USDT</span>
+                  <!-- <span>3 day</span> -->
+                </section>
+                <section class="price-txt">
+                  <span class="price-txt-font1 price-txt-color2" id="usdtPrice"></span>
+                  <p>
+                    <span class="price-txt-font2 price-txt-color2 useTRiseFall"></span>(24h)
+                  </p>
+                </section>
+                <figure class="price-img">
+                  <figcaption class="useTRiseFalls"></figcaption>
+                  <img src="./images/index/price-bg2.png" alt="BIUT-down" title=""/>
+                </figure>
+              </section>
+            </li>
+          </ul>
+        </section>
+
+        
+
+      <!-- 主体内容结束 -->
+      </section>
+      <!-- head-container 结束 -->
+    </main>
+    <!-- 背景动效 -->
+    <main class="head-container-bg head-container-ab"></main>
+  </main>
+
+  <!-- 网页后部分内容 -->
+  <main class="container-footer">
+    <section class="container">
+
+      <!-- New dynamics -->
+      <section class="new-dynamics">
+        <!-- 功能 子导航栏 -->
+        <article class="public-title">
+          <h3 data-locale="h-dyc-tit" class="wow titanimate">New dynamics</h3>
+          <!-- <figure>
+            <figcaption data-locale="more">
+              understand more
+            </figcaption>
+            <img src="./images/index/more.png" alt="BIUT-more" title="more">
+          </figure> -->
+        </article>
+        
+        <ul class="row" id="newsList">
+
+          <li class="col-md-4 col-sm-12 col-xs-12">
+            <figure id="newsActive1">
+              <img src="./images/index/dynamics1.png" alt=""/>
+              <img src="./images/index/dynamicsActive.png" class="dynamics-active" id="dynamics-active1" alt="" hidden/>
+              <figcaption>
+                <section>
+                  <p>Blockchain landing application</p>
+                  <p>| blockchain + financial natural has</p>
+                  <p>landed</p>
+                </section>
+                <section>
+                  <p>For gamers, whether it is team FPS, MOBA</p>
+                  <p>or survival games, stability, low</p>
+                </section>
+                <time>24 hours ago</time>
+              </figcaption>
+            </figure>
+          </li>
+          
+        </ul>
+      </section>
+      
+      <!-- Submit a subscription -->
+      <section class="suggest">
+        <p class="suggest-tit"  data-locale="h-ss-tit">Subscribe to the latest news! Get timely news about BIUT projects!</p>
+        <section class="pc-suggest">
+          <img src="./images/index/symbol3.png" alt="">
+          <span data-locale="h-ss-txt1" class="suggest-img-txt">We are not only doing public chain development, we are also actively using our blockchain</span>
+          <img src="./images/index/symbol4.png" alt="">
+        </section>
+        <p class="suggest-txt" data-locale="h-ss-txt2">technology to help more commercial companies create greater value.</p>
+        
+        <section class="mobile-suggest">
+          <img src="./images/index/symbol3.png" alt="">
+          <p>
+            <span data-locale="h-ss-txt1">
+              We are not only doing public chain development, we are also actively using our blockchain
+            </span>
+            <span data-locale="h-ss-txt2">technology to help more commercial companies create greater value.</span>
+          </p>
+          <img src="./images/index/symbol4.png" alt="">
+        </section>
+
+        <!-- suggest submit -->
+        <section class="suggest-from">
+          <input type="text" data-placeholder="h-ss-email" />
+          <span  data-locale="h-ss-btn">Submit a subscription</span>
+        </section>
+      </section>
+
+      <!-- Network state -->
+      <section class="network-state">
+        <!-- 功能 子导航栏 -->
+        <article class="public-title">
+          <h3 data-locale="h-net-tit" class="wow titanimate">Network state</h3>
+        </article>
+
+        <ul>
+          <li>
+            <span id="idxNetwork"></span>
+            <span data-locale="h-net-txt1">Node network</span>
+          </li>
+          <li>
+            <span id="idxAccount"></span>
+            <span data-locale="h-net-txt2">current account</span>
+          </li>
+          <li>
+            <span>
+              <span id="idxCurrent"></span>
+              <span>l</span>
+              <span id="idPeak"></span>
+            </span>
+            <span data-locale="h-net-txt3">Current/peak TPS</span>
+          </li>
+          <li>
+            <span>
+              <span id="idxHeight1"></span>
+              <span>l</span>
+              <span id="idxHeight2"></span>
+            </span>
+            <span data-locale="h-net-txt4">BIUT Height / BIU Height</span>
+          </li>
+          <li>
+            <span>
+              <span id="idxAffairs1"></span>
+              <span>l</span>
+              <span id="idxAffairs2"></span>
+            </span>
+            <span data-locale="h-net-txt5">BIUT/International Affairs</span>
+          </li>
+        </ul>
+      </section>
+
+    </section>
+  </main>
+
+  <main class="footer">
+    <section class="container">
+      <!--  -->
+      <section class="about-list">
+        <section>
+          <h4 data-locale="h-foot-proj-tit">Product</h4>
+          <ul>
+            <li data-locale="h-foot-proj-txt1">DApp</li>
+            <li data-locale="h-foot-proj-txt2">wallet</li>
+            <li data-locale="h-foot-proj-txt3">Mining tool</li>
+          </ul>
+        </section>
+
+        <section class="foot-dev">
+          <h4 data-locale="h-foot-dev-tit">Developer</h4>
+          <section class="foot-list">
+            <ul>
+              <li data-locale="h-foot-dev-txt1">Development tool documentation</li>
+              <li data-locale="h-foot-dev-txt2">GitHub</li>
+              <li data-locale="h-foot-dev-txt3">Blockchain browser</li>
+            </ul>
+            <ul class="list-margin-left">
+              <li data-locale="h-foot-dev-txt4">Test network</li>
+              <li data-locale="h-foot-dev-txt5">Development network</li>
+              <li data-locale="h-foot-dev-txt6">Developer community</li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="foot-ec">
+          <h4 data-locale="h-foot-eco-tit">Ecological </h4>
+          <section class="foot-list">
+            <ul>
+              <li data-locale="h-foot-eco-txt1">Pass Holdings</li>
+              <li data-locale="h-foot-eco-txt2">BIUT Foundation</li>
+              <li data-locale="h-foot-eco-txt3">China Chain Capital</li>
+              <li data-locale="h-foot-eco-txt4">Letter Chain Block Chain Co., Ltd.</li>
+            </ul>
+            <ul class="list-margin-left">
+              <li data-locale="h-foot-eco-txt5">BIUT International Club</li>
+              <li data-locale="h-foot-eco-txt6">BIUT new developments</li>
+              <li data-locale="h-foot-eco-txt7">Gitter</li>
+              <li data-locale="h-foot-eco-txt8">About the project</li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="last-section-cnt">
+          <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
+          <section class="foot-list last-foot-list">
+            <ul>
+              <li id="biutWx" class="biutWx">
+                <img src="./images/index/weixin.png" id="biutWxImg" alt="weixin" title="微信公众号"/>
+                <img src="./images/index/publicNumer.png" id="biutWxActiveImg" class="wxActive" alt="weixin" title="微信公众号"/>
+              </li>
+              <li id="biutWb">
+                <a href="https://weibo.com/SECblock" target="_blank">
+                  <img src="./images/index/weibo.png" id="biutWbImg" alt="weibo" title="新浪微博"/>
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li id="biutTw">
+                <a href="https://twitter.com/BIUTblock" target="_blank">
+                  <img src="./images/index/twiter.png" id="biutTwImg" alt="twiter" title="twiter"/>
+                </a>
+              </li>
+              <li id="biutPl">
+                <a href="https://t.me/joinchat/HszzcUiWaWtR5pPmOhDPwg" target="_blank">
+                  <img src="./images/index/plane.png" id="biutPlImg" alt="plane" title="plane"/>
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li id="biutFb">
+                <a href="https://www.facebook.com/BIUTblock" target="_blank">
+                  <img src="./images/index/facebook.png" id="biutFbImg" alt="facebook" title="facebook"/>
+                </a>
+              </li>
+              <li id="biutMk">
+                <a href="https://www.reddit.com/user/SECblock" target="_blank">
+                  <img src="./images/index/monkey.png" id="biutMkImg" alt="monkey" title="monkey"/>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+      </section>
+
+      <!-- footer 底部 -->
+      <footer>
+        <p>COPYRIGHT © 2017 BIUT TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.</p>
+      </footer>
+    </section>
+  </main>
+
+</body>
+<script src="./dist/jq/jquery-3.4.1.min.js"></script>
+<script src="./dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
+<script src="./dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="./dist/wow/wow.js"></script>
+<script src="./js/public.js"></script>
+<script src="./js/index.js"></script>
+</html>
