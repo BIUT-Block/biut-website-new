@@ -108,12 +108,13 @@ $(function () {
   $("#idxAffairs2").html("0")
 
   $.ajax({
-    url: "http://localhost:8080/api/v0/content/getList",
+    url: "http://biut.io:8080/api/v0/content/getList",
     type: "GET",
     dataType: "json",
     crossDomain: true,
     success: function (result) {
-      var img = "http://localhost:8080" + result.data.docs[0].sImg
+      //var img = "http://localhost:8080" + result.data.docs[0].sImg
+      var img = "http://biut.io:8080" + result.data.docs[0].sImg
       $("#newsActive1 > *:nth(0)").attr("src", img);
     }
   });
