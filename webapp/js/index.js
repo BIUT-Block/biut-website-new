@@ -107,6 +107,18 @@ $(function () {
   $("#idxAffairs1").html("0")
   $("#idxAffairs2").html("0")
 
+  $.ajax({
+    url: "http://localhost:8080/api/v0/content/getList",
+    type: "GET",
+    dataType: "json",
+    crossDomain: true,
+    success: function (result) {
+      var img = "http://localhost:8080" + result.data.docs[0].sImg
+      $("#newsActive1 > *:nth(0)").attr("src", img);
+    }
+  });
+
+
   var webSocketClient = new WebSocket("wss://api.fcoin.com/v2/ws")
   webSocketClient.onopen = function () {
     webSocketClient.send(JSON.stringify({"cmd":"sub","args":["ticker.secbtc", "ticker.seceth", "ticker.sec"],"id":"sec_official"}))
