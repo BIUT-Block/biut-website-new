@@ -107,7 +107,30 @@ $(function () {
   $("#idxAffairs1").html("0")
   $("#idxAffairs2").html("0")
 
-  
+  var webSocketClient = new WebSocket("wss://api.fcoin.com/v2/ws")
+  webSocketClient.onopen = function () {
+    webSocketClient.send(JSON.stringify({"cmd":"sub","args":["ticker.secbtc", "ticker.seceth", "ticker.sec"],"id":"sec_official"}))
+  }
+
+  webSocketClient.onmessage = function (evt) {
+    var data = JSON.parse(evt.data)
+    switch(data.type) {
+      case 'ticker.seceth':
+        $("#ethPrice").html(data.ticker[0])
+        $("#usdtPrice").html(data.ticker[3] / 1000)
+        break;
+      default:
+        break;
+    }
+  }
+
+  var ping = setTimeout(function () {
+    webSocketClient.send(JSON.stringify({"cmd": "ping", "args": [new Date().getTime()], "id": "sec_official"}))
+    ping = setTimeout(function () {
+      webSocketClient.send(JSON.stringify({"cmd": "ping", "args": [new Date().getTime()], "id": "sec_official"}))
+    }, 3500)
+  }, 35000)
+
 });
 
 //获取系统时间
@@ -127,3 +150,11 @@ function systemTime () {
 function getNow(s) {
   return s < 10 ? '0' + s: s;
 }
+
+function onOpen (ws) {
+  
+}
+
+function heartPackage (ws) {
+
+} 
