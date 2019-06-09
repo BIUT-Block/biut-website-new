@@ -119,6 +119,34 @@ $(function () {
     }
   });
 
+  $.ajax({
+    url: 'http://scan.biut.io/nodeinfoapi',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      $('#idxNetwork').html(result.length)
+    }
+  });
+
+  $.ajax({
+    url: 'http://scan.biut.io/alltx',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      $('#idxAffairs1').html(result.sectx.length);
+      $("#idxAffairs2").html(result.sentx.length);
+    }
+  })
+
+  $.ajax({
+    url: 'http://scan.biut.io/blockchain',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      $("#idxHeight1").html(result.secblockchain.length - 1)
+      $("#idxHeight2").html(result.senblockchain.length - 1)
+    }
+  })
 
   var webSocketClient = new WebSocket("wss://api.fcoin.com/v2/ws")
   webSocketClient.onopen = function () {
