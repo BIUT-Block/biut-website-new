@@ -133,8 +133,27 @@ $(function () {
     type: 'GET',
     dataType: 'json',
     success: function (result) {
+      var totalUsers = []
       $('#idxAffairs1').html(result.sectx.length);
       $("#idxAffairs2").html(result.sentx.length);
+      
+      for (var i = 0; i < result.sectx.length; i++) {
+        if (totalUsers.indexOf(result.sectx[i].TxFrom) === -1) {
+          totalUsers.push(result.sectx[i].TxFrom);
+        }
+        if (totalUsers.indexOf(result.sectx[i].TxTo) === -1) {
+          totalUsers.push(result.sectx[i].TxTo);
+        }
+      }
+      for (var j = 0; j < result.sentx.length; j++) {
+        if (totalUsers.indexOf(result.sentx[j].TxFrom) === -1) {
+          totalUsers.push(result.sentx[i].TxFrom);
+        }
+        if (totalUsers.indexOf(result.sentx[j].TxTo) === -1) {
+          totalUsers.push(result.sentx[i].TxTo);
+        }
+      }
+      $('#idxAccount').html(totalUsers.length)
     }
   })
 
