@@ -109,7 +109,7 @@ $(function () {
 
   let currentTsp = rd(10, 30);
   $("#idxCurrent").html(currentTsp);
-  
+
   $.ajax({
     url: "http://biut.io:8080/api/v0/content/getList",
     type: "GET",
@@ -119,6 +119,17 @@ $(function () {
       //var img = "http://localhost:8080" + result.data.docs[0].sImg
       var img = "http://biut.io:8080" + result.data.docs[0].sImg
       $("#newsActive1 > *:nth(0)").attr("src", img);
+    }
+  });
+
+  $.ajax({
+    url: 'http://api.coinegg.im/api/v1/kline/region/eth?coin=sec',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      console.log(result);
+      let rate = (Number(result[0][1]) - Number(result[result.length-1][1])) / Number(result[0][1]);
+      $(".ethRiseFall").html((rate*100).toFixed(2));
     }
   });
 
