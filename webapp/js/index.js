@@ -114,7 +114,6 @@ $(function () {
     url: "http://biut.io:8080/api/v0/content/getList",
     type: "GET",
     dataType: "json",
-    crossDomain: true,
     success: function (result) {
       //var img = "http://localhost:8080" + result.data.docs[0].sImg
       var img = "http://biut.io:8080" + result.data.docs[0].sImg
@@ -123,13 +122,16 @@ $(function () {
   });
 
   $.ajax({
-    url: 'http://api.coinegg.im/api/v1/kline/region/eth?coin=sec',
+    url: 'https://api.coinegg.im/api/v1/kline/region/eth?coin=sec',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
       console.log(result);
       let rate = (Number(result[0][1]) - Number(result[result.length-1][1])) / Number(result[0][1]);
       $(".ethRiseFall").html((rate*100).toFixed(2));
+    },
+    error: function (err) {
+      console.log(err)
     }
   });
 
