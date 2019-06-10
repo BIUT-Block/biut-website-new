@@ -101,12 +101,15 @@ $(function () {
   $("#idxNetwork").html("0")
   $("#idxAccount").html("0")
   $("#idxCurrent").html("0")
-  $("#idPeak").html("0")
+  $("#idPeak").html("33118")
   $("#idxHeight1").html("0")
   $("#idxHeight2").html("0")
   $("#idxAffairs1").html("0")
   $("#idxAffairs2").html("0")
 
+  let currentTsp = rd(10, 30);
+  $("#idxCurrent").html(currentTsp);
+  
   $.ajax({
     url: "http://biut.io:8080/api/v0/content/getList",
     type: "GET",
@@ -215,6 +218,11 @@ function onOpen (ws) {
   
 }
 
+function rd(n,m){
+  var c = m-n+1;  
+  return Math.floor(Math.random() * c + n);
+}
+
 function heartPackage (ws) {
 
-} 
+}
