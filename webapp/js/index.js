@@ -110,18 +110,6 @@ $(function () {
   let currentTsp = rd(10, 30);
   $("#idxCurrent").html(currentTsp);
 
-  /**获取doraCMS 新闻内容 */
-  $.ajax({
-    url: "http://biut.io:8080/api/v0/content/getList",
-    type: "GET",
-    dataType: "json",
-    success: function (result) {
-      //var img = "http://localhost:8080" + result.data.docs[0].sImg
-      var img = "http://biut.io:8080" + result.data.docs[0].sImg
-      $("#newsActive1 > *:nth(0)").attr("src", img);
-    }
-  });
-
   /**获取sec btc的信息 */
   $.ajax({
     url: 'http://scan.biut.io/forwarding?url=https://trade.coinegg.com/web/symbol/ticker?right_coin=btc',

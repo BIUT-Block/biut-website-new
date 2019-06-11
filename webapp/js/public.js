@@ -38,22 +38,22 @@ $(function () {
   }
 
   //获取新闻列表数据 0 中文 1 英文
-  getNes('1')
+  getNes(1)
 });
 
 //获取新闻数据
 function getNes (lang) {
   $.ajax({
-    type: "POST",
-    contentType: "application/json; charset=utf-8",
+    url: "http://biut.io:8080/api/v0/content/getList",
+    type: "GET",
     dataType: "json",
-    url: "",
-    data: {"langType": lang},
-    success: function (data) {
-      console.log(data)
-    },
-    error: function (e) {
-      console.log(e)
+    success: function (result) {
+      //var img = "http://localhost:8080" + result.data.docs[0].sImg
+      var img = "http://biut.io:8080" + result.data.docs[lang].sImg
+      $("#newsActive1 > *:nth(0)").attr("src", img);
+      $('#newstitle').html(result.data.docs[lang].title);
+      $('#newsubtitle').html(result.data.docs[lang].stitle);
+      $('#newstime').html(result.data.docs[lang].date.substring(0, 10));
     }
   });
 }
