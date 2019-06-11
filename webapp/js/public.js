@@ -6,6 +6,7 @@ $(function () {
     $("#i18nEn").removeClass("check-color")
     loadProperties('zh');
     $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    getNes(0)
   })
 
   //点击切换英文
@@ -15,6 +16,7 @@ $(function () {
     $("#i18nZh").removeClass("check-color")
     loadProperties(' ');
     $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    getNes(1)
   })
 
   //移动端导航栏
