@@ -162,7 +162,7 @@ $(function () {
 
   /**获取区块高度 */
   $.ajax({
-    url: 'http://scan.biut.io/blockchain',
+    url: 'http://3.112.124.196:3002/blockchain',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
