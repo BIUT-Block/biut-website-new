@@ -1,20 +1,22 @@
 $(function () {
   //点击切换中文
-  $("#i18nZh").click(function(){
+  $("#i18nZh").click(function () {
     sessionStorage.setItem("lang", 'zh');
     $(this).addClass("check-color")
     $("#i18nEn").removeClass("check-color")
     loadProperties('zh');
-    $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    getNes(0)
   })
 
   //点击切换英文
-  $("#i18nEn").click(function(){
+  $("#i18nEn").click(function () {
     sessionStorage.setItem("lang", ' ');
     $(this).addClass("check-color")
     $("#i18nZh").removeClass("check-color")
     loadProperties(' ');
-    $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    getNes(1)
   })
 
   //移动端导航栏
@@ -28,32 +30,135 @@ $(function () {
   //刷新页面保持中英文切换高亮文字
   let langS = sessionStorage.getItem("lang")
   if (langS == "zh") {
-    $("#i18nEn").removeClass("check-color")
     $("#i18nZh").addClass("check-color")
-    $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    $("#i18nEn").removeClass("check-color")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    getNes(0)
+    loadProperties('zh')
   } else {
     $("#i18nZh").removeClass("check-color")
     $("#i18nEn").addClass("check-color")
-    $(".whitepaper").attr("href","https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    getNes(1)
+    loadProperties(' ')
   }
 
-  //获取新闻列表数据 0 中文 1 英文
-  getNes('1')
+  //新闻列表页面hover
+  $("#newsList").on("mouseenter", ".new-list", function () {
+    $(this).children("figure").addClass("news-active")
+    $(this).children("figure").children(".dynamics-active").show()
+  });
+
+  $("#newsList").on("mouseleave", ".new-list", function () {
+    $(this).children("figure").removeClass("news-active")
+    $(this).children("figure").children(".dynamics-active").hide()
+  })
+
+  $("#newsMask").hide()
+  $("#closeMask").click(function(){
+    $("#newsMask").hide()
+  })
+
+  // //点击查看详情
+  $("#newsList").bind("click", ".new-list", function () {
+    let str = $(this).attr("data-time")
+    console.log(str)
+    // $("#newsMask").show()
+    // $('html,body').addClass("over-h")
+  })
+
 });
 
 //获取新闻数据
-function getNes (lang) {
+function getNes(lang) {
   $.ajax({
-    type: "POST",
-    contentType: "application/json; charset=utf-8",
+    url: "http://biut.io:8080/api/v0/content/getList",
+    type: "GET",
     dataType: "json",
-    url: "",
-    data: {"langType": lang},
-    success: function (data) {
-      console.log(data)
-    },
-    error: function (e) {
-      console.log(e)
+    success: function (result) {
+      let res = result.data.docs
+      var html = ""
+      console.log(result)
+      if (res.length > 6) {
+        if (lang == 0) {
+          for (var l = 0; l < 5; l = l + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[l].date + '">'
+              + '<figure>'
+              + '<img src="http://biut.io:8080' + res[l].sImg + '" alt=""/>'
+              + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<figcaption>'
+              + '<section>'
+              + '<p class="newstitle">' + res[l].title + '</p>'
+              + '</section>'
+              + '<section>'
+              + '<p class="subnewstitle">' + res[l].stitle + '</p>'
+              + '</section>'
+              + '<time class="newstime">' + res[l].date.substring(0, 10) + '</time>'
+              + '</figcaption>'
+              + '</figure>'
+            '</li>'
+          }
+        } else {
+          for (var k = 1; k < 6; k = k + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[k].date + '">'
+              + '<figure>'
+              + '<img src="http://biut.io:8080' + res[k].sImg + '" alt=""/>'
+              + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<figcaption>'
+              + '<section>'
+              + '<p class="newstitle">' + res[k].title + '</p>'
+              + '</section>'
+              + '<section>'
+              + '<p class="subnewstitle">' + res[k].stitle + '</p>'
+              + '</section>'
+              + '<time class="newstime">' + res[k].date.substring(0, 10) + '</time>'
+              + '</figcaption>'
+              + '</figure>'
+            '</li>'
+          }
+        }
+
+      } else {
+        if (lang == 0) {
+          for (var i = 0; i < res.length; i = i + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[i].date + '">'
+              + '<figure>'
+              + '<img src="http://biut.io:8080' + res[i].sImg + '" alt=""/>'
+              + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<figcaption>'
+              + '<section>'
+              + '<p class="newstitle">' + res[i].title + '</p>'
+              + '</section>'
+              + '<section>'
+              + '<p class="subnewstitle">' + res[i].stitle + '</p>'
+              + '</section>'
+              + '<time class="newstime">' + res[i].date.substring(0, 10) + '</time>'
+              + '</figcaption>'
+              + '</figure>'
+            '</li>'
+          }
+        } else {
+          for (var a = 1; a < res.length; a = a + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[a].date + '">'
+              + '<figure>'
+              + '<img src="http://biut.io:8080' + res[a].sImg + '" alt=""/>'
+              + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<figcaption>'
+              + '<section>'
+              + '<p class="newstitle">' + res[a].title + '</p>'
+              + '</section>'
+              + '<section>'
+              + '<p class="subnewstitle">' + res[a].stitle + '</p>'
+              + '</section>'
+              + '<time class="newstime">' + res[a].date.substring(0, 10) + '</time>'
+              + '</figcaption>'
+              + '</figure>'
+            '</li>'
+          }
+        }
+
+      }
+      $("#newsList").append(html);
     }
   });
 }
@@ -62,7 +167,7 @@ new WOW().init();
 
 //监听浏览器是否缩放
 window.onresize = function temp() {
-  let flg = ismobile ()
+  let flg = ismobile()
   if (this.detectZoom() != 100 && !flg) {
     document.getElementById("zoomMessage").style.display = "block"
   } else {
@@ -71,11 +176,11 @@ window.onresize = function temp() {
 }
 
 //移动端的时候会
-function ismobile () {
+function ismobile() {
   var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
   var ua = navigator.userAgent;
-  var res=mobileArry.filter(function(arr) {
-  return ua.indexOf(arr) > 0;
+  var res = mobileArry.filter(function (arr) {
+    return ua.indexOf(arr) > 0;
   });
   return res.length > 0;
 }

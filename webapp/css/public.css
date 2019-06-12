@@ -26,7 +26,7 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
   border-top-left-radius: .2rem;border-bottom-left-radius: .2rem;}
 
 .public-head ul li:hover,.content-head .head-list li:hover,.content-head .head-down img:hover,
-.public-title figure:hover,.last-foot-list .biutWx:hover {cursor: pointer;} 
+.public-title figure:hover,.last-foot-list .biutWx:hover,.mask-close:hover {cursor: pointer;} 
 
 .check-color {color:rgba(255,255,255,.8)!important;}
 /*  2462 2145 497 */
@@ -65,7 +65,7 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 
 /* 首页 - 头部内容 */
 .content-head {padding: 13.6rem 0 0 2.8rem;}
-.content-head .head-logo img {width: 6.25rem;height: 1.9rem;margin-bottom: 2rem;}
+.content-head .head-logo h1 {margin-bottom: 2rem;color: #00D69B;}
 .content-head .head-logo p {font-size: .75rem;color: rgba(255,255,255,.8);line-height: 2;}
 .content-head .head-logo figcaption img {width: 11px;height: 9px;margin-bottom: 1rem;}
 .content-head .head-logo figcaption img:last-child {margin: 1rem 0 0;}
@@ -117,15 +117,17 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
   font-size: .5rem;}
 .price-list .price-txt-font1 {font-size: 1.2rem;font-weight: 600;}
 .price-list .price-txt-font2 {font-size: .8rem;padding-right: .5rem;}
-.price-list .price-txt-color1 {color: #FB6363;font-family: proximaNova;}
-.price-list .price-txt-color2 {color: #59DCB4;font-family: proximaNova;}
 .price-list .price-txt-margin {margin-bottom: .8rem;}
 .price-list .price-img {position: relative;margin-top: 2rem;}
 .price-list .price-img img {width: 19.1rem;height: 7.45rem;}
 .price-list .price-img figcaption {position: absolute;top: 2.8rem;right: 4.4rem;
-  width: 2.4rem;height: 1rem;background:#59DCB4;border-radius: .3rem;
+  width: 2.4rem;height: 1rem;border-radius: .3rem;
   display: flex;align-items: center;justify-content: center;font-size: .5rem;}
-.price-list li:first-child .price-img figcaption {background: #E65C5D;}
+
+.price-list .price-txt-color1 {color: #FB6363;font-family: proximaNova;}
+.price-list .price-txt-color2 {color: #59DCB4;font-family: proximaNova;}
+.price-list .price-img .success-bg {background:#59DCB4;}
+.price-list .price-img .failure-bg {background: #E65C5D;}
 
 /* 首页 - new-dynamics  -18.1rem*/
 .new-dynamics {margin-top: -18.1rem;}
@@ -137,10 +139,26 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 
 .new-dynamics ul li figure figcaption {text-align: center;font-size: .5rem;}
 .new-dynamics ul li figure figcaption section:first-child {padding: 3rem 0 1rem;}
-.new-dynamics ul li figure figcaption section:first-child p {font-size: .6rem;color: #fff;}
+.new-dynamics ul li figure figcaption section:first-child p {font-size: .6rem;color: #fff;width: 9.1rem;margin: 0 auto;
+  display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+.new-dynamics ul li figure figcaption section:nth-child(2) p {width: 9.6rem;margin: 0 auto;display: -webkit-box;
+  -webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
 .new-dynamics ul li figure figcaption section p {line-height: 2;color:rgba(255,255,255,.2);}
+
 .new-dynamics ul li figure figcaption time {color:rgba(255,255,255,.8);padding-top: 1.5rem;display: block;}
-.new-dynamics ul li .news-active {box-sizing: border-box;border-bottom:5px solid #59DCB4;cursor: pointer;}
+.news-active {box-sizing: border-box;border-bottom:5px solid #59DCB4;cursor: pointer;}
+
+.news-mask {position: fixed;top: 0;bottom: 0;left: 0;right: 0;display: flex;align-items: center;
+  justify-content: center;background: rgba(0, 0, 0,.85);overflow: hidden;z-index: 999;}
+
+.mask-close {position: absolute;top: .25rem;right: .5rem;font-size: 20px;}
+
+.news-mask-content {width: 45rem;background: #fff;padding: 2.5rem 2rem;height: 80vh;overflow-y: auto;
+  position: relative;border-radius: .25rem;}
+.news-mask-title {display: flex;align-items: center;justify-content: space-between;padding-bottom: 2rem;
+  border-bottom:5px solid #59DCB4;box-sizing: border-box;font-size: .8rem;}
+.news-mask-title h5 {font-size: 1.2rem;font-weight: bold;}
+.news-mask-cnt {padding-top: 1rem;line-height: 2;}
 
 /* 首页 - Submit a subscription */
 .suggest {text-align: center;font-size: .55rem;color:rgba(255,255,255,.4);}
@@ -228,7 +246,7 @@ html {font-size: 20px;}
   .row {margin: 0;}
   
   .content-head {padding: 7.13rem 0 0;text-align: center;}
-  .content-head .head-logo img {margin-bottom: 1.75rem;}
+  .content-head .head-logo h1 {margin-bottom: 1.75rem;}
   .content-head .head-logo figcaption img {margin-bottom: 1.25rem;}
   .content-head .head-logo figcaption img:last-child {margin: 1.25rem 0 0;}
   .content-head .head-list {display: none;}
@@ -249,7 +267,7 @@ html {font-size: 20px;}
   .new-dynamics ul li {padding-top: 1.75rem;}
   .new-dynamics ul li figure,.new-dynamics ul li figure img {width: 100%;}
    
-
+  .news-mask-content {width: 85%;}
 
   .price-title {padding-top: 4.9rem;padding-right: 0;align-items: flex-start;}
   .price-title section {flex-direction: column;text-align: right;}
