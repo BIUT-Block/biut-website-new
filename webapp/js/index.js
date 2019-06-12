@@ -203,7 +203,7 @@ $(function () {
 
 function getEthPrice (price, chg) {
   $.ajax({
-    url: 'https://market.coinegg.com/market/ticker?symbol=eth_usdt',
+    url: 'http://scan.biut.io/forwarding?url=https://market.coinegg.com/market/ticker?symbol=eth_usdt',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
