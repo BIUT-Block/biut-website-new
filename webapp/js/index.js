@@ -88,7 +88,7 @@ $(function () {
         return coin.symbol === 'sec_btc';
       })
       $('#btcPrice').html(btc_sec[0].price);
-      $('.btnRiseFall').html('+ ' + btc_sec[0].chg + '%');
+      $('.btnRiseFalls').html(btc_sec[0].chg + '%');
       if (Number(btc_sec[0].chg) < 0) {
         $('.btnRiseFall').html('- ' + Math.abs(btc_sec[0].chg) + '%');
       } else {
@@ -110,7 +110,7 @@ $(function () {
         return coin.symbol === 'sec_eth';
       })
       $('#ethPrice').html(eth_sec[0].price);
-      $('.ethRiseFall').html('+ ' + eth_sec[0].chg + '%');
+      $('.ethRiseFalls').html(eth_sec[0].chg + '%');
       if (Number(eth_sec[0].chg) < 0) {
         $('.ethRiseFall').html('- ' + Math.abs(eth_sec[0].chg) + '%');
       } else {
@@ -174,12 +174,13 @@ $(function () {
 
 function getEthPrice (price, chg) {
   $.ajax({
-    url: 'https://market.coinegg.com/market/ticker?symbol=eth_usdt',
+    url: 'http://scan.biut.io/forwarding?url=https://market.coinegg.com/market/ticker?symbol=eth_usdt',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
       var currentUSDT = Number(price) * Number(result.data[0].close);
       $('#usdtPrice').html(currentUSDT.toFixed(2));
+      $('.useTRiseFalls').html(chg + '%');
       if (Number(chg) < 0) {
         $('.useTRiseFall').html('- ' + Math.abs(chg) + '%');
       } else {
