@@ -78,7 +78,7 @@ $(function () {
 
   /**获取sec btc的信息 */
   $.ajax({
-    url: 'http://scan.biut.io/forwarding?url=https://trade.coinegg.com/web/symbol/ticker?right_coin=btc',
+    url: 'http://scan.biut.io/market/ticker?symbol=sec_btc',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -102,7 +102,7 @@ $(function () {
 
   /**获取sec eth的信息 */
   $.ajax({
-    url: 'http://scan.biut.io/forwarding?url=https://trade.coinegg.com/web/symbol/ticker?right_coin=eth',
+    url: 'http://scan.biut.io/market/ticker?symbol=sec_eth',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -174,7 +174,7 @@ $(function () {
 
 function getEthPrice (price, chg) {
   $.ajax({
-    url: 'http://scan.biut.io/forwarding?url=https://market.coinegg.com/market/ticker?symbol=eth_usdt',
+    url: 'http://scan.biut.io/market/ticker?symbol=eth_usdt',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
