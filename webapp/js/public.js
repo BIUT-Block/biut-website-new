@@ -166,12 +166,14 @@ function newsDetails(params) {
       var docTitle = doc.title;
       var docSubTitle = doc.stitle;
       var comments = doc.simpleComments;
+      var commentsHTML = doc.comments;
       var clickNum = doc.clickNum;
       var text = '';
       for (var i=0; i<comments.length; i++) {
         text = text + comments[i].content + ' ';
       }
       console.log(text);
+      console.log(commentsHTML);
     }
   });
 }
