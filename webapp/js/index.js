@@ -176,6 +176,7 @@ function getBtc() {
 }
 
 
+
  /**获取sec eth的信息 */
  function getEth() {
   $.ajax({
