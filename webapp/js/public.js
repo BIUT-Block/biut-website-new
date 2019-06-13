@@ -71,8 +71,8 @@ function getNes(lang) {
       var html = ""
       if (res.length > 6) {
         if (lang == 0) {
-          for (var l = 0; l < 6; l = l + 1) {
-            html += '<li id="' + res[l]._id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[l].date + '">'
+          for (var l = 1; l < 6; l = l + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*l +'s onclick="newsDetails(`' + res[l].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[l].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -89,8 +89,8 @@ function getNes(lang) {
             '</li>'
           }
         } else {
-          for (var k = 1; k < 6; k = k + 2) {
-            html += '<li id="' + res[k]._id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[k].date + '">'
+          for (var k = 0; k < 5; k = k + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*k +'s onclick="newsDetails(`' + res[k].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[k].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -110,8 +110,8 @@ function getNes(lang) {
 
       } else {
         if (lang == 0) {
-          for (var i = 0; i < res.length; i = i + 2) {
-            html += '<li id="' + res[i]._id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[i].date + '">'
+          for (var i = 1; i < res.length; i = i + 2) {
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*i +'s onclick="newsDetails(`' + res[i].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[i].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -129,7 +129,7 @@ function getNes(lang) {
           }
         } else {
           for (var a = 0; a < res.length; a = a + 2) {
-            html += '<li id="' + res[a].id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[a].date + '">'
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*a +'s onclick="newsDetails(`' + res[a].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[a].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -155,23 +155,27 @@ function getNes(lang) {
 
 //查看新闻详情
 function newsDetails(params) {
-  console.log(params)
   $("#newsMask").css("display","block")
   $.ajax({
-    url: 'http://biut.io:8080/api/v0/content/getContent?id=' + newsId,
+    url: 'http://biut.io:8080/api/v0/content/getContent?id=' + params,
     type: 'GET',
     data: 'json',
     success: function (result) {
       var doc = result.data.doc;
-      var docTitle = doc.title;
-      var docSubTitle = doc.stitle;
+      var docTitle = doc.title; //标题
+      var docSubTitle = doc.stitle; //副标题
+      var clickNum = doc.clickNum;//点击次数
+      var newsTime = doc.date;//点击次数
+
+      
       var comments = doc.simpleComments;
-      var clickNum = doc.clickNum;
+
+      console.log(comments)
       var text = '';
       for (var i=0; i<comments.length; i++) {
         text = text + comments[i].content + ' ';
       }
-      console.log(text);
+      //console.log(text);
     }
   });
 }
