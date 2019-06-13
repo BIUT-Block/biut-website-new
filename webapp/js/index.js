@@ -2,6 +2,19 @@ $(function () {
   //获取当前系统时间
   $("#indexTime").html(systemTime())
 
+  $("#downLoad").click(function () {
+    $("html,body").animate({
+      scrollTop: $("#aboutProject").offset().top
+    }, 1500);
+  })
+
+  $("#submitEmail").click(function(){
+    $(".toastCnt").slideDown()
+    setTimeout(function(){ 
+      $(".toastCnt").slideUp()
+    }, 3000)
+  })
+
   //微信图片hover效果
   $('#biutWx').hover(function(){
     $('#biutWxActiveImg').slideDown();
@@ -51,74 +64,30 @@ $(function () {
   })
 
   //价格数据
-  $("#btcPrice").html("0.00006970")
-  $(".btnRiseFall").html("+ " + "5.7" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".btnRiseFalls").html("5.7" + '%')
+  $("#btcPrice").html("-")
+  $(".btcRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".btcRiseFalls").html("-" + '%')
 
-  $("#ethPrice").html("0.00006970")
-  $(".ethRiseFall").html("+ " + "5.7" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".ethRiseFalls").html("5.7" + '%')
+  $("#ethPrice").html("-")
+  $(".ethRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".ethRiseFalls").html("-" + '%')
 
-  $("#usdtPrice").html("0.00006970")
-  $(".useTRiseFall").html("+ " + "5.7" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".useTRiseFalls").html("5.7" + '%')
+  $("#usdtPrice").html("-")
+  $(".usdTRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".usdTRiseFalls").html("-" + '%')
   
   //默认所有的数据为0
-  $("#idxNetwork").html("0")
-  $("#idxAccount").html("0")
-  $("#idxCurrent").html("0")
+  $("#idxNetwork").html("-")
+  $("#idxAccount").html("-")
+  $("#idxCurrent").html("-")
   $("#idPeak").html("33118")
-  $("#idxHeight1").html("0")
-  $("#idxHeight2").html("0")
-  $("#idxAffairs1").html("0")
-  $("#idxAffairs2").html("0")
+  $("#idxHeight1").html("-")
+  $("#idxHeight2").html("-")
+  $("#idxAffairs1").html("-")
+  $("#idxAffairs2").html("-")
 
   let currentTsp = rd(10, 30);
   $("#idxCurrent").html(currentTsp);
-
-  /**获取sec btc的信息 */
-  $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=sec_btc',
-    type: 'GET',
-    dataType: 'json',
-    success: function (result) {
-      console.log("1")
-      console.log(result)
-      var btc_sec = result.data.filter(function (coin) {
-        return coin.symbol === 'sec_btc';
-      })
-      $('#btcPrice').html(btc_sec[0].price);
-      $('.btnRiseFalls').html(btc_sec[0].chg + '%');
-      if (Number(btc_sec[0].chg) < 0) {
-        $('.btnRiseFall').html('- ' + Math.abs(btc_sec[0].chg) + '%');
-      } else {
-        $('.btnRiseFall').html('+ ' + Math.abs(btc_sec[0].chg) + '%');
-      }
-    },
-    error (e) {
-      console.log(e)
-    }
-  });
-
-  /**获取sec eth的信息 */
-  $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=sec_eth',
-    type: 'GET',
-    dataType: 'json',
-    success: function (result) {
-      var eth_sec = result.data.filter(function (coin) {
-        return coin.symbol === 'sec_eth';
-      })
-      $('#ethPrice').html(eth_sec[0].price);
-      $('.ethRiseFalls').html(eth_sec[0].chg + '%');
-      if (Number(eth_sec[0].chg) < 0) {
-        $('.ethRiseFall').html('- ' + Math.abs(eth_sec[0].chg) + '%');
-      } else {
-        $('.ethRiseFall').html('+ ' + Math.abs(eth_sec[0].chg) + '%');
-      }
-      getEthPrice(eth_sec[0].price, eth_sec[0].chg);
-    }
-  });
 
   /**获取节点信息 */
   $.ajax({
@@ -170,8 +139,71 @@ $(function () {
       $("#idxHeight2").html(result.senblockchain.length - 1)
     }
   });
+  getEth()
+  getBtc()
+
+  setInterval(function(){
+    getEth()
+    getBtc()
+  }, 40000)
 });
 
+/**获取sec btc的信息 */
+function getBtc() {
+  $.ajax({
+    url: 'http://scan.biut.io/market/ticker?symbol=sec_btc',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      var btc_sec = result.data.filter(function (coin) {
+        return coin.symbol === 'sec_btc';
+      })
+      $('#btcPrice').html(btc_sec[0].price);
+      $('.btcRiseFalls').html(btc_sec[0].chg.replace('-','') + '%');
+      if (Number(btc_sec[0].chg) < 0) {
+        $('.btcRiseFall').html('- ' + Math.abs(btc_sec[0].chg) + '%');
+        $('#btcPrice,.btcRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
+        $('.btcRiseFalls').addClass('failure-bg').removeClass('success-bg')
+        $('#btcBgImg').attr("src",'../images/index/price-bg1.png')
+      } else {
+        $('.btcRiseFall').html('+ ' + Math.abs(btc_sec[0].chg) + '%');
+        $('#btcPrice,.btcRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
+        $('.btcRiseFalls').addClass('success-bg').removeClass('failure-bg')
+        $('#btcBgImg').attr("src",'../images/index/price-bg2.png')
+      }
+    }
+  });
+}
+
+ /**获取sec eth的信息 */
+ function getEth() {
+  $.ajax({
+    url: 'http://scan.biut.io/market/ticker?symbol=sec_eth',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      var eth_sec = result.data.filter(function (coin) {
+        return coin.symbol === 'sec_eth';
+      })
+      $('#ethPrice').html(eth_sec[0].price);
+      $('.ethRiseFalls').html(eth_sec[0].chg.replace('-','') + '%');
+      if (Number(eth_sec[0].chg) < 0) {
+        $('.ethRiseFall').html('- ' + Math.abs(eth_sec[0].chg) + '%');
+        $('#ethPrice,.ethRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
+        $('.ethRiseFalls').addClass('failure-bg').removeClass('success-bg')
+        $('#ethBgImg').attr("src",'../images/index/price-bg1.png')
+      } else {
+        $('.ethRiseFall').html('+ ' + Math.abs(eth_sec[0].chg) + '%');
+        $('#ethPrice,.ethRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
+        $('.ethRiseFalls').addClass('success-bg').removeClass('failure-bg')
+        $('#ethBgImg').attr("src",'../images/index/price-bg2.png')
+      }
+      getEthPrice(eth_sec[0].price, eth_sec[0].chg);
+    }
+  });
+}
+
+/** 获取usdt */
 function getEthPrice (price, chg) {
   $.ajax({
     url: 'http://scan.biut.io/market/ticker?symbol=eth_usdt',
@@ -180,11 +212,17 @@ function getEthPrice (price, chg) {
     success: function (result) {
       var currentUSDT = Number(price) * Number(result.data[0].close);
       $('#usdtPrice').html(currentUSDT.toFixed(2));
-      $('.useTRiseFalls').html(chg + '%');
+      $('.usdTRiseFalls').html(chg.replace('-','') + '%');
       if (Number(chg) < 0) {
-        $('.useTRiseFall').html('- ' + Math.abs(chg) + '%');
+        $('.usdTRiseFall').html('- ' + Math.abs(chg) + '%');
+        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
+        $('.usdTRiseFalls').addClass('failure-bg').removeClass('success-bg')
+        $('#usdtBgImg').attr("src",'../images/index/price-bg1.png')
       } else {
-        $('.useTRiseFall').html('+ ' + Math.abs(chg) + '%');
+        $('.usdTRiseFall').html('+ ' + Math.abs(chg) + '%');
+        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
+        $('.usdTRiseFalls').addClass('success-bg').removeClass('failure-bg')
+        $('#usdtBgImg').attr("src",'../images/index/price-bg2.png')
       }
     }
   })

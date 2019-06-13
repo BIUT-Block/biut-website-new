@@ -36,6 +36,16 @@
     .titanimate {
       animation-name: bounceInUp;
     }
+    .cntanimate1 {
+      animation-name: bounceIn;
+    }
+    .cntanimate2 {
+      animation-name: bounceLeft;
+    }
+    .cntanimate3 {
+      animation-name: bounce;
+    }
+
     @keyframes bounceInUp {
       0% {
         filter: blur(20px);
@@ -51,6 +61,43 @@
         transform: skew(0deg, 0deg);
       }
     }
+
+    @keyframes bounce {
+      from {
+        opacity: 0;
+        padding-top: 2.5rem;
+      }
+
+      to {
+        opacity: 1;
+        padding-top: 0;
+      }
+    }
+
+    @keyframes bounceLeft {
+      from {
+        opacity: 0;
+        margin-top: 2.5rem;
+      }
+
+      to {
+        opacity: 1;
+        margin-top: 0;
+      }
+    }
+
+    @keyframes bounceIn {
+      from {
+        position: relative;
+        opacity: 0;
+        top: 2.5rem;
+      }
+
+      to {
+        opacity: 1;
+        top: 0;
+      }
+    }
   </style>
 </head>
 
@@ -59,6 +106,10 @@
     <span data-locale="zoom">
       Your browser is currently zoomed, and the page may be misplaced. It is recommended to display 100% size.
     </span>
+  </section>
+
+  <section class="toastCnt">
+    <span data-locale="toast">! This function has not been activated, please stay tuned.</span>
   </section>
 
   <main class='head-content'>
@@ -129,15 +180,15 @@
           </ul>
   
           <figure class="head-down">
-            <img src="./images/index/header-down.png" alt="BIUT-down" title="">
+            <img src="./images/index/header-down.png" id="downLoad" alt="BIUT-down" title="">
           </figure>
         </section>
 
         <!-- about project  -->
-        <section class="about-project">
+        <section class="about-project" id="aboutProject">
           <!-- 功能 子导航栏 -->
           <article class="public-title">
-            <h3 data-locale="h-proj-tit" class="wow titanimate">About the project</h3>
+            <h3 data-locale="h-proj-tit" class="wow titanimate" data-wow-delay=".5s">About the project</h3>
             <!-- <figure>
               <figcaption data-locale="more">
                 understand more
@@ -147,7 +198,7 @@
           </article>
           
           <ul class="row project-list">
-            <li class="col-md-3 col-sm-6 col-xs-6">
+            <li class="col-md-3 col-sm-6 col-xs-6 wow cntanimate1" data-wow-delay="1s">
               <section>
                 <figure>
                   <img src="./images/index/project1.png" alt="BIUT-TPS" title="TPS">
@@ -163,7 +214,7 @@
                 </figure>
               </section>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6">
+            <li class="col-md-3 col-sm-6 col-xs-6 wow cntanimate1" data-wow-delay="1.25s">
               <section>
                 <figure>
                   <img src="./images/index/project2.png" alt="BIUT-decentralization" title="Excellent decentralization">
@@ -176,7 +227,7 @@
                 </figure>
               </section>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6">
+            <li class="col-md-3 col-sm-6 col-xs-6 wow cntanimate1" data-wow-delay="1.5s">
               <section>
                 <figure>
                   <img src="./images/index/project3.png" alt="BIUT-Consensus algorithm" title="Consensus algorithm">
@@ -197,7 +248,7 @@
                 </figure>
               </section>
             </li>
-            <li class="col-md-3 col-sm-6 col-xs-6">
+            <li class="col-md-3 col-sm-6 col-xs-6 wow cntanimate1" data-wow-delay="1.75s">
               <section>
                 <figure>
                   <img src="./images/index/project4.png" alt="BIUT-technology" title="technology">
@@ -216,7 +267,7 @@
         <section  class="price">
           <!-- 功能 子导航栏 -->
           <article class="public-title price-title">
-            <h3 data-locale="h-pr-tit" class="wow titanimate">PRICE</h3>
+            <h3 data-locale="h-pr-tit" class="wow titanimate" data-wow-delay=".5s">PRICE</h3>
             <section>
               <span data-locale="h-pr-txt1">Ten minutes or more delay in quotation</span>
               <p> 
@@ -228,7 +279,7 @@
           </article>
   
           <ul class="row price-list">
-            <li class="col-md-4 col-sm-12 col-xs-12">
+            <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay=".75s">
               <section>
                 <section class="price-txt price-txt-margin">
                   <span>BIUT/BTC</span>
@@ -237,16 +288,16 @@
                 <section class="price-txt">
                   <span class="price-txt-font1" id="btcPrice"></span>
                   <p>
-                    <span class="price-txt-font2 btnRiseFall"></span>(24h)
+                    <span class="price-txt-font2 btcRiseFall"></span>(24h)
                   </p>
                 </section>
                 <figure class="price-img">
-                  <figcaption class="btnRiseFalls"></figcaption>
-                  <img src="./images/index/price-bg1.png" alt="BIUT-down" title=""/>
+                  <figcaption class="btcRiseFalls"></figcaption>
+                  <img src="" id="btcBgImg" alt="BIUT-down" title=""/>
                 </figure>
               </section>
             </li>
-            <li class="col-md-4 col-sm-12 col-xs-12">
+            <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1s">
               <section>
                 <section class="price-txt price-txt-margin">
                   <span>BIUT/ETH</span>
@@ -260,11 +311,11 @@
                 </section>
                 <figure class="price-img">
                   <figcaption class="ethRiseFalls"></figcaption>
-                  <img src="./images/index/price-bg2.png" alt="BIUT-down" title=""/>
+                  <img src="" id="ethBgImg" alt="BIUT-down" title=""/>
                 </figure>
               </section>
             </li>
-            <li class="col-md-4 col-sm-12 col-xs-12">
+            <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1.25s">
               <section>
                 <section class="price-txt price-txt-margin">
                   <span>BIUT/USDT</span>
@@ -273,12 +324,12 @@
                 <section class="price-txt">
                   <span class="price-txt-font1" id="usdtPrice"></span>
                   <p>
-                    <span class="price-txt-font2 useTRiseFall"></span>(24h)
+                    <span class="price-txt-font2 usdTRiseFall"></span>(24h)
                   </p>
                 </section>
                 <figure class="price-img">
-                  <figcaption class="useTRiseFalls"></figcaption>
-                  <img src="./images/index/price-bg2.png" alt="BIUT-down" title=""/>
+                  <figcaption class="usdTRiseFalls"></figcaption>
+                  <img src="" id="usdtBgImg" alt="BIUT-down" title=""/>
                 </figure>
               </section>
             </li>
@@ -300,7 +351,7 @@
       <section class="new-dynamics">
         <!-- 功能 子导航栏 -->
         <article class="public-title">
-          <h3 data-locale="h-dyc-tit" class="wow titanimate">New dynamics</h3>
+          <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New dynamics</h3>
           <!-- <figure>
             <figcaption data-locale="more">
               understand more
@@ -312,7 +363,7 @@
         <ul class="row" id="newsList"></ul>
 
         <!-- 新闻mask -->
-        <section id="newsMask">
+        <article id="newsMask" class="mask">
           <section class="news-mask">
             <section class="news-mask-content">
               <span class="mask-close" id="closeMask">X</span>
@@ -330,7 +381,7 @@
               </section>
             </section>
           </section>
-        </section>
+        </article>
         
       </section>
       
@@ -358,7 +409,7 @@
         <!-- suggest submit -->
         <section class="suggest-from">
           <input type="text" data-placeholder="h-ss-email" />
-          <span  data-locale="h-ss-btn">Submit a subscription</span>
+          <span  data-locale="h-ss-btn" id="submitEmail">Submit a subscription</span>
         </section>
       </section>
 
@@ -366,19 +417,19 @@
       <section class="network-state">
         <!-- 功能 子导航栏 -->
         <article class="public-title">
-          <h3 data-locale="h-net-tit" class="wow titanimate">Network state</h3>
+          <h3 data-locale="h-net-tit" class="wow titanimate" data-wow-delay=".5s">Network state</h3>
         </article>
 
         <ul>
-          <li>
+          <li class="wow cntanimate3" data-wow-delay=".75s">
             <span id="idxNetwork"></span>
             <span data-locale="h-net-txt1">Node network</span>
           </li>
-          <li>
+          <li class="wow cntanimate3" data-wow-delay="1s">
             <span id="idxAccount"></span>
             <span data-locale="h-net-txt2">current account</span>
           </li>
-          <li>
+          <li class="wow cntanimate3" data-wow-delay="1.25s">
             <span>
               <span id="idxCurrent"></span>
               <span>l</span>
@@ -386,7 +437,7 @@
             </span>
             <span data-locale="h-net-txt3">Current/peak TPS</span>
           </li>
-          <li>
+          <li class="wow cntanimate3" data-wow-delay="1.5s">
             <span>
               <span id="idxHeight1"></span>
               <span>l</span>
@@ -394,7 +445,7 @@
             </span>
             <span data-locale="h-net-txt4">BIUT Height / BIU Height</span>
           </li>
-          <li>
+          <li class="wow cntanimate3" data-wow-delay="1.75s">
             <span>
               <span id="idxAffairs1"></span>
               <span>l</span>

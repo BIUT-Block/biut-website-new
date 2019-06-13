@@ -54,20 +54,9 @@ $(function () {
     $(this).children("figure").children(".dynamics-active").hide()
   })
 
-  $("#newsMask").hide()
   $("#closeMask").click(function(){
-    $("#newsMask").hide()
+    $("#newsMask").css("display","none")
   })
-
-  // //点击查看详情
-  $("#newsList").bind("click", ".new-list", function (evt) {
-    console.log(evt);
-    //let str = $(this).attr("data-time")
-    //console.log(str)
-    // $("#newsMask").show()
-    // $('html,body').addClass("over-h")
-  })
-
 });
 
 //获取新闻数据
@@ -77,12 +66,12 @@ function getNes(lang) {
     type: "GET",
     dataType: "json",
     success: function (result) {
+      $("#newsList").html("")
       let res = result.data.docs
       var html = ""
-      console.log(result)
       if (res.length > 6) {
         if (lang == 0) {
-          for (var l = 0; l < 5; l = l + 2) {
+          for (var l = 0; l < 6; l = l + 1) {
             html += '<li id="' + res[l]._id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[l].date + '">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[l].sImg + '" alt=""/>'
@@ -139,7 +128,7 @@ function getNes(lang) {
             '</li>'
           }
         } else {
-          for (var a = 1; a < res.length; a = a + 2) {
+          for (var a = 0; a < res.length; a = a + 2) {
             html += '<li id="' + res[a].id + '"' + 'class="col-md-4 col-sm-12 col-xs-12 new-list" data-time="' + res[a].date + '">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[a].sImg + '" alt=""/>'
@@ -164,7 +153,10 @@ function getNes(lang) {
   });
 }
 
-function getNewsDetail(newsId){
+//查看新闻详情
+function newsDetails(params) {
+  console.log(params)
+  $("#newsMask").css("display","block")
   $.ajax({
     url: 'http://biut.io:8080/api/v0/content/getContent?id=' + newsId,
     type: 'GET',
