@@ -64,27 +64,27 @@ $(function () {
   })
 
   //价格数据
-  $("#btcPrice").html("0")
-  $(".btcRiseFall").html("+ " + "0" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".btcRiseFalls").html("0" + '%')
+  $("#btcPrice").html("-")
+  $(".btcRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".btcRiseFalls").html("-" + '%')
 
-  $("#ethPrice").html("0")
-  $(".ethRiseFall").html("+ " + "0" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".ethRiseFalls").html("0" + '%')
+  $("#ethPrice").html("-")
+  $(".ethRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".ethRiseFalls").html("-" + '%')
 
-  $("#usdtPrice").html("0")
-  $(".usdTRiseFall").html("+ " + "0" + '%') //需要传递参数判断涨跌  + 涨  - 跌
-  $(".usdTRiseFalls").html("0" + '%')
+  $("#usdtPrice").html("-")
+  $(".usdTRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
+  $(".usdTRiseFalls").html("-" + '%')
   
   //默认所有的数据为0
-  $("#idxNetwork").html("0")
-  $("#idxAccount").html("0")
-  $("#idxCurrent").html("0")
+  $("#idxNetwork").html("-")
+  $("#idxAccount").html("-")
+  $("#idxCurrent").html("-")
   $("#idPeak").html("33118")
-  $("#idxHeight1").html("0")
-  $("#idxHeight2").html("0")
-  $("#idxAffairs1").html("0")
-  $("#idxAffairs2").html("0")
+  $("#idxHeight1").html("-")
+  $("#idxHeight2").html("-")
+  $("#idxAffairs1").html("-")
+  $("#idxAffairs2").html("-")
 
   let currentTsp = rd(10, 30);
   $("#idxCurrent").html(currentTsp);
