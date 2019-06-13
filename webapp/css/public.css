@@ -24,8 +24,10 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .zoom-message {position: fixed;right: 0;top: 4.4rem;width: 16.5rem;padding: .8rem 2rem .8rem .8rem;
   background: #ebf5fd;z-index: 9999;color: #515a6e;font-size: .7rem;display: none;
   border-top-left-radius: .2rem;border-bottom-left-radius: .2rem;}
+.toastCnt {position: fixed;top: 1rem;height: 2rem;background: rgba(255,255,255);z-index: 999;width: 50%;margin: 0 auto;
+  left: 25%;border-radius: .25rem;text-align: center;line-height: 2rem;font-size: .8rem;color: #FB6363;display: none;}
 
-.public-head ul li:hover,.content-head .head-list li:hover,.content-head .head-down img:hover,
+.public-head ul li:hover,.content-head .head-down img:hover,.suggest-from span:hover,
 .public-title figure:hover,.last-foot-list .biutWx:hover,.mask-close:hover {cursor: pointer;} 
 
 .check-color {color:rgba(255,255,255,.8)!important;}
@@ -74,10 +76,11 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .content-head .head-list li {font-size: .65rem;color:rgba(255,255,255,.5);height: 1.8rem;box-sizing: border-box;
   border: .1rem solid #787380;border-radius: .9rem;display: flex;align-items: center;}
 .content-head .head-list li a {color:rgba(255,255,255,.5);}
+.content-head .head-list li:hover,.content-head .head-list li a:hover {color:rgba(255,255,255,.8);cursor: pointer;}
 .content-head .head-list li:first-child {padding: 0 1.2rem 0 1.1rem;}
 .content-head .head-list li:nth-child(2) {padding: 0 .9rem 0;margin: 0 1rem 0 .5rem;} 
 .content-head .head-list li:last-child {padding: 0 1rem 0 .9rem;}
-.content-head .head-down {margin: 6.1rem 0 6.25rem;}
+.content-head .head-down {margin: 6.1rem 0 5.75rem;}
 .content-head .head-down img {width: 2.85rem;height: 2.85rem;}
 
 /* 首页公共子导航 */
@@ -88,10 +91,12 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .public-title figure img {margin-left: .8rem;width: .95rem;height: .95rem;}
 
 /* 首页 - about project */
-.about-project {height: auto;}
+.about-project {height: auto;padding-top: 1.5rem;}
 .project-list {text-align: center;}
 .project-list li {border-right: .15rem solid rgba(255,255,255,.1);padding-top: 4.7rem;height: 21.4rem;
   box-sizing: border-box;background:rgba(44,45,55,.3);}
+
+
 .project-list li:last-child {border-right: 0;}
 .project-list section figure img {margin-bottom: 1.65rem;width: 4.9rem;height: 4.9rem;
   transition: All 0.4s ease-in-out;-webkit-transition: All 0.4s ease-in-out;
@@ -148,6 +153,7 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .new-dynamics ul li figure figcaption time {color:rgba(255,255,255,.8);padding-top: 1.5rem;display: block;}
 .news-active {box-sizing: border-box;border-bottom:5px solid #59DCB4;cursor: pointer;}
 
+.mask {display: none;}
 .news-mask {position: fixed;top: 0;bottom: 0;left: 0;right: 0;display: flex;align-items: center;
   justify-content: center;background: rgba(0, 0, 0,.85);overflow: hidden;z-index: 999;}
 
@@ -177,10 +183,10 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .network-state {height: 29.6rem;padding-top: 2.4rem;
   background: url('../images/index/footer-bg.png') center no-repeat;
   background-size: cover; }
-.network-state ul {display: flex;align-items: center;justify-content: center;}
+.network-state ul {display: flex;align-items: center;justify-content: center;padding-top: 3.35rem;}
 .network-state ul li {display: flex;flex-direction: column;align-items: center;justify-content: center;
   margin-left: .3rem;height: 3.7rem;background:rgba(54,53,65,1);border-radius: .5rem;color: #7C7A81;
-  font-size: .6rem;margin-top: 3.35rem;}
+  font-size: .6rem;}
 .network-state ul li:first-child {margin-left: 0;}
 .network-state ul li span:first-child {font-size: .85rem;text-align: center;padding-bottom: .4rem;}
 .network-state ul li:nth-child(1) span:first-child {color: #6ADEB5;width: 6.85rem;}
@@ -286,7 +292,7 @@ html {font-size: 20px;}
   
   .network-state {height: auto;padding-bottom: 4.75rem;}
   .network-state ul {flex-direction: column;}
-  .network-state ul li:first-child {margin-top: 3.15rem;}
+  .network-state ul li:first-child {margin-top: 3.15rem;padding-top: 0;}
   .network-state ul li {margin-top: 1.25rem;}
 
   .about-list {text-align: center;margin-top: 0;flex-direction: column;padding: 3.4rem 0 2.5rem}
