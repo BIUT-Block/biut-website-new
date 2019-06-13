@@ -165,17 +165,14 @@ function newsDetails(params) {
       var docTitle = doc.title; //标题
       var docSubTitle = doc.stitle; //副标题
       var clickNum = doc.clickNum;//点击次数
-      var newsTime = doc.date;//点击次数
-
+      var newsTime = doc.date;//时间
       
-      var comments = doc.simpleComments;
-
-      console.log(comments)
-      var text = '';
-      for (var i=0; i<comments.length; i++) {
-        text = text + comments[i].content + ' ';
-      }
-      //console.log(text);
+      var commentsHTML = doc.comments;
+      $("#newsTitle").html(docTitle)
+      $("#reading").html(clickNum)
+      $("#newsTime").html(newsTime)
+      $("#newsContent").html(commentsHTML)
+      console.log(commentsHTML);
     }
   });
 }

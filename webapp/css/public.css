@@ -157,6 +157,8 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .news-mask {position: fixed;top: 0;bottom: 0;left: 0;right: 0;display: flex;align-items: center;
   justify-content: center;background: rgba(0, 0, 0,.85);overflow: hidden;z-index: 999;}
 
+.news-mask-list {display: flex;}
+.news-mask-list section:first-child {margin-right: 1rem;}
 .mask-close {position: absolute;top: .25rem;right: .5rem;font-size: 20px;}
 
 .news-mask-content {width: 45rem;background: #fff;padding: 2.5rem 2rem;height: 80vh;overflow-y: auto;
