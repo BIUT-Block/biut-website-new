@@ -166,7 +166,8 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .news-mask-title {display: flex;align-items: center;justify-content: space-between;padding-bottom: 2rem;
   border-bottom:5px solid #59DCB4;box-sizing: border-box;font-size: .8rem;}
 .news-mask-title h5 {font-size: 1.2rem;font-weight: bold;}
-.news-mask-cnt {padding-top: 1rem;line-height: 2;}
+.news-mask-cnt {padding-top: 1rem;line-height: 2;word-break: break-word;}
+.news-mask-cnt img {max-width: 100%;}
 
 /* 首页 - Submit a subscription */
 .suggest {text-align: center;font-size: .55rem;color:rgba(255,255,255,.4);}

@@ -56,6 +56,7 @@ $(function () {
 
   $("#closeMask").click(function(){
     $("#newsMask").css("display","none")
+    //$('html,body').removeClass('over-h')
   })
 });
 
@@ -156,6 +157,7 @@ function getNes(lang) {
 //查看新闻详情
 function newsDetails(params) {
   $("#newsMask").css("display","block")
+  //$('html,body').addClass('over-h')
   $.ajax({
     url: 'http://biut.io:8080/api/v0/content/getContent?id=' + params,
     type: 'GET',
@@ -166,13 +168,17 @@ function newsDetails(params) {
       var docSubTitle = doc.stitle; //副标题
       var clickNum = doc.clickNum;//点击次数
       var newsTime = doc.date;//时间
-      
       var commentsHTML = doc.comments;
+
       $("#newsTitle").html(docTitle)
       $("#reading").html(clickNum)
       $("#newsTime").html(newsTime)
       $("#newsContent").html(commentsHTML)
-      console.log(commentsHTML);
+
+      $("#newsMask img").each(function(){
+        let imgUrl = $(this).attr("src")
+        $(this).attr("src",`http://biut.io:8080` + imgUrl)
+      })
     }
   });
 }
