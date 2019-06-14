@@ -163,9 +163,9 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 
 .news-mask-content {width: 45rem;background: #fff;padding: 2.5rem 2rem;height: 80vh;overflow-y: auto;
   position: relative;border-radius: .25rem;}
-.news-mask-title {display: flex;align-items: center;justify-content: space-between;padding-bottom: 2rem;
+.news-mask-title {display: flex;justify-content: space-between;padding-bottom: 2rem;
   border-bottom:5px solid #59DCB4;box-sizing: border-box;font-size: .8rem;}
-.news-mask-title h5 {font-size: 1.2rem;font-weight: bold;}
+.news-mask-title h5 {font-size: 1.2rem;font-weight: bold;width: 20rem;word-break: break-all;}
 .news-mask-cnt {padding-top: 1rem;line-height: 2;word-break: break-word;}
 .news-mask-cnt img {max-width: 100%;}
 
@@ -277,6 +277,7 @@ html {font-size: 20px;}
   .new-dynamics ul li figure,.new-dynamics ul li figure img {width: 100%;}
    
   .news-mask-content {width: 85%;}
+  .news-mask-title h5 {width: 50%;word-break: break-all;}
 
   .price-title {padding-top: 4.9rem;padding-right: 0;align-items: flex-start;}
   .price-title section {flex-direction: column;text-align: right;}

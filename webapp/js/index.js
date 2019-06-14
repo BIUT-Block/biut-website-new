@@ -1,7 +1,4 @@
 $(function () {
-  //获取当前系统时间
-  $("#indexTime").html(systemTime())
-
   $("#downLoad").click(function () {
     $("html,body").animate({
       scrollTop: $("#aboutProject").offset().top
@@ -141,10 +138,13 @@ $(function () {
   });
   getEth()
   getBtc()
+  //获取当前系统时间
+  $("#indexTime").html(systemTime())
 
   setInterval(function(){
     getEth()
     getBtc()
+    $("#indexTime").html(systemTime())
   }, 40000)
 });
 
