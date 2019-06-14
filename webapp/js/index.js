@@ -198,7 +198,6 @@ function getBtc() {
         $('.ethRiseFalls').addClass('success-bg').removeClass('failure-bg')
         $('#ethBgImg').attr("src",'../images/index/price-bg2.png')
       }
-     //getEthPrice(eth_sec[0].price, eth_sec[0].chg);
     }
   });
 
@@ -229,27 +228,32 @@ function getBtc() {
 
 }
 
-/** 获取usdt */
-function getEthPrice (price, chg) {
+/**
+ * 获取价格历史信息
+ * @param {*} symbol
+ * sec_btc 对比特币历史信息
+ * sec_eth 对以太币历史信息
+ * sec_usdt 对美元历史信息
+ * @param {callback} fnAfterGetPrice
+ */
+
+function getPriceHistory(symbol, fnAfterGetPrice) {
+  let url = 'http://scan.biut.io/market/ticker?symbol=' + symbol
   $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=eth_usdt',
+    url: url,
     type: 'GET',
     dataType: 'json',
-    success: function (result) {
-      var currentUSDT = Number(price) * Number(result.data[0].close);
-      $('#usdtPrice').html(currentUSDT.toFixed(2));
-      $('.usdTRiseFalls').html(chg.replace('-','') + '%');
-      if (Number(chg) < 0) {
-        $('.usdTRiseFall').html('- ' + Math.abs(chg) + '%');
-        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
-        $('.usdTRiseFalls').addClass('failure-bg').removeClass('success-bg')
-        $('#usdtBgImg').attr("src",'../images/index/price-bg1.png')
-      } else {
-        $('.usdTRiseFall').html('+ ' + Math.abs(chg) + '%');
-        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
-        $('.usdTRiseFalls').addClass('success-bg').removeClass('failure-bg')
-        $('#usdtBgImg').attr("src",'../images/index/price-bg2.png')
+    success: function(result) {
+      let times = result.t
+      let closePrices = result.c
+      let prices = []
+      for (var i = 0; i < times.length; i++) {
+        prices.push({
+          timestamp: times[i],
+          price: closePrices[i]
+        })
       }
+      fnAfterGetPrice(prices)
     }
   })
 }
