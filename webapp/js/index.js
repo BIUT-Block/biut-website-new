@@ -236,7 +236,6 @@ function getBtc() {
  * sec_usdt 对美元历史信息
  * @param {callback} fnAfterGetPrice
  */
-
 function getPriceHistory(symbol, fnAfterGetPrice) {
   let url = 'http://scan.biut.io/market/ticker?symbol=' + symbol
   $.ajax({
