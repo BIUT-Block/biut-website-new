@@ -237,7 +237,7 @@ function getBtc() {
  * @param {callback} fnAfterGetPrice
  */
 function getPriceHistory(symbol, fnAfterGetPrice) {
-  let url = 'http://scan.biut.io/market/ticker?symbol=' + symbol
+  let url = 'http://scan.biut.io/market/history?symbol=' + symbol
   $.ajax({
     url: url,
     type: 'GET',
