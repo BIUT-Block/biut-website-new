@@ -208,11 +208,11 @@ function getBtc() {
     type: 'GET',
     dataType: 'json',
     success: function (result) {
-      var data = result.data;
-      var deltaPrice = Number(data.close) - Number(data.close)
-      var chg = deltaPrice / Number(data.open) * 100
+      var data = result.data[0];
+      var deltaPrice = Number(data.close) - Number(data.open);
+      var chg = (deltaPrice / Number(data.open) * 100).toFixed(2);
       $('#usdtPrice').html(data.close);
-      $('.usdTRiseFalls').html(chg.replace('-','') + '%');
+      $('.usdTRiseFalls').html(chg + '%');
       if (Number(chg) < 0) {
         $('.usdTRiseFall').html('- ' + Math.abs(chg) + '%');
         $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
