@@ -175,9 +175,6 @@ function getBtc() {
   });
 }
 
-
-
-
  /**获取sec eth的信息 */
  function getEth() {
   $.ajax({
@@ -201,9 +198,35 @@ function getBtc() {
         $('.ethRiseFalls').addClass('success-bg').removeClass('failure-bg')
         $('#ethBgImg').attr("src",'../images/index/price-bg2.png')
       }
-      getEthPrice(eth_sec[0].price, eth_sec[0].chg);
+     //getEthPrice(eth_sec[0].price, eth_sec[0].chg);
     }
   });
+
+  /**获取sec usdt的信息 */
+  $.ajax({
+    url: 'http://scan.biut.io/market/ticker?symbol=sec_usdt',
+    type: 'GET',
+    dataType: 'json',
+    success: function (result) {
+      var data = result.data;
+      var deltaPrice = Number(data.close) - Number(data.close)
+      var chg = deltaPrice / Number(data.open) * 100
+      $('#usdtPrice').html(data.close);
+      $('.usdTRiseFalls').html(chg.replace('-','') + '%');
+      if (Number(chg) < 0) {
+        $('.usdTRiseFall').html('- ' + Math.abs(chg) + '%');
+        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
+        $('.usdTRiseFalls').addClass('failure-bg').removeClass('success-bg')
+        $('#usdtBgImg').attr("src",'../images/index/price-bg1.png')
+      } else {
+        $('.usdTRiseFall').html('+ ' + Math.abs(chg) + '%');
+        $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
+        $('.usdTRiseFalls').addClass('success-bg').removeClass('failure-bg')
+        $('#usdtBgImg').attr("src",'../images/index/price-bg2.png')
+      }
+    }
+  })
+
 }
 
 /** 获取usdt */
