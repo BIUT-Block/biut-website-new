@@ -348,7 +348,7 @@ function getPriceHistory(symbol, fnAfterGetPrice) {
       let times = result.t
       let closePrices = result.c
       let prices = []
-      for (var i = 0; i < times.length; i++) {
+      for (var i = 4; i < times.length; i++) {
         prices.push({
           timestamp: getDateTime(times[i]*1000),
           price: closePrices[i].replace(/(?:\.0*|(\.\d+?)0+)$/, '$1')
