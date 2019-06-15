@@ -5,18 +5,18 @@ $(function () {
     }, 1500);
   })
 
-  $("#submitEmail").click(function(){
+  $("#submitEmail").click(function () {
     $(".toastCnt").slideDown()
-    setTimeout(function(){ 
+    setTimeout(function () {
       $(".toastCnt").slideUp()
     }, 3000)
   })
 
   //微信图片hover效果
-  $('#biutWx').hover(function(){
+  $('#biutWx').hover(function () {
     $('#biutWxActiveImg').slideDown();
     $('#biutWxImg').attr('src', '../images/index/weixins.png')
-  },function(){
+  }, function () {
     $('#biutWxActiveImg').slideUp();
     $('#biutWxImg').attr('src', '../images/index/weixin.png')
   })
@@ -72,7 +72,7 @@ $(function () {
   $("#usdtPrice").html("-")
   $(".usdTRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
   $(".usdTRiseFalls").html("-" + '%')
-  
+
   //默认所有的数据为0
   $("#idxNetwork").html("-")
   $("#idxAccount").html("-")
@@ -105,7 +105,7 @@ $(function () {
       var totalUsers = []
       $('#idxAffairs1').html(result.sectx.length);
       $("#idxAffairs2").html(result.sentx.length);
-      
+
       for (var i = 0; i < result.sectx.length; i++) {
         if (totalUsers.indexOf(result.sectx[i].TxFrom) === -1) {
           totalUsers.push(result.sectx[i].TxFrom);
@@ -141,12 +141,114 @@ $(function () {
   //获取当前系统时间
   $("#indexTime").html(systemTime())
 
-  setInterval(function(){
+  setInterval(function () {
     getEth()
     getBtc()
     $("#indexTime").html(systemTime())
   }, 40000)
+
+  getPriceHistory("sec_eth", function (data) {
+    //console.log(data)
+  })
+
+  getPriceHistory("sec_btc", function (data) {
+    //console.log(data)
+  })
+
+  // getPriceHistory("sec_usdt", function (data) {
+  //   let titls = []
+  //   let titlss = []
+  //   let color = '#59DCB4'
+  //   for (var i = 0;i < 7;i++) {
+  //     titls.push(data[i].timestamp)
+  //     titlss.push(data[i].price)
+  //   }
+  //   generateChart(titls, titlss, color)
+  // })
 });
+
+
+function generateChart(param1, param2, colors) {
+  // let  arr = []
+  // let test1 = arr.concat(param.timestamp)
+  //console.log(param)
+  //基于准备好的DOM，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+  //指定图表的配置项和数据
+  myChart.clear();
+  var option = {
+    title: {
+      text: ''
+    },
+    //提示框组件
+    tooltip: {
+      trigger: 'item',
+      //show: true,   //default true
+      showDelay: 0,
+      hideDelay: 50,
+      transitionDuration:0,
+      backgroundColor : colors,
+      padding: [5, 8],    // [5, 10, 15, 20]
+      position : function(p) {
+          // 位置回调
+          // console.log && console.log(p);
+          return [p[0] + 10, p[1] - 10];
+      },
+      textStyle : {
+        color: '#fff',
+      },
+    },
+    //图例
+    legend: {
+      data: ['']
+    },
+    //横轴
+    xAxis: {
+      data: param1,
+      splitLine:{show: false},
+      "axisTick":{ "show":false },
+      axisLabel: {
+        color: '#fff'
+      },
+      show: false,
+    },
+    //纵轴
+    yAxis: {
+      splitLine:{show: false}, //y轴刻网格
+      "axisTick":{ "show":false}, //y轴刻度线
+      "axisLine":{ "show":false }, //隐藏y轴
+      show:false
+    },
+    //系列列表。每个系列通过type决定自己的图表类型
+    series: [
+      {
+        name: '',
+        //折线图
+        type: 'line',
+        data: param2,//处理小数点数据
+        symbolSize: 6,
+        lineStyle:{    
+          color: colors,
+          width: '5'    
+        },
+        itemStyle:{
+          normal:{
+              color: colors,//拐点颜色
+              borderColor: colors,//拐点边框颜色
+          },
+          
+        }
+      }
+    ]
+  };
+
+  //.price-list .price-img .success-bg {background: ;}
+  //.price-list .price-img .failure-bg {background: #E65C5D;}
+  //使用刚指定的配置项和数据显示图表
+  myChart.setOption(option);
+}
+
+
 
 /**获取sec btc的信息 */
 function getBtc() {
@@ -159,24 +261,24 @@ function getBtc() {
         return coin.symbol === 'sec_btc';
       })
       $('#btcPrice').html(btc_sec[0].price);
-      $('.btcRiseFalls').html(btc_sec[0].chg.replace('-','') + '%');
+      $('.btcRiseFalls').html(btc_sec[0].chg.replace('-', '') + '%');
       if (Number(btc_sec[0].chg) < 0) {
         $('.btcRiseFall').html('- ' + Math.abs(btc_sec[0].chg) + '%');
         $('#btcPrice,.btcRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
         $('.btcRiseFalls').addClass('failure-bg').removeClass('success-bg')
-        $('#btcBgImg').attr("src",'../images/index/price-bg1.png')
+        $('#btcBgImg').attr("src", '../images/index/price-bg1.png')
       } else {
         $('.btcRiseFall').html('+ ' + Math.abs(btc_sec[0].chg) + '%');
         $('#btcPrice,.btcRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
         $('.btcRiseFalls').addClass('success-bg').removeClass('failure-bg')
-        $('#btcBgImg').attr("src",'../images/index/price-bg2.png')
+        $('#btcBgImg').attr("src", '../images/index/price-bg2.png')
       }
     }
   });
 }
 
- /**获取sec eth的信息 */
- function getEth() {
+/**获取sec eth的信息 */
+function getEth() {
   $.ajax({
     url: 'http://scan.biut.io/market/ticker?symbol=sec_eth',
     type: 'GET',
@@ -186,17 +288,17 @@ function getBtc() {
         return coin.symbol === 'sec_eth';
       })
       $('#ethPrice').html(eth_sec[0].price);
-      $('.ethRiseFalls').html(eth_sec[0].chg.replace('-','') + '%');
+      $('.ethRiseFalls').html(eth_sec[0].chg.replace('-', '') + '%');
       if (Number(eth_sec[0].chg) < 0) {
         $('.ethRiseFall').html('- ' + Math.abs(eth_sec[0].chg) + '%');
         $('#ethPrice,.ethRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
         $('.ethRiseFalls').addClass('failure-bg').removeClass('success-bg')
-        $('#ethBgImg').attr("src",'../images/index/price-bg1.png')
+        $('#ethBgImg').attr("src", '../images/index/price-bg1.png')
       } else {
         $('.ethRiseFall').html('+ ' + Math.abs(eth_sec[0].chg) + '%');
         $('#ethPrice,.ethRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
         $('.ethRiseFalls').addClass('success-bg').removeClass('failure-bg')
-        $('#ethBgImg').attr("src",'../images/index/price-bg2.png')
+        $('#ethBgImg').attr("src", '../images/index/price-bg2.png')
       }
     }
   });
@@ -211,17 +313,17 @@ function getBtc() {
       var deltaPrice = Number(data.close) - Number(data.open);
       var chg = (deltaPrice / Number(data.open) * 100).toFixed(2);
       $('#usdtPrice').html(data.close);
-      $('.usdTRiseFalls').html(chg + '%');
+      $('.usdTRiseFalls').html(chg.replace('-', '') + '%');
       if (Number(chg) < 0) {
         $('.usdTRiseFall').html('- ' + Math.abs(chg) + '%');
         $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color1').removeClass('price-txt-color2')
         $('.usdTRiseFalls').addClass('failure-bg').removeClass('success-bg')
-        $('#usdtBgImg').attr("src",'../images/index/price-bg1.png')
+        $('#usdtBgImg').attr("src", '../images/index/price-bg1.png')
       } else {
         $('.usdTRiseFall').html('+ ' + Math.abs(chg) + '%');
         $('#usdtPrice,.usdTRiseFall').addClass('price-txt-color2').removeClass('price-txt-color1')
         $('.usdTRiseFalls').addClass('success-bg').removeClass('failure-bg')
-        $('#usdtBgImg').attr("src",'../images/index/price-bg2.png')
+        $('#usdtBgImg').attr("src", '../images/index/price-bg2.png')
       }
     }
   })
@@ -242,14 +344,14 @@ function getPriceHistory(symbol, fnAfterGetPrice) {
     url: url,
     type: 'GET',
     dataType: 'json',
-    success: function(result) {
+    success: function (result) {
       let times = result.t
       let closePrices = result.c
       let prices = []
       for (var i = 0; i < times.length; i++) {
         prices.push({
-          timestamp: times[i],
-          price: closePrices[i]
+          timestamp: getDateTime(times[i]*1000),
+          price: closePrices[i].replace(/(?:\.0*|(\.\d+?)0+)$/, '$1')
         })
       }
       fnAfterGetPrice(prices)
@@ -257,33 +359,54 @@ function getPriceHistory(symbol, fnAfterGetPrice) {
   })
 }
 
+function getDateTime(time) {
+  var oDate = new Date(time),
+    oYear = oDate.getFullYear(),
+    oMonth = oDate.getMonth() + 1,
+    oDay = oDate.getDate(),
+    oHour = oDate.getHours(),
+    oMin = oDate.getMinutes(),
+    oSen = oDate.getSeconds(),
+    //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) 
+    //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) + ' ' + getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
+    oTime = getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
+  return oTime;
+}
+function getConnection(num) {
+  if (parseInt(num) < 10) {
+    num = '0' + num;
+  }
+  return num;
+}
+
+
 //获取系统时间
-function systemTime () {
+function systemTime() {
   var now = new Date()
-	let year = now.getFullYear()
-	let mounth = now.getMonth() + 1
-	let date = now.getDate()
-	let day =	now.getDay()
-	let hours =	now.getHours()
-	let minutes =	now.getMinutes()
-  let seconds =	now.getSeconds()
-  var x = year + "/" +getNow(mounth) + "/" +getNow(date) + " " + getNow(hours) + ":" +getNow(minutes) + ":" +getNow(seconds)
+  let year = now.getFullYear()
+  let mounth = now.getMonth() + 1
+  let date = now.getDate()
+  let day = now.getDay()
+  let hours = now.getHours()
+  let minutes = now.getMinutes()
+  let seconds = now.getSeconds()
+  var x = year + "/" + getNow(mounth) + "/" + getNow(date) + " " + getNow(hours) + ":" + getNow(minutes) + ":" + getNow(seconds)
   return x
 }
 
 function getNow(s) {
-  return s < 10 ? '0' + s: s;
+  return s < 10 ? '0' + s : s;
 }
 
-function onOpen (ws) {
-  
+function onOpen(ws) {
+
 }
 
-function rd(n,m){
-  var c = m-n+1;  
+function rd(n, m) {
+  var c = m - n + 1;
   return Math.floor(Math.random() * c + n);
 }
 
-function heartPackage (ws) {
+function heartPackage(ws) {
 
 }

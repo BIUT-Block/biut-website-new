@@ -47,6 +47,9 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 	to   { opacity: 0.1; }   
 }
 
+.echart-content {width: 19.1rem;height: 7.45rem;background: url('../images/index/echartBg.png') no-repeat center;
+  background-size: cover;color: #fff;}
+
 .container-footer {background:rgba(44,45,55,1);position: relative;}
 
 /* 公共头部 */
