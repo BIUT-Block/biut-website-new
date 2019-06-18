@@ -1,4 +1,5 @@
 $(function () {
+
   //点击切换中文
   $("#i18nZh").click(function () {
     sessionStorage.setItem("lang", 'zh');
@@ -24,7 +25,6 @@ $(function () {
     $(this).toggleClass('open');
     $("#toggle-head").toggleClass('open-nav')
     $("#tabNav").toggleClass('tab-nav')
-    $('html,body').toggleClass('over-h')
   });
 
   //刷新页面保持中英文切换高亮文字
@@ -54,9 +54,24 @@ $(function () {
     $(this).children("figure").children(".dynamics-active").hide()
   })
 
-  $("#closeMask").click(function(){
-    $("#newsMask").css("display","none")
-    //$('html,body').removeClass('over-h')
+  $("#closeMask").click(function () {
+    $("#newsMask").css("display", "none")
+  })
+
+  $("img").lazyload({
+    threshold: 200,
+    effect: "fadeIn",
+    failure_limit: 20,
+    skip_invisible: false
+  });
+
+  $(document).scroll(function () {
+    var scroH = $(document).scrollTop();  //滚动高度
+    if (scroH > 40) {  //距离顶部大于80px时
+      $('#header-nav').addClass('public-head-bg');
+    } else {
+      $('#header-nav').removeClass('public-head-bg');
+    }
   })
 });
 
@@ -73,7 +88,7 @@ function getNes(lang) {
       if (res.length > 6) {
         if (lang == 0) {
           for (var l = 1; l < 6; l = l + 2) {
-            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*l +'s onclick="newsDetails(`' + res[l].id + '`)">'
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * l + 's onclick="newsDetails(`' + res[l].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[l].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -91,7 +106,7 @@ function getNes(lang) {
           }
         } else {
           for (var k = 0; k < 5; k = k + 2) {
-            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*k +'s onclick="newsDetails(`' + res[k].id + '`)">'
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * k + 's onclick="newsDetails(`' + res[k].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[k].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -112,7 +127,7 @@ function getNes(lang) {
       } else {
         if (lang == 0) {
           for (var i = 1; i < res.length; i = i + 2) {
-            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*i +'s onclick="newsDetails(`' + res[i].id + '`)">'
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * i + 's onclick="newsDetails(`' + res[i].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[i].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -130,7 +145,7 @@ function getNes(lang) {
           }
         } else {
           for (var a = 0; a < res.length; a = a + 2) {
-            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay='+ .5*a +'s onclick="newsDetails(`' + res[a].id + '`)">'
+            html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * a + 's onclick="newsDetails(`' + res[a].id + '`)">'
               + '<figure>'
               + '<img src="http://biut.io:8080' + res[a].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
@@ -156,8 +171,7 @@ function getNes(lang) {
 
 //查看新闻详情
 function newsDetails(params) {
-  $("#newsMask").css("display","block")
-  //$('html,body').addClass('over-h')
+  $("#newsMask").css("display", "block")
   $.ajax({
     url: 'http://biut.io:8080/api/v0/content/getContent?id=' + params,
     type: 'GET',
@@ -175,9 +189,9 @@ function newsDetails(params) {
       $("#newsTime").html(newsTime)
       $("#newsContent").html(commentsHTML)
 
-      $("#newsMask img").each(function(){
+      $("#newsMask img").each(function () {
         let imgUrl = $(this).attr("src")
-        $(this).attr("src",`http://biut.io:8080` + imgUrl)
+        $(this).attr("src", `http://biut.io:8080` + imgUrl)
       })
     }
   });

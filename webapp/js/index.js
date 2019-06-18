@@ -2,7 +2,7 @@ $(function () {
   $("#downLoad").click(function () {
     $("html,body").animate({
       scrollTop: $("#aboutProject").offset().top
-    }, 1500);
+    }, 1000);
   })
 
   $("#submitEmail").click(function () {
@@ -159,7 +159,7 @@ $(function () {
   //   let titls = []
   //   let titlss = []
   //   let color = '#59DCB4'
-  //   for (var i = 0;i < 7;i++) {
+  //   for (var i = 0;i < data.length;i++) {
   //     titls.push(data[i].timestamp)
   //     titlss.push(data[i].price)
   //   }
@@ -169,9 +169,6 @@ $(function () {
 
 
 function generateChart(param1, param2, colors) {
-  // let  arr = []
-  // let test1 = arr.concat(param.timestamp)
-  //console.log(param)
   //基于准备好的DOM，初始化echarts实例
   var myChart = echarts.init(document.getElementById('main'));
   //指定图表的配置项和数据
@@ -188,15 +185,20 @@ function generateChart(param1, param2, colors) {
       hideDelay: 50,
       transitionDuration:0,
       backgroundColor : colors,
-      padding: [5, 8],    // [5, 10, 15, 20]
+      padding: [4, 8],    // [5, 10, 15, 20]
       position : function(p) {
           // 位置回调
           // console.log && console.log(p);
-          return [p[0] + 10, p[1] - 10];
+          return [p[0] - 22, p[1] + 15];
       },
       textStyle : {
         color: '#fff',
+        fontSize: '12px',
+        fontFamily: ''
       },
+      formatter: function(param) { 
+        return '<di> '+ param.value + "<br>" + param.name +'</div>';               
+      }
     },
     //图例
     legend: {
@@ -241,14 +243,9 @@ function generateChart(param1, param2, colors) {
       }
     ]
   };
-
-  //.price-list .price-img .success-bg {background: ;}
-  //.price-list .price-img .failure-bg {background: #E65C5D;}
   //使用刚指定的配置项和数据显示图表
   myChart.setOption(option);
 }
-
-
 
 /**获取sec btc的信息 */
 function getBtc() {
@@ -367,10 +364,12 @@ function getDateTime(time) {
     oHour = oDate.getHours(),
     oMin = oDate.getMinutes(),
     oSen = oDate.getSeconds(),
+    
     //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) 
+    oTime = getConnection(oMonth) + '-' + getConnection(oDay) 
     //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) + ' ' + getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
-    oTime = getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
-  return oTime;
+    //oTime = getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
+    return oTime;
 }
 function getConnection(num) {
   if (parseInt(num) < 10) {
