@@ -77,7 +77,7 @@ $(function () {
   $("#idxNetwork").html("-")
   $("#idxAccount").html("-")
   $("#idxCurrent").html("-")
-  $("#idPeak").html("33118")
+  // $("#idPeak").html("33118")
   $("#idxHeight1").html("-")
   $("#idxHeight2").html("-")
   $("#idxAffairs1").html("-")
