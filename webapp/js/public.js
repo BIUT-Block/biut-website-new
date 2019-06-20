@@ -78,7 +78,7 @@ $(function () {
 //获取新闻数据
 function getNes(lang) {
   $.ajax({
-    url: "http://biut.io:8080/api/v0/content/getList",
+    url: "https://biut.io:18080/api/v0/content/getList",
     type: "GET",
     dataType: "json",
     success: function (result) {
@@ -173,7 +173,7 @@ function getNes(lang) {
 function newsDetails(params) {
   $("#newsMask").css("display", "block")
   $.ajax({
-    url: 'http://biut.io:8080/api/v0/content/getContent?id=' + params,
+    url: 'https://biut.io:18080/api/v0/content/getContent?id=' + params,
     type: 'GET',
     data: 'json',
     success: function (result) {
