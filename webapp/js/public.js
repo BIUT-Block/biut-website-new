@@ -90,7 +90,7 @@ function getNes(lang) {
           for (var l = 1; l < 6; l = l + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * l + 's onclick="newsDetails(`' + res[l].id + '`)">'
               + '<figure>'
-              + '<img src="https://biut.io:8080' + res[l].sImg + '" alt=""/>'
+              + '<img src="https://biut.io:18080' + res[l].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
               + '<figcaption>'
               + '<section>'
@@ -108,7 +108,7 @@ function getNes(lang) {
           for (var k = 0; k < 5; k = k + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * k + 's onclick="newsDetails(`' + res[k].id + '`)">'
               + '<figure>'
-              + '<img src="https://biut.io:8080' + res[k].sImg + '" alt=""/>'
+              + '<img src="https://biut.io:18080' + res[k].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
               + '<figcaption>'
               + '<section>'
@@ -129,7 +129,7 @@ function getNes(lang) {
           for (var i = 1; i < res.length; i = i + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * i + 's onclick="newsDetails(`' + res[i].id + '`)">'
               + '<figure>'
-              + '<img src="https://biut.io:8080' + res[i].sImg + '" alt=""/>'
+              + '<img src="https://biut.io:18080' + res[i].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
               + '<figcaption>'
               + '<section>'
@@ -147,7 +147,7 @@ function getNes(lang) {
           for (var a = 0; a < res.length; a = a + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * a + 's onclick="newsDetails(`' + res[a].id + '`)">'
               + '<figure>'
-              + '<img src="https://biut.io:8080' + res[a].sImg + '" alt=""/>'
+              + '<img src="https://biut.io:18080' + res[a].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
               + '<figcaption>'
               + '<section>'
