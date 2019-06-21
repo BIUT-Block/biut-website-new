@@ -88,6 +88,11 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .last-foot-list ul:last-child {margin-right: 0;}
 .list-margin-left {margin-left: 1.9rem;}
 
+.foot-list-img {display: flex;flex-direction: column;}
+.foot-list-img ul {display: flex;align-items: center;margin-bottom: .5rem;justify-content: flex-end;}
+.foot-list-img ul li {margin-left: 1rem;}
+.foot-list-img ul:last-child {margin-bottom: 0;}
+.foot-list-img ul li:first-child {margin-left: 0;}
 .last-foot-list .biutWx .wxActive {position: absolute;top: 10%;right: 15%;display: none;}
 
 .footer footer {height: 9.15rem;box-sizing: border-box;border-top: .1rem solid rgba(78,79,91,.7);
