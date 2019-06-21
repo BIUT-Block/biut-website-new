@@ -1,0 +1,66 @@
+.about-container {background: #4D4E60;}
+.about-container h2 {font-size: 1.1rem;color: #fff;padding: 0 0 1.5rem 2.6rem;border-bottom: .2rem solid #fff;}
+
+
+.advantage-list {margin-top: 24.9rem;}
+.advantage-list ul li {padding: 4.5rem 0 0;text-align: center;font-family: PingFangSC-Semibold, sans-serif;
+  height: 22.25rem;}
+.advantage-list ul li figure {width: 13.5rem;margin: 0 auto;}
+.advantage-list ul li figure img {width: 5.65rem;height: 5.65rem;}
+.advantage-list ul li figure figcaption h3 {font-size: .9rem;color: #fff;padding: 2.1rem 0 1.4rem 0;}
+
+
+.apply-list {margin-top: 5.9rem;}
+.apply-list ul li {display: flex;border-right: 0.05rem solid red;margin-top: 2.6rem;padding: 1.7rem 0 0;
+  height: 17.4rem;text-align: center;font-family: PingFangSC-Semibold, sans-serif;}
+.apply-list ul li:last-child {border: 0;}
+.apply-list ul li figure {width: 12rem;margin: 0 auto;}
+.apply-list ul li:nth-child(2) figure {width: 13.6rem;}
+.apply-list ul li:last-child figure {width: 14rem;}
+.apply-list ul li figure img {width: 3.75rem;height: 3.75rem;}
+.apply-list ul li figure figcaption h3 {font-size: .9rem;color: #fff;padding: 2.4rem 0 1.4rem 0;}
+.apply-list ul li figure figcaption span,.advantage-list ul li figure figcaption span {display: block;font-size: .8rem;color:rgba(255,255,255,.4);
+  line-height: 1.5;}
+
+.use-list {margin-top: 6.1rem;padding-bottom: 13.7rem;}
+.use-list ul li {padding: 2.4rem 0 0 1.25rem;}
+.use-list ul li:last-child {padding-left: 2rem;}
+.use-list ul li figure {display: flex;}
+.use-list ul li figure img {width: 7.8rem;height: 7.8rem;}
+.use-list ul li figure figcaption {font-size: .9rem;color: #fff;padding: 1.2rem 0 0 1.5rem;width: 17.85rem;
+  font-family: PingFangSC-Semibold, sans-serif;line-height: 1.5;}
+.use-list ul li:last-child figure figcaption {width: 16.5rem;}
+
+.footer {background: #2C2D37;}
+.foot-members {display: flex;}
+.foot-members .container {background: #363740;margin-top: -9.8rem;padding-bottom: 3.1rem;}
+.foot-members .container-fisrt {flex: 1;margin-top: -9.8rem;}
+.foot-members .container-last {flex: 1;background: #363740;margin-top: -9.8rem;}
+
+.foot-members-head {display: flex;color: #fff;justify-content: space-between;align-items: center;
+  padding: 5rem 2.25rem 1.075rem 2.6rem;border-bottom: .2rem solid #fff;}
+.foot-members-head h2 {font-size: 1.1rem;}
+.foot-members-head figure {display: flex;}
+.foot-members-head figure img {width: .95rem;height: .95rem;}
+.foot-members-head figure figcaption {font-size: .8rem;margin-right: .6rem;}
+
+.foot-members-cont ul li {padding: 0;}
+.foot-members-cont ul li  figure {font-family: PingFangSC-Semibold, sans-serif;text-align: center;width: 11.8rem;
+  margin: 0 auto;border: 1px solid red;}
+.foot-members-cont ul li  figure img {width: 7.1rem;height: 7.1rem;}
+.foot-members-cont ul li  figure h4 {font-size: .9rem;color: #fff;padding: 2.7rem 0 1.3rem;}
+.foot-members-cont ul li  figure p {font-size: .6rem;line-height: 2;color:rgba(255,255,255,.4);width: 10rem;
+  margin: 0 auto;}
+.foot-members-cont .members-tab figure {display: flex;align-items: center;justify-content: center;
+    color:rgba(255,255,255,.9);font-family: PingFangSC-Semibold, sans-serif;font-size: .8rem;}
+.foot-members-cont .members-tab figure img {width: .95rem;height: .85rem;margin-left: .5rem;}
+
+.foot-history {color: #fff;margin: 7.5rem 0 10rem;}
+.foot-history .col-md-3 {padding: 0;}
+.foot-history ul li .foot-history-time {font-size: .7rem;color:rgba(255,255,255,.3);padding: 2.5rem 0 1.6rem;}
+.foot-history ul li .foot-history-txt {font-family: PingFangSC-Semibold, sans-serif;color: #fff;font-size: .9rem;
+  line-height: 2;}
+
+@media (min-width: 1500px) {
+  .foot-members .container-fisrt {background: none;}
+}

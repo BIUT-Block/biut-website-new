@@ -30,24 +30,28 @@
   <title>BIUT-社交电子商务链</title>
   <link href="../dist/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/swiper.min.css" rel="stylesheet">
   <link href="../css/public.css" rel="stylesheet">
+  <link href="../css/dynamic.css" rel="stylesheet">
 
 </head>
 
 <body>
-  <section class="zoomMessage" id="zoomMessage">
-    <span>你的浏览器目前处于缩放状态，页面可能会出现错位现象，建议100%大小显示。</span>
+  <section class="zoom-message" id="zoomMessage">
+    <span data-locale="zoom">
+      Your browser is currently zoomed, and the page may be misplaced. It is recommended to display 100% size.
+    </span>
   </section>
 
   <!-- 网页前部分内容 -->
-  <main class="container-header">
+  <main class="dynamic-container">
     <!-- 头部导航 -->
     <header class="public-head">
       <!-- logo -->
       <figure>
         <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
       </figure>
-  
+
       <!-- nav导航条 -->
       <nav>
         <ul>
@@ -62,7 +66,10 @@
             <span data-locale="nav-dynamic">Dynamic</span>
           </li>
           <li>
-            <a href="gitter.html" data-locale="nav-gitter">Gitter</a>
+            <a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="nav-gitter">Gitter</a>
+          </li>
+          <li class="login">
+            <a href="login.html" data-locale="nav-login">登陆</a>
           </li>
           <li>
             <span id="i18nZh"> 中文 </span>
@@ -72,26 +79,238 @@
         </ul>
       </nav>
     </header>
-    Dynamic 
-  <section class="footer">
-    <!--  -->
-    <section>
-      
-    </section>
-    <ul>
-      <li></li>
-    </ul>
 
-    <!-- footer 底部 -->
-    <footer>
-      <p>COPYRIGHT © 2017 BIUT TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.</p>
-    </footer>
-  </section>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background: #3F4156">
+          <div class="title" data-swiper-parallax="-100">Slide 1</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
+              feugiat non eros quis feugiat.</p>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background: #59DCB4">
+          <div class="title" data-swiper-parallax="-100">Slide 2</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
+              feugiat non eros quis feugiat.</p>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background: #000">
+          <div class="title" data-swiper-parallax="-100">Slide 3</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus
+              feugiat non eros quis feugiat.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+
+  </main>
+
+
+  <main class="news-list-bg">
+    <main class="container">
+      <!-- New dynamics -->
+      <section class="new-dynamics">
+        <!-- 功能 子导航栏 -->
+        <article class="public-title">
+          <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New dynamics</h3>
+          <!-- <figure>
+                    <figcaption data-locale="more">
+                      understand more
+                    </figcaption>
+                    <img data-original="./images/index/more.png" alt="BIUT-more" title="more">
+                  </figure> -->
+        </article>
+
+        <ul class="row" id="newsList"></ul>
+
+        <!-- 新闻mask -->
+        <article id="newsMask" class="mask">
+          <section class="news-mask">
+            <section class="news-mask-content">
+              <span class="mask-close" id="closeMask">X</span>
+              <section class="news-mask-title">
+                <h5 id="newsTitle"></h5>
+                <section class="news-mask-list">
+                  <section>
+                    <span>阅读量</span>
+                    <span id="reading"></span>
+                  </section>
+                  <time id="newsTime"></time>
+                </section>
+              </section>
+
+              <section class="news-mask-cnt" id="newsContent"></section>
+            </section>
+          </section>
+        </article>
+      </section>
+    </main>
+  </main>
+
+
+  <main class="footer">
+    <section class="container">
+      <!-- 新闻列表 -->
+      <section class="foot-news">
+        <section class="foot-news-head">
+          <h2>New dynamics</h2>
+        </section>
+        <ul>
+          <li>
+            <section class="foot-news-tit">
+              <h4>区块链落地应用|区块链+金融天然已落地</h4>
+              <time>24 hours ago</time>
+            </section>
+            <p class="foot-news-txt">对游戏玩家来说，无论是团队FPS、MOBA竞技还是生存类游戏，稳定、低延迟是获胜的关键。</p>
+          </li>
+
+          <li>
+            <section class="foot-news-tit">
+              <h4>区块链落地应用|区块链+金融天然已落地</h4>
+              <time>24 hours ago</time>
+            </section>
+            <p class="foot-news-txt">对游戏玩家来说，无论是团队FPS、MOBA竞技还是生存类游戏，稳定、低延迟是获胜的关键。</p>
+          </li>
+        </ul>
+
+        <section class="foot-news-more">
+          <figure>
+            <figcaption>understand more</figcaption>
+            <img src="../images/about/memberMore.png" alt="">
+          </figure>
+        </section>
+      </section>
+
+      <!-- 底部内容 -->
+      <section class="about-list about-footer-list">
+        <section>
+          <h4 data-locale="h-foot-proj-tit">Product</h4>
+          <ul>
+            <li><a href="#" data-locale="h-foot-proj-txt1">DApp</a></li>
+            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt2">Wallet</a>
+            </li>
+            <li><a href="#" data-locale="h-foot-proj-txt3">Mining tool</a></li>
+          </ul>
+        </section>
+
+        <section class="foot-dev">
+          <h4 data-locale="h-foot-dev-tit">Developer</h4>
+          <section class="foot-list">
+            <ul>
+              <li><a href="#" data-locale="h-foot-dev-txt1">Development tool documentation</a></li>
+              <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a>
+              </li>
+              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain browser</a>
+              </li>
+            </ul>
+            <ul class="list-margin-left">
+              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test network</a></li>
+              <li><a href="#" data-locale="h-foot-dev-txt5">Network Developer</a></li>
+              <li><a href="#" data-locale="h-foot-dev-txt6">Developer community</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="foot-ec">
+          <h4 data-locale="h-foot-eco-tit">Ecological correlation </h4>
+          <section class="foot-list">
+            <ul>
+              <li><a href="#" data-locale="h-foot-eco-txt1">Tongzheng Holding</a></li>
+              <li><a href="#" data-locale="h-foot-eco-txt2">BIUT Foundation</a></li>
+              <li><a href="#" data-locale="h-foot-eco-txt3">Hualian Capital</a></li>
+              <li><a href="#" data-locale="h-foot-eco-txt4">Xinlian Block Chain Co., Ltd.</a></li>
+            </ul>
+            <ul class="list-margin-left">
+              <li><a href="#" data-locale="h-foot-eco-txt5">BIUT International Club</a></li>
+              <li><a href="#" data-locale="h-foot-eco-txt6">BIUT new developments</a></li>
+              <li><a href="https://gitter.im/grin_community/Lobby" target="_blank"
+                  data-locale="h-foot-eco-txt7">Gitter</a></li>
+              <li><a href="#" data-locale="h-foot-eco-txt8">About the project</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="last-section-cnt">
+          <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
+          <section class="foot-list last-foot-list">
+            <ul>
+              <li id="biutWx" class="biutWx">
+                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="微信公众号" title="微信公众号" />
+                <img src="../images/index/publicNumer.png" id="biutWxActiveImg" class="wxActive" alt="weixin"
+                  title="微信公众号" />
+              </li>
+              <li id="biutWb">
+                <a href="https://weibo.com/SECblock" target="_blank">
+                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="新浪微博" title="新浪微博" />
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li id="biutTw">
+                <a href="https://twitter.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/twiter.png" id="biutTwImg" alt="twiter" title="Twiter" />
+                </a>
+              </li>
+              <li id="biutPl">
+                <a href="https://t.me/joinchat/HszzcUiWaWtR5pPmOhDPwg" target="_blank">
+                  <img data-original="../images/index/plane.png" id="biutPlImg" alt="telegram" title="Telegram" />
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li id="biutFb">
+                <a href="https://www.facebook.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
+                </a>
+              </li>
+              <li id="biutMk">
+                <a href="https://www.reddit.com/user/SECblock" target="_blank">
+                  <img data-original="../images/index/monkey.png" id="biutMkImg" alt="reddit" title="Reddit" />
+                </a>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+      </section>
+
+      <!-- <div id="main" class="echart-content"></div> -->
+      <!-- footer 底部 -->
+      <footer>
+        <p>COPYRIGHT © 2017 BIUT TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.</p>
+      </footer>
+    </section>
+  </main>
 
 </body>
 <script src="../dist/jq/jquery-3.4.1.min.js"></script>
+<script src="../dist/wow/wow.js"></script>
+<script src="../dist/swiper/swiper.min.js"></script>
+<script src="../dist/jq/jquery.lazyload.min.js"></script>
 <script src="../dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
-<script src="../js/index.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    parallax: true,
+    speed: 600,
+    //grabCursor : true,
+    loop: true,
+    autoplay: 3000,
+    autoplayDisableOnInteraction: false,
+  });
+</script>
+
 </html>
