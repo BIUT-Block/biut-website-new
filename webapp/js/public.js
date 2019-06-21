@@ -6,7 +6,7 @@ $(function () {
     $(this).addClass("check-color")
     $("#i18nEn").removeClass("check-color")
     loadProperties('zh');
-    // $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
     getNes(0)
   })
 
@@ -16,7 +16,7 @@ $(function () {
     $(this).addClass("check-color")
     $("#i18nZh").removeClass("check-color")
     loadProperties(' ');
-    // $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
     getNes(1)
   })
 
@@ -32,13 +32,13 @@ $(function () {
   if (langS == "zh") {
     $("#i18nZh").addClass("check-color")
     $("#i18nEn").removeClass("check-color")
-    // $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
     getNes(0)
     loadProperties('zh')
   } else {
     $("#i18nZh").removeClass("check-color")
     $("#i18nEn").addClass("check-color")
-    // $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
     getNes(1)
     loadProperties(' ')
   }
