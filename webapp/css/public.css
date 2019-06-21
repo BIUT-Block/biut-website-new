@@ -80,7 +80,7 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .about-list ul li a:hover {color:rgba(255,255,255, 1);font-size: .5rem;line-height: 2.5;}
 
 .about-list .foot-list {display: flex; align-items: center;}
-.about-list .last-section-cnt {text-align: left;}
+.about-list .last-section-cnt {text-align: right;}
 .last-foot-list {justify-content: flex-end;}
 .last-foot-list ul {margin-right: 1rem;}
 .last-foot-list ul li {margin-top: .5rem;}
