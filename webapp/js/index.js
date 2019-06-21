@@ -12,6 +12,12 @@ $(function () {
     }, 3000)
   })
 
+  $("#biutWx").click(function(){
+    $('#biutWxActiveImg').slideDown();
+  }),$("#biutWxActiveImg").click(function(e){
+    e.stopPropagation(),
+    $('#biutWxActiveImg').slideUp();
+  })
   //微信图片hover效果
   $('#biutWx').hover(function () {
     $('#biutWxActiveImg').slideDown();
