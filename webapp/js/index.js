@@ -77,7 +77,7 @@ $(function () {
   $("#idxNetwork").html("-")
   $("#idxAccount").html("-")
   $("#idxCurrent").html("-")
-  $("#idPeak").html("33118")
+  // $("#idPeak").html("33118")
   $("#idxHeight1").html("-")
   $("#idxHeight2").html("-")
   $("#idxAffairs1").html("-")
@@ -88,7 +88,7 @@ $(function () {
 
   /**获取节点信息 */
   $.ajax({
-    url: 'http://scan.biut.io/nodeinfoapi',
+    url: 'https://scan.biut.io/nodeinfoapi',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -98,7 +98,7 @@ $(function () {
 
   /**获取全网交易数量 */
   $.ajax({
-    url: 'http://scan.biut.io/alltx',
+    url: 'https://scan.biut.io/alltx',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -128,7 +128,7 @@ $(function () {
 
   /**获取区块高度 */
   $.ajax({
-    url: 'http://scan.biut.io/blockchain',
+    url: 'https://scan.biut.io/blockchain',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -250,7 +250,7 @@ function generateChart(param1, param2, colors) {
 /**获取sec btc的信息 */
 function getBtc() {
   $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=sec_btc',
+    url: 'https://scan.biut.io/market/ticker?symbol=sec_btc',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -277,7 +277,7 @@ function getBtc() {
 /**获取sec eth的信息 */
 function getEth() {
   $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=sec_eth',
+    url: 'https://scan.biut.io/market/ticker?symbol=sec_eth',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -302,7 +302,7 @@ function getEth() {
 
   /**获取sec usdt的信息 */
   $.ajax({
-    url: 'http://scan.biut.io/market/ticker?symbol=sec_usdt',
+    url: 'https://scan.biut.io/market/ticker?symbol=sec_usdt',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
@@ -336,7 +336,7 @@ function getEth() {
  * @param {callback} fnAfterGetPrice
  */
 function getPriceHistory(symbol, fnAfterGetPrice) {
-  let url = 'http://scan.biut.io/market/history?symbol=' + symbol
+  let url = 'https://scan.biut.io/market/history?symbol=' + symbol
   $.ajax({
     url: url,
     type: 'GET',
