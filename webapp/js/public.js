@@ -67,10 +67,17 @@ $(function () {
 
   $(document).scroll(function () {
     var scroH = $(document).scrollTop();  //滚动高度
+    let flg = ismobile()
     if (scroH > 40) {  //距离顶部大于80px时
       $('#header-nav').addClass('public-head-bg');
     } else {
       $('#header-nav').removeClass('public-head-bg');
+    }
+    
+    if (flg && scroH > 50) {
+      $("#downLoad").slideUp()
+    } else {
+      $("#downLoad").slideDown()
     }
   })
 });
@@ -209,7 +216,7 @@ window.onresize = function temp() {
   }
 }
 
-//移动端的时候会
+//移动端
 function ismobile() {
   var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
   var ua = navigator.userAgent;

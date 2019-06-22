@@ -1,5 +1,9 @@
 $(function () {
   $("#downLoad").click(function () {
+    let flg = ismobile()
+    if (flg) {
+      $(this).hide()
+    }
     $("html,body").animate({
       scrollTop: $("#aboutProject").offset().top
     }, 1000);
@@ -384,6 +388,15 @@ function getConnection(num) {
   return num;
 }
 
+//移动端
+function ismobile() {
+  var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
+  var ua = navigator.userAgent;
+  var res = mobileArry.filter(function (arr) {
+    return ua.indexOf(arr) > 0;
+  });
+  return res.length > 0;
+}
 
 //获取系统时间
 function systemTime() {

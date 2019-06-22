@@ -103,8 +103,8 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .content-head {padding: 13.6rem 0 0 2.8rem;}
 .content-head .head-logo h1 {margin-bottom: 2rem;color: #00D69B;}
 .content-head .head-logo p {font-size: .75rem;color: rgba(255,255,255,.8);line-height: 2;}
-.content-head .head-logo figcaption .pc-tit {display: none;}
-.content-head .head-logo figcaption .moible-tit {display: block;}
+.content-head .head-logo figcaption .pc-tit {display: block;}
+.content-head .head-logo figcaption .moible-tit {display: none;}
 .content-head .head-logo figcaption img {width: 11px;height: 9px;margin-bottom: 1rem;}
 .content-head .head-logo figcaption img:last-child {margin: 1rem 0 0;}
 
@@ -275,7 +275,7 @@ html {font-size: 20px;}
 
   .row {margin: 0;}
   
-  .content-head {padding: 7.13rem 0 0;text-align: center;}
+  .content-head {padding: 7.13rem 0 22rem;text-align: center;}
   .content-head .head-logo h1 {margin-bottom: 1.75rem;}
   .content-head .head-logo figcaption img {margin-bottom: 1.25rem;}
   .content-head .head-logo figcaption img:last-child {margin: 1.25rem 0 0;}
@@ -283,7 +283,8 @@ html {font-size: 20px;}
   .content-head .head-logo figcaption .moible-tit {display: block;}
   .content-head .head-list {display: none;}
 
-  .content-head .head-down {margin: 16.45rem 0 5.6rem;}
+  /* .content-head .head-down {margin: 16.45rem 0 5.6rem;} */
+  .content-head .head-down {margin: 0;position: fixed;bottom: 3%;z-index: 999;left: 45%;}
    
   .about-project {padding-top: 4.5rem;}
   
