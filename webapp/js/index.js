@@ -138,12 +138,12 @@ $(function () {
 
   /**获取区块高度 */
   $.ajax({
-    url: 'https://scan.biut.io/blockchain',
+    url: 'https://scan.biut.io/blockheight',
     type: 'GET',
     dataType: 'json',
     success: function (result) {
-      $("#idxHeight1").html(result.secblockchain.length - 1)
-      $("#idxHeight2").html(result.senblockchain.length - 1)
+      $("#idxHeight1").html(result.secblockheigh)
+      $("#idxHeight2").html(result.senblockheigh)
     }
   });
   getEth()
