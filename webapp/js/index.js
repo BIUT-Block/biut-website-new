@@ -132,8 +132,8 @@ $(function () {
     type: 'GET',
     dataType: 'json',
     success: function (result) {
-      $("#idxHeight1").html(result.secblockheigh)
-      $("#idxHeight2").html(result.senblockheigh)
+      $("#idxHeight1").html(result.secblockheight)
+      $("#idxHeight2").html(result.senblockheight)
     }
   });
   getEth()
