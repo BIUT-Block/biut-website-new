@@ -246,7 +246,7 @@ html {font-size: 20px;}
 
   .head-container-bg  {background: none;}
 
-  .public-head {padding: .85rem 15px;position: fixed;top: 0;left: 0;right: 0;z-index: 99;
+  .public-head {padding: .85rem 15px;position: fixed;top: 0;left: 0;right: 0;z-index: 9999;
     background: rgba(40, 38, 53,0);transition: all 1s;}
   .public-head-bg {background: rgba(40, 38, 53,1);transition: all 1s;}
   
