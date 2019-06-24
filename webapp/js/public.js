@@ -73,12 +73,6 @@ $(function () {
     } else {
       $('#header-nav').removeClass('public-head-bg');
     }
-    
-    if (flg && scroH > 50) {
-      $("#downLoad").slideUp()
-    } else {
-      $("#downLoad").slideDown()
-    }
   })
 });
 

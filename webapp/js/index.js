@@ -1,14 +1,4 @@
 $(function () {
-  $("#downLoad").click(function () {
-    let flg = ismobile()
-    if (flg) {
-      $(this).hide()
-    }
-    $("html,body").animate({
-      scrollTop: $("#aboutProject").offset().top
-    }, 1000);
-  })
-
   $("#submitEmail").click(function () {
     $(".toastCnt").slideDown()
     setTimeout(function () {
@@ -16,11 +6,11 @@ $(function () {
     }, 3000)
   })
 
-  $("#biutWx").click(function(){
+  $("#biutWx").click(function () {
     $('#biutWxActiveImg').slideDown();
-  }),$("#biutWxActiveImg").click(function(e){
+  }), $("#biutWxActiveImg").click(function (e) {
     e.stopPropagation(),
-    $('#biutWxActiveImg').slideUp();
+      $('#biutWxActiveImg').slideUp();
   })
   //微信图片hover效果
   $('#biutWx').hover(function () {
@@ -175,8 +165,44 @@ $(function () {
   //   }
   //   generateChart(titls, titlss, color)
   // })
+
+
 });
 
+$(document).ready(function () {
+
+  var mTop = []
+  $('.scrollContent').each(function () {
+    mTop.push($(this).offset().top)
+  });
+  
+  $('#downLoad').click(function () {
+    $("html,body").stop().animate({
+      scrollTop: mTop[index] + 1
+    }, 600);
+  })
+  var index = 0
+  $(window).scroll(function () {
+    var scrollTop = $(this).scrollTop()
+    index = getIndex(mTop, scrollTop)
+  })
+
+  function getIndex(arr, num) {
+    var idx = 0;
+    var len = arr.length - 1
+    if (num > arr[len]) {
+      return len
+    }
+    for (var index in arr) {
+      if (arr[index] > num) {
+        idx = index;
+        //console.log(mTop[idx],$('.scrollContent').eq(idx).offset().top);
+        break;
+      }
+    }
+    return idx;
+  }
+})
 
 function generateChart(param1, param2, colors) {
   //基于准备好的DOM，初始化echarts实例
@@ -193,21 +219,21 @@ function generateChart(param1, param2, colors) {
       //show: true,   //default true
       showDelay: 0,
       hideDelay: 50,
-      transitionDuration:0,
-      backgroundColor : colors,
-      padding: [4, 8],    // [5, 10, 15, 20]
-      position : function(p) {
-          // 位置回调
-          // console.log && console.log(p);
-          return [p[0] - 22, p[1] + 15];
+      transitionDuration: 0,
+      backgroundColor: colors,
+      padding: [4, 8], // [5, 10, 15, 20]
+      position: function (p) {
+        // 位置回调
+        // console.log && console.log(p);
+        return [p[0] - 22, p[1] + 15];
       },
-      textStyle : {
+      textStyle: {
         color: '#fff',
         fontSize: '12px',
         fontFamily: ''
       },
-      formatter: function(param) { 
-        return '<di> '+ param.value + "<br>" + param.name +'</div>';               
+      formatter: function (param) {
+        return '<di> ' + param.value + "<br>" + param.name + '</div>';
       }
     },
     //图例
@@ -217,8 +243,12 @@ function generateChart(param1, param2, colors) {
     //横轴
     xAxis: {
       data: param1,
-      splitLine:{show: false},
-      "axisTick":{ "show":false },
+      splitLine: {
+        show: false
+      },
+      "axisTick": {
+        "show": false
+      },
       axisLabel: {
         color: '#fff'
       },
@@ -226,32 +256,36 @@ function generateChart(param1, param2, colors) {
     },
     //纵轴
     yAxis: {
-      splitLine:{show: false}, //y轴刻网格
-      "axisTick":{ "show":false}, //y轴刻度线
-      "axisLine":{ "show":false }, //隐藏y轴
-      show:false
+      splitLine: {
+        show: false
+      }, //y轴刻网格
+      "axisTick": {
+        "show": false
+      }, //y轴刻度线
+      "axisLine": {
+        "show": false
+      }, //隐藏y轴
+      show: false
     },
     //系列列表。每个系列通过type决定自己的图表类型
-    series: [
-      {
-        name: '',
-        //折线图
-        type: 'line',
-        data: param2,//处理小数点数据
-        symbolSize: 6,
-        lineStyle:{    
-          color: colors,
-          width: '5'    
+    series: [{
+      name: '',
+      //折线图
+      type: 'line',
+      data: param2, //处理小数点数据
+      symbolSize: 6,
+      lineStyle: {
+        color: colors,
+        width: '5'
+      },
+      itemStyle: {
+        normal: {
+          color: colors, //拐点颜色
+          borderColor: colors, //拐点边框颜色
         },
-        itemStyle:{
-          normal:{
-              color: colors,//拐点颜色
-              borderColor: colors,//拐点边框颜色
-          },
-          
-        }
+
       }
-    ]
+    }]
   };
   //使用刚指定的配置项和数据显示图表
   myChart.setOption(option);
@@ -357,7 +391,7 @@ function getPriceHistory(symbol, fnAfterGetPrice) {
       let prices = []
       for (var i = 4; i < times.length; i++) {
         prices.push({
-          timestamp: getDateTime(times[i]*1000),
+          timestamp: getDateTime(times[i] * 1000),
           price: closePrices[i].replace(/(?:\.0*|(\.\d+?)0+)$/, '$1')
         })
       }
@@ -374,13 +408,14 @@ function getDateTime(time) {
     oHour = oDate.getHours(),
     oMin = oDate.getMinutes(),
     oSen = oDate.getSeconds(),
-    
+
     //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) 
-    oTime = getConnection(oMonth) + '-' + getConnection(oDay) 
-    //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) + ' ' + getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
-    //oTime = getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
-    return oTime;
+    oTime = getConnection(oMonth) + '-' + getConnection(oDay)
+  //oTime = oYear + '-' + getConnection(oMonth) + '-' + getConnection(oDay) + ' ' + getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
+  //oTime = getConnection(oHour) + ':' + getConnection(oMin) + ':' + getConnection(oSen);
+  return oTime;
 }
+
 function getConnection(num) {
   if (parseInt(num) < 10) {
     num = '0' + num;
