@@ -165,12 +165,9 @@ $(function () {
   //   }
   //   generateChart(titls, titlss, color)
   // })
-
-
 });
 
 $(document).ready(function () {
-
   var mTop = []
   $('.scrollContent').each(function () {
     mTop.push($(this).offset().top)
