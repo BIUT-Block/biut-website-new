@@ -28,8 +28,9 @@
 	        document.execCommand("Stop");
 	    </script>
   <![endif]-->
-  <title>Bit Trust System</title>
+  <title data-locale="currentTitle">Bit Trust System</title>
   <link href="../dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/animate.css" rel="stylesheet">
   <link href="../css/reset.css" rel="stylesheet">
   <link href="../css/public.css" rel="stylesheet">
   <link href="../css/about.css" rel="stylesheet">
@@ -42,136 +43,154 @@
     </span>
   </section>
 
+  <!-- 头部导航 -->
+  <header class="public-head" id="header-nav">
+    <!-- logo -->
+    <figure id="toggle-head">
+      <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
+      <figcaption id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </figcaption>
+    </figure>
+
+    <!-- nav导航条 -->
+    <nav id="tabNav">
+      <ul>
+        <li>
+          <a href="../index.html" data-locale="nav-home">Home</a>
+        </li>
+        <li>
+          <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf" class="whitepaper"
+            target="_blank" data-locale="h-banner-list-txt2">WhitePaper</a>
+        </li>
+        <li>
+          <a href="http://scan.biut.io/" target="_blank" data-locale="nav-explorer">Explorer</a>
+        </li>
+        <li class="check-color check-img">
+          <img src="../images/index/nav-check.png" alt="">
+          <a href="about.html" data-locale="nav-about">About</a>
+        </li>
+        <li>
+          <a href="dynamic.html" data-locale="nav-dynamic">Dynamic</a>
+        </li>
+        <li>
+          <a href="dapp.html" data-locale="nav-dapp">DApp</a>
+        </li>
+        <li class="login">
+          <a href="login.html" data-locale="nav-login">登陆</a>
+        </li>
+        <li>
+          <span id="i18nZh"> 中文 </span>
+          <span class="head-line"> / </span>
+          <span id="i18nEn"> EN </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- 网页前部分内容 -->
   <main class="about-container">
-    <!-- 头部导航 -->
-    <header class="public-head">
-      <!-- logo -->
-      <figure>
-        <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
-      </figure>
-
-      <!-- nav导航条 -->
-      <nav>
-        <ul>
-          <li>
-            <a href="../index.html" data-locale="nav-home">Home</a>
-          </li>
-          <li class="check-color check-img">
-            <img src="../images/index/nav-check.png" alt="">
-            <span data-locale="nav-about">About</span>
-          </li>
-          <li>
-            <a href="dynamic.html" data-locale="nav-dynamic">Dynamic</a>
-          </li>
-          <li>
-            <a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="nav-gitter">Gitter</a>
-          </li>
-          <li class="login">
-            <a href="login.html" data-locale="nav-login">登陆</a>
-          </li>
-          <li>
-            <span id="i18nZh"> 中文 </span>
-            <span class="head-line"> / </span>
-            <span id="i18nEn" class="check-color"> EN </span>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- 头部导航栏结束 -->
 
     <section class="container">
       <!-- 技术优势 -->
       <section class="advantage-list">
-        <h2>123</h2>
-        <ul class="row">
-          <li class="col-md-4 col-sm-12 col-xs-12">
+        <article class="public-title">
+          <h3 class="wow titanimate" data-wow-delay=".5s" data-locale="a-adv">技术优势</h3>
+        </article>
+        <ul class="row advantage-list-border1">
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay=".75s">
             <figure>
-              <img src="../images/about/apply1.png" alt="1">
+              <img src="../images/about/advantage1.png" alt="1">
               <figcaption>
-                <h3>共识算法PGPOW</h3>
-                <span>Polling Group proof of work,融合pos与pow共识算法优势，实现去中心化POW挖矿</span>
+                <h3 data-locale="a-list-tit1">共识算法PGPOW</h3>
+                <span data-locale="a-list-txt1">Polling Group proof of work,融合pos与pow共识算法优势，实现去中心化POW挖矿</span>
               </figcaption>
             </figure>
           </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1s">
             <figure>
-              <img src="../images/about/apply1.png" alt="1">
+              <img src="../images/about/advantage2.png" alt="1">
               <figcaption>
-                <h3>去中心化下实现高TPS</h3>
-                <span>测试网有174个节点，10个群落情况下，网络达到33000TPS,主网上线后随着节点及节点群落数量增多，可实现更高TPS</span>
+                <h3 data-locale="a-list-tit2">去中心化下实现高TPS</h3>
+                <span data-locale="a-list-txt2">测试网有174个节点，10个群落情况下，网络达到33000TPS,主网上线后随着节点及节点群落数量增多，可实现更高TPS</span>
               </figcaption>
             </figure>
           </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1.25s">
             <figure>
-              <img src="../images/about/apply1.png" alt="1">
+              <img src="../images/about/advantage3.png" alt="1">
               <figcaption>
-                <h3>优异的去中心化</h3>
-                <span>高TPS，同时保持去中心化，突破分布式系统不可能三角定律</span>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-        <ul class="row">
-          <li class="col-md-4 col-sm-12 col-xs-12">
-            <figure>
-              <img src="../images/about/apply1.png" alt="1">
-              <figcaption>
-                <h3>有效降低开发难度</h3>
-                <span>JavaScript完成的公链，未做任何推广，在npm下载量优异</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
-            <figure>
-              <img src="../images/about/apply1.png" alt="1">
-              <figcaption>
-                <h3>新一代公链技术</h3>
-                <span>模块化设计保证了扩展性。借助biut主网，根据自定义数据结构，发布一条公链只需几秒到几周时间</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
-            <figure>
-              <img src="../images/about/apply1.png" alt="1">
-              <figcaption>
-                <h3>多链架构</h3>
-                <span>双币经济模型，多链平行架构。多链结构实现了系统高吞吐和高安全性。双币经济模型则平衡了生态不同发展时期多方参与者的利益。</span>
+                <h3 data-locale="a-list-tit3">优异的去中心化</h3>
+                <span data-locale="a-list-txt3">高TPS，同时保持去中心化，突破分布式系统不可能三角定律</span>
               </figcaption>
             </figure>
           </li>
         </ul>
+        <ul class="row advantage-list-border2">
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay=".5s">
+            <figure>
+              <img src="../images/about/advantage4.png" alt="1">
+              <figcaption>
+                <h3 data-locale="a-list-tit4">有效降低开发难度</h3>
+                <span data-locale="a-list-txt4">JavaScript完成的公链，未做任何推广，在npm下载量优异</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay=".75s">
+            <figure>
+              <img src="../images/about/advantage5.png" alt="1">
+              <figcaption>
+                <h3 data-locale="a-list-tit5">新一代公链技术</h3>
+                <span data-locale="a-list-txt5">模块化设计保证了扩展性。借助biut主网，根据自定义数据结构，发布一条公链只需几秒到几周时间</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="col-md-4 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1s">
+            <figure>
+              <img src="../images/about/advantage6.png" alt="1">
+              <figcaption>
+                <h3 data-locale="a-list-tit6">多链架构</h3>
+                <span data-locale="a-list-txt6">双币经济模型，多链平行架构。多链结构实现了系统高吞吐和高安全性。双币经济模型则平衡了生态不同发展时期多方参与者的利益。</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+
       </section>
 
       <!-- BIUT应用场景 -->
       <section class="apply-list">
-        <h2>BIUT应用场景</h2>
+        <article class="public-title">
+          <h3 class="wow titanimate" data-wow-delay=".5s" data-locale="a-apply">BIUT应用场景</h3>
+        </article>
         <ul class="row">
-          <li class="col-md-4 col-sm-12 col-xs-12">
+          <li class="col-md-4 col-sm-12 col-xs-12  wow cntanimate1" data-wow-delay=".75s">
             <figure>
               <img src="../images/about/apply1.png" alt="1">
               <figcaption>
-                <h3>社交电商</h3>
-                <span>去中心化C2C交易应用广泛，陌生人在互联网交易细分领域低频但需求强烈，适合区块链应用</span>
+                <h3 data-locale="a-apply-tit1">社交电商</h3>
+                <span data-locale="a-apply-txt1">去中心化C2C交易应用广泛，陌生人在互联网交易细分领域低频但需求强烈，适合区块链应用</span>
               </figcaption>
             </figure>
           </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
+          <li class="col-md-4 col-sm-12 col-xs-12  wow cntanimate1" data-wow-delay="1s">
             <figure>
               <img src="../images/about/apply2.png" alt="1">
               <figcaption>
-                <h3>P2P借贷</h3>
-                <span>金融行业，因交易对象缺乏信任机制，整个处于行业瓶颈，国内更是频临崩盘。瞄准中产的理财需求，协助生态企业、合作伙伴借助BIUT系统转型</span>
+                <h3 data-locale="a-apply-tit2">P2P借贷</h3>
+                <span
+                  data-locale="a-apply-txt2">金融行业，因交易对象缺乏信任机制，整个处于行业瓶颈，国内更是频临崩盘。瞄准中产的理财需求，协助生态企业、合作伙伴借助BIUT系统转型</span>
               </figcaption>
             </figure>
           </li>
-          <li class="col-md-4 col-sm-12 col-xs-12">
+          <li class="col-md-4 col-sm-12 col-xs-12  wow cntanimate1" data-wow-delay="1.25s">
             <figure>
               <img src="../images/about/apply3.png" alt="1">
               <figcaption>
-                <h3>公链商店</h3>
-                <span>为开发者提供开发去中心化、去信任化应用的便利，降低DAPP和公链开发的难度。从技术上协助生态企业占据国内社交电商垂直领域市场</span>
+                <h3 data-locale="a-apply-tit3">公链商店</h3>
+                <span data-locale="a-apply-txt3">为开发者提供开发去中心化、去信任化应用的便利，降低DAPP和公链开发的难度。从技术上协助生态企业占据国内社交电商垂直领域市场</span>
               </figcaption>
             </figure>
           </li>
@@ -180,20 +199,22 @@
 
       <!-- 代币使用 -->
       <section class="use-list">
-        <h2>代币使用</h2>
+        <article class="public-title">
+          <h3 class="wow titanimate" data-wow-delay=".5s" data-locale="a-use">代币使用</h3>
+        </article>
         <ul class="row">
-          <li class="col-md-6 col-sm-12 col-xs-12">
+          <li class="col-md-6 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay=".75s">
             <figure>
-              <img src="../images/about/useImg.png" alt="1">
-              <figcaption>
+              <img src="../images/about/useBiut.png" alt="1">
+              <figcaption data-locale="a-use-txt1">
                 BIUT（原SEC）：支付、挖矿权益证明、交易抵押金、交易市场开通费用、交易纠纷仲裁费用等
               </figcaption>
             </figure>
           </li>
-          <li class="col-md-6 col-sm-12 col-xs-12">
+          <li class="col-md-6 col-sm-12 col-xs-12 wow cntanimate1" data-wow-delay="1s">
             <figure>
-              <img src="../images/about/useImg.png" alt="1">
-              <figcaption>
+              <img src="../images/about/useBiu.png" alt="1">
+              <figcaption data-locale="a-use-txt2">
                 信任令 BIU : 转账和智能合约GAS，发行自定义主链的节点费用
               </figcaption>
             </figure>
@@ -203,193 +224,190 @@
     </section>
   </main>
 
-  <main class="footer">
+  <main class="public-footer">
     <!-- BIUT生态成员 -->
     <section class="foot-members">
       <section class="container-fisrt"></section>
       <section class="container">
-        <section class="foot-members-head">
-          <h2>BIUT生态成员</h2>
-          <figure>
-            <figcaption>我也要榜上有名</figcaption>
-            <img src="../images/about/memberMore.png" alt="">
-          </figure>
-        </section>
+        <article class="public-title">
+          <h3 class="wow titanimate" data-wow-delay=".5s" data-locale="a-members">BIUT生态成员</h3>
+          <!-- <figure id="openMask">
+            <figcaption data-locale="a-members-txt1">
+              我也要榜上有名
+            </figcaption>
+            <img data-original="../images/index/more.png" alt="BIUT-more" title="more">
+          </figure> -->
+        </article>
+
         <section class="foot-members-cont">
-          <ul class="row">
-            <li class="col-md-3 col-sm-12 col-xs-12">
-              <figure>
-                <img src="../images/about/memberHeaderImg.png" alt="">
-                <figcaption>
-                  <h4>储炀</h4>
-                  <p>曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-          </ul>
-
-          <ul class="row">
-            <li class="col-md-3 col-sm-12 col-xs-12">
-              <figure>
-                <img src="../images/about/memberHeaderImg.png" alt="">
-                <figcaption>
-                  <h4>储炀</h4>
-                  <p>曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-          </ul>
-
-          <ul class="row">
-            <li class="col-md-3 col-sm-12 col-xs-12">
-              <figure>
-                <img src="../images/about/memberHeaderImg.png" alt="">
-                <figcaption>
-                  <h4>储炀</h4>
-                  <p>曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-            <li class="col-md-3 col-sm-12 col-xs-12"></li>
-          </ul>
-
-          <section class="members-tab">
+          <ul class="row" id="memberList"></ul>
+          <!-- <section class="members-tab" id="membersTab">
             <figure>
-              <figcaption>换一换</figcaption>
+              <figcaption data-locale="a-members-txt2">换一换</figcaption>
               <img src="../images/about/memberRefresh.png" alt="">
             </figure>
-          </section>
+          </section> -->
         </section>
       </section>
       <section class="container-last"></section>
     </section>
 
+    <!-- 提交申请mask -->
+    <section class="mask-hidden" id="aboutMask">
+      <section class="mask">
+        <section class="about-mask">
+          <figure class="close-mask" id="closeMask">
+            <img src="../images/close.png" alt="">
+          </figure>
+          <section class="mask-content">
+            <h4 data-locale="a-mask-tit">榜上有名-申请表</h4>
+            <p class="mask-txt1" data-locale="a-mask-txt">申请成功后，你的个人信息将会显示在网站中让更多的人看到</p>
+            <figure class="mask-head">
+              <img src="../images/about/maskHead.png" id="maskHead" alt="">
+              <figcaption>
+                <span data-locale="a-mask-name">昵称</span>
+                <span id="maskName">张智超</span>
+              </figcaption>
+            </figure>
+            <p class="mask-txt1" data-locale="a-mask-txt2">上榜理由</p>
+            <section class="mask-ipt">
+              <section>
+                <span id="iptLength">0</span>
+                <span>/400</span>
+              </section>
+              <textarea id="iptReason" cols="30" rows="10" data-placeholder="a-mask-ipt" maxlength="400"></textarea>
+            </section>
+            <button type="button" class="public-btn" id="maskSubmit" data-locale="a-mask-btn">提交申请</button>
+          </section>
+        </section>
+      </section>
+    </section>
+
     <section class="container">
       <!-- 时间历程 -->
       <section class="foot-history">
-        <ul class="row">
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            1
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            2
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            3
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            4
-          </li>
-        </ul>
-        <ul class="row">
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            <section>
-              <p class="foot-history-time">Jan.19 2016</p>
-              <p class="foot-history-txt">发布1.0版</p>
-              <p class="foot-history-txt">
-                本共识算法和网络方案
-              </p>
-            </section>
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            <p class="foot-history-time">Jan.19 2016</p>
-            <p class="foot-history-txt">发布1.0版</p>
-            <p class="foot-history-txt">
-              本共识算法和网络方案
-            </p>
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            <p class="foot-history-time">Jan.19 2016</p>
-            <p class="foot-history-txt">发布1.0版</p>
-            <p class="foot-history-txt">
-              本共识算法和网络方案
-            </p>
-          </li>
-          <li class="col-md-3 col-sm-12 col-xs-12">
-            <p class="foot-history-time">Jan.19 2016</p>
-            <p class="foot-history-txt">发布1.0版</p>
-            <p class="foot-history-txt">
-              本共识算法和网络方案
-            </p>
-          </li>
-        </ul>
+        <article class="public-title">
+          <h3 class="wow titanimate" data-wow-delay=".5s" data-locale="a-time">项目进展和发展计划</h3>
+          <figure id="lookTime">
+            <figcaption data-locale="more">
+              了解更多
+            </figcaption>
+            <img data-original="../images/index/more.png" alt="BIUT-more" title="more">
+          </figure>
+        </article>
+
+        <section class="footer-flex-list">
+          <ul class="row">
+            <li>
+              <section class="foot-history-content">
+                <section class="time-img">
+                  <span></span>
+                </section>
+                <p class="foot-history-line">
+                  <span></span>
+                </p>
+              </section>
+            </li>
+            <li>
+              <section class="foot-history-content">
+                <section class="time-img">
+                  <span></span>
+                </section>
+                <p class="foot-history-line">
+                  <span></span>
+                </p>
+              </section>
+            </li>
+            <li>
+              <section class="foot-history-content">
+                <section class="time-img">
+                  <span></span>
+                </section>
+                <p class="foot-history-line">
+                  <span></span>
+                </p>
+              </section>
+            </li>
+            <li>
+              <section class="foot-history-content">
+                <section class="time-img">
+                  <span></span>
+                </section>
+                <p class="foot-history-line">
+                  <span></span>
+                </p>
+              </section>
+            </li>
+          </ul>
+          <!-- 时间列表 -->
+          <ul class="row" id="timeList"></ul>
+        </section>
       </section>
 
-      <!-- 底部内容 -->
-      <section class="about-list about-footer-list">
+      <!-- 底部链接 -->
+      <section class="footer-list">
+
         <section>
           <h4 data-locale="h-foot-proj-tit">Product</h4>
           <ul>
-            <li><a href="#" data-locale="h-foot-proj-txt1">DApp</a></li>
-            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt2">Wallet</a>
+            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt">Wallet</a>
             </li>
-            <li><a href="#" data-locale="h-foot-proj-txt3">Mining tool</a></li>
           </ul>
         </section>
 
-        <section class="foot-dev">
+        <section class="footer-dev">
           <h4 data-locale="h-foot-dev-tit">Developer</h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-              <li><a href="#" data-locale="h-foot-dev-txt1">Development tool documentation</a></li>
+              <li><a href="https://www.npmjs.com/org/sec-block" target="_blank" data-locale="h-foot-dev-txt1">npm</a>
+              </li>
               <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a></li>
-              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain browser</a>
+              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain Browser</a>
+              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test Network
+                  Development</a></li>
               </li>
             </ul>
-            <ul class="list-margin-left">
-              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test network</a></li>
-              <li><a href="#" data-locale="h-foot-dev-txt5">Network Developer</a></li>
-              <li><a href="#" data-locale="h-foot-dev-txt6">Developer community</a></li>
-            </ul>
           </section>
         </section>
 
-        <section class="foot-ec">
+        <section class="footer-ec">
           <h4 data-locale="h-foot-eco-tit">Ecological correlation </h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-              <li><a href="#" data-locale="h-foot-eco-txt1">Tongzheng Holding</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt2">BIUT Foundation</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt3">Hualian Capital</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt4">Xinlian Block Chain Co., Ltd.</a></li>
-            </ul>
-            <ul class="list-margin-left">
-              <li><a href="#" data-locale="h-foot-eco-txt5">BIUT International Club</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt6">BIUT new developments</a></li>
-              <li><a href="https://gitter.im/grin_community/Lobby" target="_blank"
-                  data-locale="h-foot-eco-txt7">Gitter</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt8">About the project</a></li>
+              <li><a href="https://www.tokenholding.cn/" target="_blank" data-locale="h-foot-eco-txt1">Tokenholding</a>
+              </li>
+              <li><a href="https://www.secblock.io/" target="_blank" data-locale="h-foot-eco-txt2">Social Ecommerce
+                  Chain</a></li>
+              <li><a href="dynamic.html" target="_blank" data-locale="h-foot-eco-txt3">Biut News</a></li>
+              <li><a href="about.html" target="_blank" data-locale="h-foot-eco-txt4">About BIUT</a></li>
             </ul>
           </section>
         </section>
 
-        <section class="last-section-cnt">
+        <section class="footer-last">
           <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
-          <section class="foot-list last-foot-list">
+          <section class="footer-last-list">
             <ul>
               <li id="biutWx" class="biutWx">
-                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="微信公众号" title="微信公众号" />
+                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="WeChat" title="WeChat" />
                 <img src="../images/index/publicNumer.png" id="biutWxActiveImg" class="wxActive" alt="weixin"
-                  title="微信公众号" />
+                  title="WeChat" />
               </li>
-              <li id="biutWb">
-                <a href="https://weibo.com/SECblock" target="_blank">
-                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="新浪微博" title="新浪微博" />
+              <li id="biutTw">
+                <a href="https://twitter.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/twiter.png" id="biutTwImg" alt="twiter" title="Twiter" />
+                </a>
+              </li>
+              <li id="biutFb">
+                <a href="https://www.facebook.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
                 </a>
               </li>
             </ul>
             <ul>
-              <li id="biutTw">
-                <a href="https://twitter.com/BIUTblock" target="_blank">
-                  <img data-original="../images/index/twiter.png" id="biutTwImg" alt="twiter" title="Twiter" />
+              <li id="biutWb">
+                <a href="https://weibo.com/SECblock" target="_blank">
+                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="MicroBlog" title="MicroBlog" />
                 </a>
               </li>
               <li id="biutPl">
@@ -397,25 +415,16 @@
                   <img data-original="../images/index/plane.png" id="biutPlImg" alt="telegram" title="Telegram" />
                 </a>
               </li>
-            </ul>
-            <ul>
-              <li id="biutFb">
-                <a href="https://www.facebook.com/BIUTblock" target="_blank">
-                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
-                </a>
-              </li>
               <li id="biutMk">
-                <a href="https://www.reddit.com/user/SECblock" target="_blank">
-                  <img data-original="../images/index/monkey.png" id="biutMkImg" alt="reddit" title="Reddit" />
+                <a href="https://www.rgba(255,255,255,.5)dit.com/user/SECblock" target="_blank">
+                  <img data-original="../images/index/monkey.png" id="biutMkImg" alt="rgba(255,255,255,.5)dit"
+                    title="rgba(255,255,255,.5)dit" />
                 </a>
               </li>
             </ul>
           </section>
         </section>
-
       </section>
-
-      <!-- <div id="main" class="echart-content"></div> -->
       <!-- footer 底部 -->
       <footer>
         <p>COPYRIGHT © 2017 BIUT TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.</p>
@@ -430,4 +439,6 @@
 <script src="../dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
+<script src="../js/about.js"></script>
+
 </html>

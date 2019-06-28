@@ -30,88 +30,10 @@
   <![endif]-->
   <title data-locale="currentTitle">Bit Trust System</title>
   <link href="./dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./css/animate.css" rel="stylesheet">
   <link href="./css/reset.css" rel="stylesheet">
   <link href="./css/public.css" rel="stylesheet">
-  <link href="./css/animate.css" rel="stylesheet">
-  <style>
-    .titanimate {
-      animation-name: bounceInUp;
-    }
-
-    .cntanimate1 {
-      animation-name: bounceIn;
-    }
-
-    .cntanimate2 {
-      animation-name: bounceLeft;
-    }
-
-    .cntanimate3 {
-      animation-name: bounce;
-    }
-
-    @keyframes bounceInUp {
-      0% {
-        filter: blur(20px);
-        opacity: 0;
-        transform-origin: 0% 0%;
-        transform: skew(10deg, 15deg);
-      }
-
-      100% {
-        filter: blur(0px);
-        opacity: 1;
-        transform-origin: 0% 0%;
-        transform: skew(0deg, 0deg);
-      }
-    }
-
-    @keyframes bounce {
-      from {
-        opacity: 0;
-        padding-top: 2.5rem;
-      }
-
-      to {
-        opacity: 1;
-        padding-top: 0;
-      }
-    }
-
-    @keyframes bounceLeft {
-      from {
-        opacity: 0;
-        margin-top: 2.5rem;
-      }
-
-      to {
-        opacity: 1;
-        margin-top: 0;
-      }
-    }
-
-    @keyframes bounceIn {
-      from {
-        position: relative;
-        opacity: 0;
-        top: 2.5rem;
-      }
-
-      to {
-        opacity: 1;
-        top: 0;
-      }
-    }
-
-    @keyframes tipmove {
-      0%{top:-0.6rem;opacity:0}
-      25%{top:-0.3rem;opacity:.5}
-      50%{top:0;opacity:1}
-      75%{top:.3rem;opacity:.5}
-      100%{top:.6rem;opacity:0}
-    }
-    .animationDown {animation: tipmove 1.5s infinite ease-in-out;}
-  </style>
+  <link href="./css/index.css" rel="stylesheet">
 </head>
 
 <body>
@@ -121,74 +43,71 @@
     </span>
   </section>
 
-  <section class="toastCnt">
+  <section class="toast-content">
     <span data-locale="toast">This function has not been activated, please stay tuned.</span>
   </section>
 
+  <!-- 头部导航 -->
+  <header class="public-head" id="header-nav">
+    <!-- logo -->
+    <figure id="toggle-head">
+      <img src="./images/nav-logo.png" alt="BIUT" title="BIUT">
+      <figcaption id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </figcaption>
+    </figure>
+
+    <!-- nav导航条 -->
+    <nav id="tabNav">
+      <ul>
+        <li class="check-color check-img">
+          <img src="./images/index/nav-check.png" alt="">
+          <span data-locale="nav-home">Home</span>
+        </li>
+        <li>
+          <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf"
+          class="whitepaper" target="_blank" data-locale="h-banner-list-txt2">WhitePaper</a>
+        </li>
+        <li>
+          <a href="http://scan.biut.io/" target="_blank" data-locale="nav-explorer">Explorer</a>
+        </li>
+        <li>
+          <a href="./pages/about.html" data-locale="nav-about">About</a>
+        </li>
+        <li>
+          <a href="./pages/dynamic.html" target="_blank" data-locale="nav-dynamic">Dynamic</a>
+        </li>
+        <li>
+          <a href="./pages/dapp.html" data-locale="nav-dapp">DApp</a>
+        </li>
+        <li class="login">
+          <a href="./pages/login.html" data-locale="nav-login">登陆</a>
+        </li>
+        <li>
+          <span id="i18nZh"> 中文 </span>
+          <span class="head-line"> / </span>
+          <span id="i18nEn"> EN </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
   <main class='head-content'>
     <main class="head-container">
-      <!-- 头部导航 -->
-      <header class="public-head" id="header-nav">
-        <!-- logo -->
-        <figure id="toggle-head">
-          <img src="./images/nav-logo.png" alt="BIUT" title="BIUT">
-          <figcaption id="navbar-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </figcaption>
-        </figure>
-
-        <!-- nav导航条 -->
-        <nav id="tabNav">
-          <ul>
-            <li class="check-color check-img">
-              <img src="./images/index/nav-check.png" alt="">
-              <span data-locale="nav-home">Home</span>
-            </li>
-            <!-- <li>
-              <a href="./pages/about.html" class="whitepaper" data-locale="nav-about">About</a>
-            </li> -->
-            <li>
-              <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf"
-                class="whitepaper" target="_blank" data-locale="nav-about">WhitePaper</a>
-            </li>
-            <!-- <li>
-              <a href="./pages/dynamic.html" target="_blank" data-locale="nav-dynamic">Dynamic</a>
-            </li> -->
-
-            <li>
-              <a href="http://scan.biut.io/" target="_blank" data-locale="nav-dynamic">Explorer</a>
-            </li>
-            <li>
-              <!-- Gitter -->
-              <a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="nav-wallet">Wallet</a>
-            </li>
-            <!-- <li class="login">
-              <a href="./pages/login.html" data-locale="nav-login">登陆</a>
-            </li> -->
-            <li>
-              <span id="i18nZh"> 中文 </span>
-              <span class="head-line"> / </span>
-              <span id="i18nEn"> EN </span>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
       <!-- 主体内容 -->
       <section class="container">
         <!-- 带logo的头部内容 -->
         <section class="content-head">
           <figure class="head-logo">
-            <!-- <img data-original="./images/index/logo.png" alt="BIUT" title="BIUT"> -->
+            <!-- <img src="./images/index/logo.png" alt="BIUT" title="BIUT"> -->
             <h1 class="head-title" data-locale="h-banner-tit">Bit Trust System</h1>
             <figcaption>
               <img src="./images/index/symbol1.png" alt="">
               <p data-locale="h-banner-name1" class="pc-tit">Permissionless Trust，Free To Trade</p>
               <p data-locale="h-banner-name2" class="moible-tit">Permissionless Trust</p>
-              <p data-locale="h-banner-name3" class="moible-tit">Free To Trade</p>
-
+              <p data-locale="h-banner-name3" class="moible-tit">Free To Trade !</p>
               <img src="./images/index/symbol2.png" alt="">
             </figcaption>
           </figure>
@@ -197,16 +116,16 @@
             <li>
               <a href="https://mp.weixin.qq.com/s?__biz=MzUxNDY0MTQyMA==&mid=2247484720&idx=1&sn=98befa5d8809cebbb378406dfb6c946d&chksm=f9439e53ce34174505b6dd9f375e27049caa668abebbbdfed393579b313cf55b5cf8b18e255b&mpshare=1&scene=1&srcid=0621VLOymJ8mmYGkZAIkkKWt&key=1ec7def7b9fef9e5b850005c1b1ad2244088d5352a9172c5d75c485cdc95f47dbbca0183493f6b2ca50df41a682232cd10b14fb14a5a38dee5a54088ccd73f869ab2d079909d2d5f6ee160be8ed01140&ascene=1&uin=MjMxMjMwNzYzNg%3D%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=s3Xrknra7nYyuOc7UU4RgTsCwI1rvmvOTBkc6A%2B8VkSuxHKtZzRsrFCeFRA598I1"
                 target="_blank" data-locale="h-banner-list-txt1">
-                Main net
+                Main Net
               </a>
             </li>
             <li>
               <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf"
                 class="whitepaper" target="_blank" data-locale="h-banner-list-txt2">
-                White Paper
+                WhitePaper
               </a>
             </li>
-            <!-- <li data-locale="h-banner-list-txt3">Watch Video</li>  -->
+            <!-- <li data-locale="h-banner-list-txt3">Watch Video</li> -->
           </ul>
 
           <figure class="head-down">
@@ -221,13 +140,13 @@
         <section class="about-project scrollContent">
           <!-- 功能 子导航栏 -->
           <article class="public-title">
-            <h3 data-locale="h-proj-tit" class="wow titanimate" data-wow-delay=".5s">About The Project</h3>
-            <!-- <figure>
+            <h3 data-locale="h-proj-tit" class="wow titanimate" data-wow-delay=".5s">About the project</h3>
+            <figure id="projectMore">
               <figcaption data-locale="more">
                 understand more
               </figcaption>
               <img data-original="./images/index/more.png" alt="BIUT-more" title="more">
-            </figure> -->
+            </figure>
           </article>
 
           <ul class="row project-list">
@@ -254,11 +173,9 @@
                     title="Excellent decentralization">
                   <figcaption>
                     <p class="font-bold" data-locale="h-proj-center-tit">Excellent decentralization</p>
-
                     <p data-locale="h-proj-center-txt1">Breaking through the</p>
                     <p data-locale="h-proj-center-txt2">Impossible Triangle law of</p>
                     <p data-locale="h-proj-center-txt3">distributed systems</p>
-                    <!-- <p data-locale="h-proj-center-txt3">impossible Triangular law</p> -->
                   </figcaption>
                 </figure>
               </section>
@@ -381,34 +298,41 @@
       <section class="new-dynamics">
         <!-- 功能 子导航栏 -->
         <article class="public-title">
-          <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New Dynamics</h3>
-          <!-- <figure>
+          <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New dynamics</h3>
+          <figure id="newsMore">
             <figcaption data-locale="more">
               understand more
             </figcaption>
             <img data-original="./images/index/more.png" alt="BIUT-more" title="more">
-          </figure> -->
+          </figure>
         </article>
-
+        <!-- 新闻列表 -->
         <ul class="row" id="newsList"></ul>
 
         <!-- 新闻mask -->
-        <article id="newsMask" class="mask">
+        <article class="mask-hidden" id="newsMask">
           <section class="news-mask">
-            <section class="news-mask-content">
-              <span class="mask-close" id="closeMask">X</span>
+            <section class="left-container">
+              <!-- <img src="../images/dynamic/prevImg.png" alt="" id="prevNews" /> -->
+            </section>
+            <aside class="container news-container news-mask-content" id="newsMaskContent">
+              <!-- 标题 -->
               <section class="news-mask-title">
                 <h5 id="newsTitle"></h5>
                 <section class="news-mask-list">
-                  <section>
+                  <section class="news-mask-read">
                     <span data-locale="h-dyc-readNumber">Reading</span>
                     <span id="reading"></span>
                   </section>
                   <time id="newsTime"></time>
                 </section>
               </section>
-
+              <!-- 内容 -->
               <section class="news-mask-cnt" id="newsContent"></section>
+            </aside>
+            <section class="right-container">
+              <img src="../images/close.png" alt="" class="close-img" id="closeMask" />
+              <!-- <img src="../images/dynamic/nextImg.png" alt="" id="nextNews" /> -->
             </section>
           </section>
         </article>
@@ -448,114 +372,99 @@
 
       <!-- Network state -->
       <section class="network-state scrollContent">
-          <!-- 功能 子导航栏 -->
-          <article class="public-title">
-            <h3 data-locale="h-net-tit" class="wow titanimate" data-wow-delay=".5s">Network State</h3>
-          </article>
+        <!-- <div 功能 子导航栏 -->
+        <article class="public-title">
+          <h3 data-locale="h-net-tit" class="wow titanimate" data-wow-delay=".5s">Network state</h3>
+        </article>
 
-          <ul>
-            <li class="wow cntanimate3" data-wow-delay=".75s">
-              <span id="idxNetwork"></span>
-              <span data-locale="h-net-txt1">Nodes Online</span>
-            </li>
-            <li class="wow cntanimate3" data-wow-delay="1s">
-              <span id="idxAccount"></span>
-              <span data-locale="h-net-txt2">Current Accounts</span>
-            </li>
-            <li class="wow cntanimate3" data-wow-delay="1.25s">
-              <span>
-                <span id="idxCurrent"></span>
-              </span>
-              <!-- <span>
+        <ul>
+          <li class="wow cntanimate3" data-wow-delay=".75s">
+            <span id="idxNetwork"></span>
+            <span data-locale="h-net-txt1">Node network</span>
+          </li>
+          <li class="wow cntanimate3" data-wow-delay="1s">
+            <span id="idxAccount"></span>
+            <span data-locale="h-net-txt2">current account</span>
+          </li>
+          <li class="wow cntanimate3" data-wow-delay="1.25s">
+            <span>
+              <span id="idxCurrent"></span>
+            </span>
+
+            <!-- <span>
                 <span id="idxCurrent"></span>
                 <span>l</span>
                 <span id="idPeak"></span>
               </span> -->
-              <!-- <span data-locale="h-net-txt3">Current/peak TPS</span> -->
-              <span data-locale="h-net-txt3">Current TPS</span>
-            </li>
-            <li class="wow cntanimate3" data-wow-delay="1.5s">
-              <span>
-                <span id="idxHeight1"></span>
-                <span>l</span>
-                <span id="idxHeight2"></span>
-              </span>
-              <span data-locale="h-net-txt4">BIUT Height / BIU Height</span>
-            </li>
-            <li class="wow cntanimate3" data-wow-delay="1.75s">
-              <span>
-                <span id="idxAffairs1"></span>
-                <span>l</span>
-                <span id="idxAffairs2"></span>
-              </span>
-              <span data-locale="h-net-txt5">BIUT / BIU Transactions</span>
-            </li>
-          </ul>
+            <!-- <span data-locale="h-net-txt3">Current/peak TPS</span> -->
+            <span data-locale="h-net-txt3">Current TPS</span>
+          </li>
+          <li class="wow cntanimate3" data-wow-delay="1.5s">
+            <span>
+              <span id="idxHeight1"></span>
+              <span>l</span>
+              <span id="idxHeight2"></span>
+            </span>
+            <span data-locale="h-net-txt4">BIUT Height / BIU Height</span>
+          </li>
+          <li class="wow cntanimate3" data-wow-delay="1.75s">
+            <span>
+              <span id="idxAffairs1"></span>
+              <span>l</span>
+              <span id="idxAffairs2"></span>
+            </span>
+            <span data-locale="h-net-txt5">BIUT/International Affairs</span>
+          </li>
+        </ul>
       </section>
-
     </section>
   </main>
 
-  <main class="footer scrollContent">
+  <main class="public-footer scrollContent">
     <section class="container">
-      <!--  -->
-      <section class="about-list">
+      <!-- 底部链接 -->
+      <section class="footer-list">
+
         <section>
           <h4 data-locale="h-foot-proj-tit">Product</h4>
           <ul>
-            <!-- <li><a href="#" data-locale="h-foot-proj-txt1">DApp</a></li> -->
-            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt2">Wallet</a>
+            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt">Wallet</a>
             </li>
-            <!-- <li><a href="#" data-locale="h-foot-proj-txt3">Mining tool</a></li> -->
           </ul>
         </section>
 
-        <section class="foot-dev">
+        <section class="footer-dev">
           <h4 data-locale="h-foot-dev-tit">Developer</h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-              <!-- <li><a href="#" data-locale="h-foot-dev-txt1">Development tool documentation</a></li> -->
-              <li><a href="https://www.npmjs.com/org/sec-block" target="_blank"
-                  data-locale="h-foot-dev-txt7">npm</a></li>
+              <li><a href="https://www.npmjs.com/org/sec-block" target="_blank" data-locale="h-foot-dev-txt1">npm</a>
+              </li>
               <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a></li>
               <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain Browser</a>
+              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test Network
+                  Development</a></li>
               </li>
-              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test network</a></li>
-            </ul>
-            <ul class="list-margin-left">
-              <!-- <li><a href="#" data-locale="h-foot-dev-txt5">Network Developer</a></li> -->
-              <!-- <li><a href="#" data-locale="h-foot-dev-txt6">Developer community</a></li> -->
             </ul>
           </section>
         </section>
 
-        <section class="foot-ec">
+        <section class="footer-ec">
           <h4 data-locale="h-foot-eco-tit">Ecological correlation </h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-               <!--<li><a href="https://gitter.im/grin_community/Lobby" target="_blank" data-locale="h-foot-eco-txt9">GITTER</a></li> -->
-              <li><a href="https://www.tokenholding.cn/" target="_blank" data-locale="h-foot-eco-txt10">Tokenholding</a></li>
-              <li><a href="https://www.secblock.io/" target="_blank" data-locale="h-foot-eco-txt11">Social Ecommerce Chain</a></li>
+              <li><a href="https://www.tokenholding.cn/" target="_blank" data-locale="h-foot-eco-txt1">Tokenholding</a>
+              </li>
+              <li><a href="https://www.secblock.io/" target="_blank" data-locale="h-foot-eco-txt2">Social Ecommerce
+                  Chain</a></li>
+              <li><a href="./dynamic.html" target="_blank" data-locale="h-foot-eco-txt3">Biut News</a></li>
+              <li><a href="./about.html" target="_blank" data-locale="h-foot-eco-txt4">About BIUT</a></li>
             </ul>
-            <!-- <ul>
-              <li><a href="#" data-locale="h-foot-eco-txt1">Tongzheng Holding</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt2">BIUT Foundation</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt3">Hualian Capital</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt4">Xinlian Block Chain Co., Ltd.</a></li>
-            </ul>
-            <ul class="list-margin-left">
-              <li><a href="#" data-locale="h-foot-eco-txt5">BIUT International Club</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt6">BIUT new developments</a></li>
-              <li><a href="https://gitter.im/grin_community/Lobby" target="_blank"
-                  data-locale="h-foot-eco-txt7">Gitter</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt8">About the project</a></li>
-            </ul> -->
           </section>
         </section>
 
-        <section class="last-section-cnt">
+        <section class="footer-last">
           <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
-          <section class="foot-list-img">
+          <section class="footer-last-list">
             <ul>
               <li id="biutWx" class="biutWx">
                 <img data-original="./images/index/weixin.png" id="biutWxImg" alt="WeChat" title="WeChat" />
@@ -592,9 +501,7 @@
             </ul>
           </section>
         </section>
-
       </section>
-
       <!-- <div id="main" class="echart-content"></div> -->
       <!-- footer 底部 -->
       <footer>

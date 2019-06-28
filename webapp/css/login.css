@@ -1,4 +1,21 @@
-.login-container {background: #68608D;height: 100vh;}
+.login-content {padding: 5rem  2.7rem 5.5rem;display: none;}
+h2 {font-size: 1.2rem;}
+.login-content h2 {padding-bottom: 1.7rem;}
 
-footer {position: fixed;bottom: 0;right: 0;left: 0;background:rgba(0,0,0,.1);color: #fff;font-size: .6rem;
-  height: 3rem;text-align: right;display: flex;align-items: center;justify-content: flex-end;padding-right: 1.7rem;}
+.public-flex-list input {background: none;border: 0;flex: 1;text-indent: 1.2rem;}
+.login-btn {color: #434561;margin: 2.4rem 0 1rem;}
+.create-list {display: flex;align-items: center;justify-content: space-between;}
+.create-list a {flex: 1;display: flex;align-items: center;justify-content: center;background: #45485A;
+  border: 0;}
+.create-list a:first-child {border-top-right-radius: 0;border-bottom-right-radius: 0;
+  border-right: .05rem solid rgba(169,169,181,1.5);box-sizing: border-box;font-size: .7rem;}
+.create-list a:last-child {border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.create-list a:hover {color: #fff;}
+
+
+.phone-content {padding: 3.5rem  2.7rem;}
+.phone-content h2 {padding: 0;}
+.phone-content p {padding: 1rem 0 1.4rem;color:rgba(255,255,255,.2);}
+
+.error-txt {width: 16.8rem;text-align: center;font-size: .6rem;padding-top: 1.4rem;}
+.error-txt span {display: block;line-height: 2;}

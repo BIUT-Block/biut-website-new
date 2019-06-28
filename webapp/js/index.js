@@ -6,60 +6,23 @@ $(function () {
     }, 3000)
   })
 
-  $("#biutWx").click(function () {
-    $('#biutWxActiveImg').slideDown();
-  }), $("#biutWxActiveImg").click(function (e) {
-    e.stopPropagation(),
-      $('#biutWxActiveImg').slideUp();
-  })
-  //微信图片hover效果
-  $('#biutWx').hover(function () {
-    $('#biutWxActiveImg').slideDown();
-    $('#biutWxImg').attr('src', '../images/index/weixins.png')
-  }, function () {
-    $('#biutWxActiveImg').slideUp();
-    $('#biutWxImg').attr('src', '../images/index/weixin.png')
-  })
-  //微博图片hover效果
-  $('#biutWb').mouseover(function () {
-    $('#biutWbImg').attr('src', '../images/index/weibos.png')
-  })
-  $('#biutWb').mouseout(function () {
-    $('#biutWbImg').attr('src', '../images/index/weibo.png')
+  $("#submitEmail").click(function () {
+    $(".toast-content").slideDown()
+    setTimeout(function () {
+      $(".toast-content").slideUp()
+    }, 3000)
   })
 
-  //推特图片hover效果
-  $('#biutTw').mouseover(function () {
-    $('#biutTwImg').attr('src', '../images/index/twiters.png')
-  })
-  $('#biutTw').mouseout(function () {
-    $('#biutTwImg').attr('src', '../images/index/twiter.png')
+  //更多项目
+  $("#projectMore").click(function(){
+    location.href='./pages/about.html';
   })
 
-  //plan图片hover效果
-  $('#biutPl').mouseover(function () {
-    $('#biutPlImg').attr('src', '../images/index/planes.png')
+  //更多新闻
+  $("#newsMore").click(function(){
+    location.href='/pages/dynamic.html';
   })
-  $('#biutPl').mouseout(function () {
-    $('#biutPlImg').attr('src', '../images/index/plane.png')
-  })
-
-  //facebooks图片hover效果
-  $('#biutFb').mouseover(function () {
-    $('#biutFbImg').attr('src', '../images/index/facebooks.png')
-  })
-  $('#biutFb').mouseout(function () {
-    $('#biutFbImg').attr('src', '../images/index/facebook.png')
-  })
-
-  //monkey图片hover效果
-  $('#biutMk').mouseover(function () {
-    $('#biutMkImg').attr('src', '../images/index/monkeys.png')
-  })
-  $('#biutMk').mouseout(function () {
-    $('#biutMkImg').attr('src', '../images/index/monkey.png')
-  })
-
+  
   //价格数据
   $("#btcPrice").html("-")
   $(".btcRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
@@ -418,16 +381,6 @@ function getConnection(num) {
     num = '0' + num;
   }
   return num;
-}
-
-//移动端
-function ismobile() {
-  var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
-  var ua = navigator.userAgent;
-  var res = mobileArry.filter(function (arr) {
-    return ua.indexOf(arr) > 0;
-  });
-  return res.length > 0;
 }
 
 //获取系统时间

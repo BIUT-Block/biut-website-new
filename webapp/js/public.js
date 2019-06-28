@@ -1,5 +1,4 @@
 $(function () {
-
   //点击切换中文
   $("#i18nZh").click(function () {
     sessionStorage.setItem("lang", 'zh');
@@ -8,6 +7,8 @@ $(function () {
     loadProperties('zh');
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
     getNes(0)
+    getMember(0)
+    getTimeList(0)
   })
 
   //点击切换英文
@@ -18,6 +19,8 @@ $(function () {
     loadProperties(' ');
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
     getNes(1)
+    getMember(1)
+    getTimeList(1)
   })
 
   //移动端导航栏
@@ -34,12 +37,16 @@ $(function () {
     $("#i18nEn").removeClass("check-color")
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
     getNes(0)
+    getMember(0)
+    getTimeList(0)
     loadProperties('zh')
   } else {
     $("#i18nZh").removeClass("check-color")
     $("#i18nEn").addClass("check-color")
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
     getNes(1)
+    getMember(1)
+    getTimeList(1)
     loadProperties(' ')
   }
 
@@ -56,6 +63,64 @@ $(function () {
 
   $("#closeMask").click(function () {
     $("#newsMask").css("display", "none")
+    $("body").removeClass('ov-h')
+  })
+
+  //微信图片点击效果
+  $("#biutWx").click(function(){
+    $('#biutWxActiveImg').slideDown();
+  }),$("#biutWxActiveImg").click(function(e){
+    e.stopPropagation(),
+    $('#biutWxActiveImg').slideUp();
+  })
+
+  //微信图片hover效果
+  $('#biutWx').hover(function () {
+    $('#biutWxActiveImg').slideDown();
+    $('#biutWxImg').attr('src', '../images/index/weixins.png')
+  }, function () {
+    $('#biutWxActiveImg').slideUp();
+    $('#biutWxImg').attr('src', '../images/index/weixin.png')
+  })
+
+  //微博图片hover效果
+  $('#biutWb').mouseover(function () {
+    $('#biutWbImg').attr('src', '../images/index/weibos.png')
+  })
+  $('#biutWb').mouseout(function () {
+    $('#biutWbImg').attr('src', '../images/index/weibo.png')
+  })
+
+  //推特图片hover效果
+  $('#biutTw').mouseover(function () {
+    $('#biutTwImg').attr('src', '../images/index/twiters.png')
+  })
+  $('#biutTw').mouseout(function () {
+    $('#biutTwImg').attr('src', '../images/index/twiter.png')
+  })
+
+  //plan图片hover效果
+  $('#biutPl').mouseover(function () {
+    $('#biutPlImg').attr('src', '../images/index/planes.png')
+  })
+  $('#biutPl').mouseout(function () {
+    $('#biutPlImg').attr('src', '../images/index/plane.png')
+  })
+
+  //facebooks图片hover效果
+  $('#biutFb').mouseover(function () {
+    $('#biutFbImg').attr('src', '../images/index/facebooks.png')
+  })
+  $('#biutFb').mouseout(function () {
+    $('#biutFbImg').attr('src', '../images/index/facebook.png')
+  })
+
+  //monkey图片hover效果
+  $('#biutMk').mouseover(function () {
+    $('#biutMkImg').attr('src', '../images/index/monkeys.png')
+  })
+  $('#biutMk').mouseout(function () {
+    $('#biutMkImg').attr('src', '../images/index/monkey.png')
   })
 
   $("img").lazyload({
@@ -64,16 +129,27 @@ $(function () {
     failure_limit: 20,
     skip_invisible: false
   });
+});
 
-  $(document).scroll(function () {
-    var scroH = $(document).scrollTop();  //滚动高度
-    let flg = ismobile()
-    if (scroH > 40) {  //距离顶部大于80px时
+$(window).scroll(function (event) {
+  var winTop = document.documentElement.scrollTop || document.body.scrollTop
+  var visualH = document.documentElement.clientHeight
+  var visualW = document.documentElement.clientWidth
+  let flg = ismobile()
+  if (flg) {
+    if (winTop > 40) {  //距离顶部大于40px时
       $('#header-nav').addClass('public-head-bg');
     } else {
       $('#header-nav').removeClass('public-head-bg');
     }
-  })
+  } else {
+    if (winTop > 80) {
+      $("#header-nav").fadeOut(1000)
+    } else {
+      $("#header-nav").fadeIn(1500)
+    }
+  }
+  
 });
 
 //获取新闻数据
@@ -170,9 +246,74 @@ function getNes(lang) {
   });
 }
 
+function getMember(lang) {
+  $.get("../data/member.json", function (data) {
+    $("#memberList").html("")
+    let item = data.list
+    var html = ""
+    if (lang == 0) {
+      for (var i = 1; i < item.length; i = i + 2) {
+        html += '<li class="col-md-3 col-sm-4 col-xs-6 wow bounceInUp"  data-wow-delay=' + .05 * i + 's>'
+          + '<figure>'
+          + '<img src="'+ item[i].img +'" alt="">'
+          + '<figcaption>'
+          + '<h4>'+ item[i].tit +'</h4>'
+          + '<p>'+ item[i].txt +'</p>'
+          + '</figcaption>'
+          + '</figure>'
+          + '</li>';
+      }
+    } else {
+      for (var k = 0; k < item.length; k = k + 2) {
+        html += '<li class="col-md-3 col-sm-4 col-xs-6 wow bounceInUp"  data-wow-delay=' + .05 * k + 's>'
+          + '<figure>'
+          + '<img src="'+ item[k].img +'" alt="">'
+          + '<figcaption>'
+          + '<h4>'+ item[k].tit +'</h4>'
+          + '<p>'+ item[k].txt +'</p>'
+          + '</figcaption>'
+          + '</figure>'
+          + '</li>'
+      }
+    }
+    $("#memberList").append(html);
+  })
+}
+
+function getTimeList(lang) {
+  $.get("../data/timeList.json", function (data) {
+    $("#timeList").html("")
+    let item = data.dateList
+    var html = ""
+    if (lang == 0) {
+      for (var i = 1; i < item.length; i = i + 2) {
+          html += '<li class="">'
+          + '<section>'
+          + '<p class="foot-history-time">'+ item[i].time +'</p>'
+          + '<p class="foot-history-txt">'+ item[i].version +'</p>'
+          + '<p class="foot-history-txt">'+ item[i].txt +'</p>'
+          + '</section>'
+          + '</li>'
+      }
+    } else {
+      for (var k = 0; k < item.length; k = k + 2) {
+        html += '<li class="">'
+          + '<section>'
+          + '<p class="foot-history-time">'+ item[k].time +'</p>'
+          + '<p class="foot-history-txt">'+ item[k].version +'</p>'
+          + '<p class="foot-history-txt">'+ item[k].txt +'</p>'
+          + '</section>'
+          + '</li>'
+      }
+    }
+    $("#timeList").append(html);
+  })
+}
+
 //查看新闻详情
 function newsDetails(params) {
   $("#newsMask").css("display", "block")
+  $("body").addClass('ov-h')
   $.ajax({
     url: 'https://biut.io:18080/api/v0/content/getContent?id=' + params,
     type: 'GET',
@@ -189,14 +330,29 @@ function newsDetails(params) {
       $("#reading").html(clickNum)
       $("#newsTime").html(newsTime)
       $("#newsContent").html(commentsHTML)
-
-      $("#newsMask img").each(function () {
+      $("#newsMaskContent img").each(function () {
         let imgUrl = $(this).attr("src")
         $(this).attr("src", `http://biut.io:8080` + imgUrl)
       })
     }
   });
 }
+
+var ModalHelper = (function (bodyCls) {
+  var scrollTop;
+  return {
+      afterOpen: function () {
+          scrollTop = document.scrollingElement.scrollTop;
+          document.body.classList.add(bodyCls);
+          document.body.style.top = -scrollTop + 'px';
+      },
+      beforeClose: function () {
+          document.body.classList.remove(bodyCls);
+          document.scrollingElement.scrollTop = scrollTop;
+      }
+  };
+})('modal-open');
+
 
 new WOW().init();
 
@@ -210,7 +366,7 @@ window.onresize = function temp() {
   }
 }
 
-//移动端
+//移动端的时候会
 function ismobile() {
   var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
   var ua = navigator.userAgent;

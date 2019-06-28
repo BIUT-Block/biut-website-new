@@ -11,8 +11,10 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <meta name="Keywords" content="" />
-  <meta name="Description" content="" />
+  <meta name="Keywords" content="比特信任系统、BIUT、BIU，加密货币、信任共识、ICO、信任算法、区块链3.0、PC-miner、Permissionless trust" />
+  <meta name="Description"
+    content="比特信任系统是一种新的分布式信任系统，是第一个建立账户间基于系统信任的区块链网络，专注于互联网用户安全的进行去中心化交易和协作，为开发者、商家和互联网用户打开数字经济大门的钥匙" />
+
 
   <link rel="shortcut icon" href="../static/favicon.ico">
   <!--[if lt IE 9]>
@@ -27,13 +29,13 @@
 	        document.execCommand("Stop");
 	    </script>
   <![endif]-->
-  <title>BIUT-社交电子商务链</title>
+  <title data-locale="currentTitle">Bit Trust System</title>
   <link href="../dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/animate.css" rel="stylesheet">
   <link href="../css/reset.css" rel="stylesheet">
   <link href="../css/swiper.min.css" rel="stylesheet">
   <link href="../css/public.css" rel="stylesheet">
   <link href="../css/dynamic.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -43,43 +45,54 @@
     </span>
   </section>
 
+  <!-- 头部导航 -->
+  <header class="public-head" id="header-nav">
+    <!-- logo -->
+    <figure id="toggle-head">
+      <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
+      <figcaption id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </figcaption>
+    </figure>
+
+    <!-- nav导航条 -->
+    <nav id="tabNav">
+      <ul>
+        <li>
+          <a href="../index.html" data-locale="nav-home">Home</a>
+        </li>
+        <li>
+          <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf" class="whitepaper"
+            target="_blank" data-locale="h-banner-list-txt2">WhitePaper</a>
+        </li>
+        <li>
+          <a href="http://scan.biut.io/" target="_blank" data-locale="nav-explorer">Explorer</a>
+        </li>
+        <li>
+          <a href="about.html" data-locale="nav-about">About</a>
+        </li>
+        <li class="check-color check-img">
+          <img src="../images/index/nav-check.png" alt="">
+          <span data-locale="nav-dynamic">dynamic</span>
+        </li>
+        <li>
+           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
+        </li>
+
+        <li>
+          <span id="i18nZh"> 中文 </span>
+          <span class="head-line"> / </span>
+          <span id="i18nEn"> EN </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- 网页前部分内容 -->
   <main class="dynamic-container">
-    <!-- 头部导航 -->
-    <header class="public-head">
-      <!-- logo -->
-      <figure>
-        <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
-      </figure>
-
-      <!-- nav导航条 -->
-      <nav>
-        <ul>
-          <li>
-            <a href="../index.html" data-locale="nav-home">Home</a>
-          </li>
-          <li>
-            <a href="about.html" data-locale="nav-about">About</a>
-          </li>
-          <li class="check-color check-img">
-            <img src="../images/index/nav-check.png" alt="">
-            <span data-locale="nav-dynamic">Dynamic</span>
-          </li>
-          <li>
-            <a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="nav-gitter">Gitter</a>
-          </li>
-          <li class="login">
-            <a href="login.html" data-locale="nav-login">登陆</a>
-          </li>
-          <li>
-            <span id="i18nZh"> 中文 </span>
-            <span class="head-line"> / </span>
-            <span id="i18nEn" class="check-color"> EN </span>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
+    <!-- swiper 轮播图 -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" style="background: #3F4156">
@@ -121,48 +134,50 @@
         <!-- 功能 子导航栏 -->
         <article class="public-title">
           <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New dynamics</h3>
-          <!-- <figure>
-                    <figcaption data-locale="more">
-                      understand more
-                    </figcaption>
-                    <img data-original="./images/index/more.png" alt="BIUT-more" title="more">
-                  </figure> -->
         </article>
 
         <ul class="row" id="newsList"></ul>
 
         <!-- 新闻mask -->
-        <article id="newsMask" class="mask">
+        <article class="mask-hidden" id="newsMask">
           <section class="news-mask">
-            <section class="news-mask-content">
-              <span class="mask-close" id="closeMask">X</span>
+            <section class="left-container">
+              <img src="../images/dynamic/prevImg.png" alt="" id="prevNews" />
+            </section>
+            <aside class="container news-container news-mask-content" id="newsMaskContent">
+              <!-- 标题 -->
               <section class="news-mask-title">
                 <h5 id="newsTitle"></h5>
                 <section class="news-mask-list">
-                  <section>
-                    <span>阅读量</span>
+                  <section class="news-mask-read">
+                    <span data-locale="h-dyc-readNumber">Reading</span>
                     <span id="reading"></span>
                   </section>
                   <time id="newsTime"></time>
                 </section>
               </section>
-
+              <!-- 内容 -->
               <section class="news-mask-cnt" id="newsContent"></section>
+            </aside>
+            <section class="right-container">
+              <img src="../images/close.png" alt="" class="close-img" id="closeMask" />
+              <img src="../images/dynamic/nextImg.png" alt="" id="nextNews" />
             </section>
           </section>
         </article>
+
       </section>
     </main>
   </main>
 
-
-  <main class="footer">
+  <main class="public-footer">
     <section class="container">
       <!-- 新闻列表 -->
       <section class="foot-news">
-        <section class="foot-news-head">
-          <h2>New dynamics</h2>
-        </section>
+        <!-- 功能 子导航栏 -->
+        <article class="public-title">
+          <h3 data-locale="h-dyc-tit" class="wow titanimate" data-wow-delay=".5s">New dynamics</h3>
+        </article>
         <ul>
           <li>
             <section class="foot-news-tit">
@@ -182,93 +197,83 @@
         </ul>
 
         <section class="foot-news-more">
-          <figure>
+          <figure id="newsMore">
             <figcaption>understand more</figcaption>
-            <img src="../images/about/memberMore.png" alt="">
+            <img data-original="../images/index/more.png" alt="BIUT-more" title="more">
           </figure>
         </section>
       </section>
 
-      <!-- 底部内容 -->
-      <section class="about-list about-footer-list">
+      <!-- 底部链接 -->
+      <section class="footer-list">
+
         <section>
           <h4 data-locale="h-foot-proj-tit">Product</h4>
           <ul>
-            <li><a href="#" data-locale="h-foot-proj-txt1">DApp</a></li>
-            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt2">Wallet</a>
+            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt">Wallet</a>
             </li>
-            <li><a href="#" data-locale="h-foot-proj-txt3">Mining tool</a></li>
           </ul>
         </section>
 
-        <section class="foot-dev">
+        <section class="footer-dev">
           <h4 data-locale="h-foot-dev-tit">Developer</h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-              <li><a href="#" data-locale="h-foot-dev-txt1">Development tool documentation</a></li>
-              <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a>
+              <li><a href="https://www.npmjs.com/org/sec-block" target="_blank" data-locale="h-foot-dev-txt1">npm</a>
               </li>
-              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain browser</a>
+              <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a></li>
+              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain Browser</a>
+              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test Network
+                  Development</a></li>
               </li>
-            </ul>
-            <ul class="list-margin-left">
-              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test network</a></li>
-              <li><a href="#" data-locale="h-foot-dev-txt5">Network Developer</a></li>
-              <li><a href="#" data-locale="h-foot-dev-txt6">Developer community</a></li>
             </ul>
           </section>
         </section>
 
-        <section class="foot-ec">
+        <section class="footer-ec">
           <h4 data-locale="h-foot-eco-tit">Ecological correlation </h4>
-          <section class="foot-list">
+          <section class="footer-flex">
             <ul>
-              <li><a href="#" data-locale="h-foot-eco-txt1">Tongzheng Holding</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt2">BIUT Foundation</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt3">Hualian Capital</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt4">Xinlian Block Chain Co., Ltd.</a></li>
-            </ul>
-            <ul class="list-margin-left">
-              <li><a href="#" data-locale="h-foot-eco-txt5">BIUT International Club</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt6">BIUT new developments</a></li>
-              <li><a href="https://gitter.im/grin_community/Lobby" target="_blank"
-                  data-locale="h-foot-eco-txt7">Gitter</a></li>
-              <li><a href="#" data-locale="h-foot-eco-txt8">About the project</a></li>
+              <li><a href="https://www.tokenholding.cn/" target="_blank" data-locale="h-foot-eco-txt1">Tokenholding</a>
+              </li>
+              <li><a href="https://www.secblock.io/" target="_blank" data-locale="h-foot-eco-txt2">Social Ecommerce
+                  Chain</a></li>
+              <li><a href="dynamic.html" target="_blank" data-locale="h-foot-eco-txt3">Biut News</a></li>
+              <li><a href="about.html" target="_blank" data-locale="h-foot-eco-txt4">About BIUT</a></li>
             </ul>
           </section>
         </section>
 
-        <section class="last-section-cnt">
+
+        <section class="footer-last">
           <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
-          <section class="foot-list last-foot-list">
+          <section class="footer-last-list">
             <ul>
               <li id="biutWx" class="biutWx">
-                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="微信公众号" title="微信公众号" />
+                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="WeChat" title="WeChat" />
                 <img src="../images/index/publicNumer.png" id="biutWxActiveImg" class="wxActive" alt="weixin"
-                  title="微信公众号" />
+                  title="WeChat" />
               </li>
-              <li id="biutWb">
-                <a href="https://weibo.com/SECblock" target="_blank">
-                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="新浪微博" title="新浪微博" />
-                </a>
-              </li>
-            </ul>
-            <ul>
               <li id="biutTw">
                 <a href="https://twitter.com/BIUTblock" target="_blank">
                   <img data-original="../images/index/twiter.png" id="biutTwImg" alt="twiter" title="Twiter" />
                 </a>
               </li>
-              <li id="biutPl">
-                <a href="https://t.me/joinchat/HszzcUiWaWtR5pPmOhDPwg" target="_blank">
-                  <img data-original="../images/index/plane.png" id="biutPlImg" alt="telegram" title="Telegram" />
+              <li id="biutFb">
+                <a href="https://www.facebook.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
                 </a>
               </li>
             </ul>
             <ul>
-              <li id="biutFb">
-                <a href="https://www.facebook.com/BIUTblock" target="_blank">
-                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
+              <li id="biutWb">
+                <a href="https://weibo.com/SECblock" target="_blank">
+                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="MicroBlog" title="MicroBlog" />
+                </a>
+              </li>
+              <li id="biutPl">
+                <a href="https://t.me/joinchat/HszzcUiWaWtR5pPmOhDPwg" target="_blank">
+                  <img data-original="../images/index/plane.png" id="biutPlImg" alt="telegram" title="Telegram" />
                 </a>
               </li>
               <li id="biutMk">
@@ -279,9 +284,7 @@
             </ul>
           </section>
         </section>
-
       </section>
-
       <!-- <div id="main" class="echart-content"></div> -->
       <!-- footer 底部 -->
       <footer>
@@ -298,19 +301,6 @@
 <script src="../dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    pagination: '.swiper-pagination',
-    paginationClickable: true,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    parallax: true,
-    speed: 600,
-    //grabCursor : true,
-    loop: true,
-    autoplay: 3000,
-    autoplayDisableOnInteraction: false,
-  });
-</script>
+<script src="../js/dynamic.js"></script>
 
 </html>

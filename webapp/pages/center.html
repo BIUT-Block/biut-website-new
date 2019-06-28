@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="Keywords" content="比特信任系统、BIUT、BIU，加密货币、信任共识、ICO、信任算法、区块链3.0、PC-miner、Permissionless trust" />
+  <meta name="Description"
+    content="比特信任系统是一种新的分布式信任系统，是第一个建立账户间基于系统信任的区块链网络，专注于互联网用户安全的进行去中心化交易和协作，为开发者、商家和互联网用户打开数字经济大门的钥匙" />
+
+
+  <link rel="shortcut icon" href="../static/favicon.ico">
+  <!--[if lt IE 9]>
+	    <script type="text/javascript">
+	        var str = "您的浏览器版本太低了 :(";
+	        var str2 = "推荐使用:<a href='https://www.baidu.com/s?ie=UTF-8&wd=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8' target='_blank' style='color:blue;'>谷歌</a>,"
+	                + "<a href='https://www.baidu.com/s?ie=UTF-8&wd=%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8' target='_blank' style='color:blue;'>火狐</a>,"
+	                + "其他双核极速模式";
+	        document.writeln("<pre style='text-align:center;color:#fff;background-color:#0088ff; height:100%;border:0;position:fixed;top:0;left:0;width:100%;z-index:1234'>" +
+	                "<h2 style='padding-top:200px;margin:0;line-height:30px'><strong>" + str + "<br/></strong></h2><h2>" +
+	                str2 + "</h2><h2 style='margin:0'><strong>如果您的使用的是双核浏览器,请切换到极速模式访问<br/></strong></h2></pre>");
+	        document.execCommand("Stop");
+	    </script>
+  <![endif]-->
+  <title data-locale="currentTitle">Bit Trust System</title>
+  <link href="../dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="../css/reset.css" rel="stylesheet">
+  <link href="../css/public.css" rel="stylesheet">
+  <link href="../css/center.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <section class="zoom-message" id="zoomMessage">
+    <span data-locale="zoom">
+      Your browser is currently zoomed, and the page may be misplaced. It is recommended to display 100% size.
+    </span>
+  </section>
+
+  <!-- 头部导航 -->
+  <header class="public-head" id="header-nav">
+    <!-- logo -->
+    <figure id="toggle-head">
+      <img src="../images/nav-logo.png" alt="BIUT" title="BIUT">
+      <figcaption id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </figcaption>
+    </figure>
+
+    <!-- nav导航条 -->
+    <nav id="tabNav">
+      <ul>
+        <li>
+          <a href="../index.html" data-locale="nav-home">Home</a>
+        </li>
+        <li>
+          <a href="https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf" class="whitepaper"
+            target="_blank" data-locale="h-banner-list-txt2">WhitePaper</a>
+        </li>
+        <li>
+          <a href="http://scan.biut.io/" target="_blank" data-locale="nav-explorer">Explorer</a>
+        </li>
+        <li>
+          <a href="about.html" data-locale="nav-about">About</a>
+        </li>
+        <li>
+          <a href="dynamic.html" data-locale="nav-dynamic">Dynamic</a>
+        </li>
+        <li>
+          <a href="dapp.html" data-locale="nav-dapp">DApp</a>
+        </li>
+        <li class="login">
+          <a href="login.html" data-locale="nav-login">登陆</a>
+        </li>
+        <li>
+          <span id="i18nZh"> 中文 </span>
+          <span class="head-line"> / </span>
+          <span id="i18nEn"> EN </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 网页前部分内容 -->
+  <main class="cneter-container">
+    <main class="container center-content">
+      <section class="center-flex">
+        <section class="center-left">
+          <h4 data-locale="c-left-tit">个人中心</h4>
+          <ul class="left-list1">
+            <li><img src="../images/center/centerImg1.png" alt=""></li>
+            <li>张智超</li>
+            <li>139234567835</li>
+          </ul>
+
+          <ul class="left-list2">
+            <li class="active-list">
+              <img src="../images/index/nav-check.png" alt="">
+              <span data-locale="c-left-txt1">账户中心</span>
+            </li>
+            <li>
+              <img src="../images/index/nav-check.png" alt="">
+              <span data-locale="c-left-txt2">基本资料</span>
+            </li>
+            <li>
+              <img src="../images/index/nav-check.png" alt="">
+              <span data-locale="c-left-txt3">网站信息</span>
+            </li>
+            <li>
+              <img src="../images/index/nav-check.png" alt="">
+              <span data-locale="c-left-txt4">榜上有名</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 修改头像内容 -->
+        <section class="center-update center-flex">
+          <!-- 修改头像 -->
+          <section class="center-center">
+            <h4 data-locale="c-center-tit">修改头像</h4>
+            <p data-locale="c-center-txt">支持jpg、jpeg、gif、png、bmp格式的图片</p>
+            <section class="center-btn-list">
+              <section class="upload-button">
+                <img src="../images/confirmPhoto/uploadImg1.png" alt="">
+                <span data-locale="c-center-upload">选择你要上传的头像</span>
+                <input type="file" id="uploadBtn1" />
+              </section>
+              <button type="button" class="public-btn center-btn" data-locale="c-center-reset-btn">重新上传</button>
+            </section>
+
+            <section class="default-img">
+              <img src="../images/confirmPhoto/topLeft.png" class="topLeft">
+              <img src="../images/confirmPhoto/bottomLeft.png" class="bottomLeft">
+              <img src="../images/confirmPhoto/topRight.png" class="topRight">
+              <img src="../images/confirmPhoto/bottomRight.png" class="bottomRight">
+            </section>
+
+            <button type="button" class="public-btn center-btn" data-locale="c-center-save-btn">保存</button>
+            <h5 data-locale="c-center-head">推荐头像</h5>
+            <ul>
+              <li><img src="../images/center/listImg1.png" alt=""></li>
+              <li><img src="../images/center/listImg2.png" alt=""></li>
+              <li><img src="../images/center/listImg3.png" alt=""></li>
+              <li><img src="../images/center/listImg2.png" alt=""></li>
+              <li><img src="../images/center/listImg1.png" alt=""></li>
+            </ul>
+          </section>
+          <!-- 效果预览 -->
+          <section class="center-right">
+            <h4 data-locale="c-right-tit">效果预览</h4>
+            <ul>
+              <li data-locale="c-right-txt">你上传的图片会自动生成2种尺寸,请注意小尺寸的头像是否清晰</li>
+              <li>
+                <figure>
+                  <img src="../images/center/centerImg2.png" alt="">
+                  <figcaption data-locale="c-right-img1">
+                    100 x 100像素
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="../images/center/centerImg2.png" alt="">
+                  <figcaption data-locale="c-right-img2">
+                    65 x 65像素
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- 我的上榜信息，还没有申请 -->
+        <section class="center-begin center-info">
+          <h4 data-locale="c-info-tit">我的上榜信息</h4>
+          <!-- 开始申请 -->
+          <section class="info-none center-info-bg">
+            <button type="button" class="public-btn" data-locale="c-info-no-txt1">申请榜上有名</button>
+            <p data-locale="c-info-no-txt2">申请成功后，你的个人信息将会显示在网站中让更多的人看到</p>
+          </section>
+        </section>
+
+        <!-- 我的上榜信息，申请中、申请失败 -->
+        <section class="center-ongoing center-info">
+          <h4 data-locale="c-info-tit">我的上榜信息</h4>
+          <!-- 申请中的状态查询 -->
+          <section class="info-contetn center-info-bg">
+            <section class="ongoing-list">
+              <button type="button" class="public-btn error-btn" data-locale="c-info-go">进行中</button>
+              <span data-locale="c-info-no-txt2">申请成功后，你的个人信息将会显示在网站中让更多的人看到</span>
+            </section>
+            <button type="button" class="public-btn error-btn" data-locale="c-info-error">申请失败</button>
+
+            <p class="info-txt1" data-locale="c-info-session">申请信息</p>
+            <figure class="mask-head">
+              <img src="../images/about/maskHead.png" id="maskHead" alt="">
+              <figcaption>
+                <span data-locale="a-mask-name">昵称</span>
+                <span id="maskName">张智超</span>
+              </figcaption>
+            </figure>
+            <p class="info-txt2" data-locale="a-mask-txt2">上榜理由</p>
+            <section class="info-txt-list center-info-bg"></section>
+            <section>
+              <span class="public-white" data-locale="c-info-begin-time">申请时间</span>
+              <span class="info-txt3">2019/02/11 15:27:30</span>
+            </section>
+            <section class="info-top">
+              <span class="public-white" data-locale="c-info-end-time">申请结果时间</span>
+              <span class="info-txt3 public-red">2019/02/11 15:27:30</span>
+            </section>
+            <button type="button" class="public-btn reset-btn" data-locale="c-info-reset-btn">重新申请</button>
+          </section>
+        </section>
+
+        <!-- 申请成功 -->
+        <section class="center-success center-info">
+          <h4 data-locale="c-info-tit">我的上榜信息</h4>
+          <section class="success-content info-contetn center-info-bg">
+            <button type="button" class="public-btn success-btn" data-locale="c-info-success">申请成功</button>
+            <section class="success-txt">
+              <span data-locale="a-mask-txt2">上榜理由</span>
+              <span id="editTxt" data-locale="c-info-edit">重新编辑</span>
+            </section>
+            <textarea id="editContent" readonly cols="30" rows="10" class="info-txt-list center-info-bg"></textarea>
+            <ul>
+              <li>
+                <p class="public-white" data-locale="c-info-ranking">我的排名</p>
+                <figure>
+                  <img src="../images/center/rising.png" alt="">
+                  <figcaption class="txt">
+                    10
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <p class="public-white" data-locale="a-h-time-txt1">时间</p>
+                <span class="txt">2019/02/11 15:27:30</span>
+              </li>
+              <li>
+                <button type="button" class="public-btn" data-locale="c-info-goLoook">去官网查看</button>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- 基础信息 -->
+        <section class="center-info center-basis">
+          <h4 data-locale="c-basis-tit">基础信息</h4>
+          <section class="basis-content center-info-bg">
+            <section class="basis-head">
+              <figure>
+                <img src="../images/center/center-head.png" alt="">
+                <figcaption>
+                  <section class="basis-list1">
+                    <section>
+                      <span data-locale="kyc-from-name">用户名</span>
+                      <span class="public-f">TEST123456</span>
+                    </section>
+                    <section>
+                      <span class="l-s" data-locale="a-mask-name">昵称</span>
+                      <span class="public-white">张智超</span>
+                      <span class="public-blur" data-locale="c-basis-update-txt">修改昵称</span>
+                    </section>
+                  </section>
+                  <section class="basis-list2">
+                    <section>
+                      <span class="l-s" data-locale="kyc-from-time">注册时间</span>
+                      <span class="public-f public-white">2019-01-22</span>
+                    </section>
+                    <section>
+                      <span data-locale="kyc-from-card">绑定手机号码</span>
+                      <span class="public-f public-white">139234567835</span>
+                    </section>
+                  </section>
+                </figcaption>
+              </figure>
+            </section>
+            <h5 data-locale="c-basis-service">安全服务</h5>
+            <ul>
+              <li>
+                <figure>
+                  <img src="../images/center/successImg.png" alt="">
+                  <figcaption class="public-white" data-locale="c-base-success">
+                    已完成
+                  </figcaption>
+                </figure>
+                <span data-locale="c-base-kyc">KYC验证</span>
+                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                <span class="public-blur" data-locale="c-base-look">查看</span>
+              </li>
+              <li>
+                <figure>
+                  <img src="../images/center/errorImg.png" alt="">
+                  <figcaption class="public-white" data-locale="c-base-error">
+                      校验失败
+                  </figcaption>
+                </figure>
+                <span data-locale="c-base-kyc">KYC验证</span>
+                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                <span class="public-blur" data-locale="c-base-going">重新校验</span>
+              </li>
+              <li>
+                <figure>
+                  <img src="../images/center/goImg.png" alt="">
+                  <figcaption class="public-white" data-locale="c-base-go">
+                      校验中
+                  </figcaption>
+                </figure>
+                <span data-locale="c-base-kyc">KYC验证</span>
+                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                <span class="public-blur" data-locale="c-base-look">查看</span>
+              </li>
+              <li>
+                <figure>
+                  <img src="../images/center/noImg.png" alt="">
+                  <figcaption class="public-white" data-locale="c-base-no">
+                      未校验
+                  </figcaption>
+                </figure>
+                <span data-locale="c-base-kyc">KYC验证</span>
+                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                <span class="public-blur" data-locale="c-base-gos">校验</span>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </main>
+  </main>
+
+  <main class="public-footer">
+    <section class="container">
+      <!-- 底部链接 -->
+      <section class="footer-list">
+
+        <section>
+          <h4 data-locale="h-foot-proj-tit">Product</h4>
+          <ul>
+            <li><a href="http://wallet.biut.io/#/createWallet" target="_blank" data-locale="h-foot-proj-txt">Wallet</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer-dev">
+          <h4 data-locale="h-foot-dev-tit">Developer</h4>
+          <section class="footer-flex">
+            <ul>
+              <li><a href="https://www.npmjs.com/org/sec-block" target="_blank" data-locale="h-foot-dev-txt1">npm</a>
+              </li>
+              <li><a href="https://github.com/BIUT-Block" target="_blank" data-locale="h-foot-dev-txt2">GitHub</a></li>
+              <li><a href="http://scan.biut.io/" target="_blank" data-locale="h-foot-dev-txt3">Blockchain Browser</a>
+              <li><a href="http://test.biut.io/" target="_blank" data-locale="h-foot-dev-txt4">Test Network
+                  Development</a></li>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="footer-ec">
+          <h4 data-locale="h-foot-eco-tit">Ecological correlation </h4>
+          <section class="footer-flex">
+            <ul>
+              <li><a href="https://www.tokenholding.cn/" target="_blank" data-locale="h-foot-eco-txt1">Tokenholding</a>
+              </li>
+              <li><a href="https://www.secblock.io/" target="_blank" data-locale="h-foot-eco-txt2">Social Ecommerce
+                  Chain</a></li>
+              <li><a href="dynamic.html" target="_blank" data-locale="h-foot-eco-txt3">Biut News</a></li>
+              <li><a href="about.html" target="_blank" data-locale="h-foot-eco-txt4">About BIUT</a></li>
+            </ul>
+          </section>
+        </section>
+
+
+        <section class="footer-last">
+          <h4 data-locale="h-foot-focus-tit">Focus on BIUT</h4>
+          <section class="footer-last-list">
+            <ul>
+              <li id="biutWx" class="biutWx">
+                <img data-original="../images/index/weixin.png" id="biutWxImg" alt="WeChat" title="WeChat" />
+                <img src="../images/index/publicNumer.png" id="biutWxActiveImg" class="wxActive" alt="weixin"
+                  title="WeChat" />
+              </li>
+              <li id="biutTw">
+                <a href="https://twitter.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/twiter.png" id="biutTwImg" alt="twiter" title="Twiter" />
+                </a>
+              </li>
+              <li id="biutFb">
+                <a href="https://www.facebook.com/BIUTblock" target="_blank">
+                  <img data-original="../images/index/facebook.png" id="biutFbImg" alt="facebook" title="Facebook" />
+                </a>
+              </li>
+            </ul>
+            <ul>
+              <li id="biutWb">
+                <a href="https://weibo.com/SECblock" target="_blank">
+                  <img data-original="../images/index/weibo.png" id="biutWbImg" alt="MicroBlog" title="MicroBlog" />
+                </a>
+              </li>
+              <li id="biutPl">
+                <a href="https://t.me/joinchat/HszzcUiWaWtR5pPmOhDPwg" target="_blank">
+                  <img data-original="../images/index/plane.png" id="biutPlImg" alt="telegram" title="Telegram" />
+                </a>
+              </li>
+              <li id="biutMk">
+                <a href="https://www.reddit.com/user/SECblock" target="_blank">
+                  <img data-original="../images/index/monkey.png" id="biutMkImg" alt="reddit" title="Reddit" />
+                </a>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </section>
+      <!-- footer 底部 -->
+      <footer>
+        <p>COPYRIGHT © 2017 BIUT TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.</p>
+      </footer>
+    </section>
+  </main>
+
+</body>
+<script src="../dist/jq/jquery-3.4.1.min.js"></script>
+<script src="../dist/wow/wow.js"></script>
+<script src="../dist/jq/jquery.lazyload.min.js"></script>
+<script src="../dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/center.js"></script>
+
+</html>
