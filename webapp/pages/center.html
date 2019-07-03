@@ -78,6 +78,11 @@
         <li>
           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
         </li>
+        <li class="headerImg">
+          <a href="center.html">
+            <img src="../images/header.png" alt="" class="header-img">
+          </a>
+        </li>
         <li class="login">
           <a href="login.html" data-locale="nav-login">登陆</a>
         </li>
@@ -102,7 +107,7 @@
             <li>139234567835</li>
           </ul>
 
-          <ul class="left-list2">
+          <ul class="left-list2" id="dataNavList">
             <li class="active-list">
               <img src="../images/index/nav-check.png" alt="">
               <span data-locale="c-left-txt1">账户中心</span>
@@ -123,7 +128,7 @@
         </section>
 
         <!-- 修改头像内容 -->
-        <section class="center-update center-flex">
+        <section class="center-update center-flex" id="centerUpdate">
           <!-- 修改头像 -->
           <section class="center-center">
             <h4 data-locale="c-center-tit">修改头像</h4>
@@ -180,7 +185,7 @@
         </section>
 
         <!-- 我的上榜信息，还没有申请 -->
-        <section class="center-begin center-info">
+        <section class="center-begin center-info" id="noApply">
           <h4 data-locale="c-info-tit">我的上榜信息</h4>
           <!-- 开始申请 -->
           <section class="info-none center-info-bg">
@@ -190,7 +195,7 @@
         </section>
 
         <!-- 我的上榜信息，申请中、申请失败 -->
-        <section class="center-ongoing center-info">
+        <section class="center-ongoing center-info" id="applyFailure">
           <h4 data-locale="c-info-tit">我的上榜信息</h4>
           <!-- 申请中的状态查询 -->
           <section class="info-contetn center-info-bg">
@@ -223,7 +228,7 @@
         </section>
 
         <!-- 申请成功 -->
-        <section class="center-success center-info">
+        <section class="center-success center-info" id="applySuccess">
           <h4 data-locale="c-info-tit">我的上榜信息</h4>
           <section class="success-content info-contetn center-info-bg">
             <button type="button" class="public-btn success-btn" data-locale="c-info-success">申请成功</button>
@@ -254,7 +259,7 @@
         </section>
 
         <!-- 基础信息 -->
-        <section class="center-info center-basis">
+        <section class="center-info center-basis" id="centerBasis">
           <h4 data-locale="c-basis-tit">基础信息</h4>
           <section class="basis-content center-info-bg">
             <section class="basis-head">
@@ -302,7 +307,7 @@
                 <figure>
                   <img src="../images/center/errorImg.png" alt="">
                   <figcaption class="public-white" data-locale="c-base-error">
-                      校验失败
+                    校验失败
                   </figcaption>
                 </figure>
                 <span data-locale="c-base-kyc">KYC验证</span>
@@ -313,7 +318,7 @@
                 <figure>
                   <img src="../images/center/goImg.png" alt="">
                   <figcaption class="public-white" data-locale="c-base-go">
-                      校验中
+                    校验中
                   </figcaption>
                 </figure>
                 <span data-locale="c-base-kyc">KYC验证</span>
@@ -324,7 +329,7 @@
                 <figure>
                   <img src="../images/center/noImg.png" alt="">
                   <figcaption class="public-white" data-locale="c-base-no">
-                      未校验
+                    未校验
                   </figcaption>
                 </figure>
                 <span data-locale="c-base-kyc">KYC验证</span>

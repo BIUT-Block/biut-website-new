@@ -13,10 +13,12 @@ html, body {position: relative;height: 100%;}
 .dynamic-container {height: 26rem;}
 .public-title {border-color: #00D69B;}
 
-.news-list-bg {padding: 8.9rem 0;background: url('../images/dynamic/dynamicListBg.png') no-repeat center;
+.news-list-bg {padding: 9.6rem 0 8.5rem;background: url('../images/dynamic/dynamicListBg.png') no-repeat center;
   background-size: cover;}
 .news-list-bg .new-dynamics {margin-top: 0;}
 .news-list-bg .new-dynamics ul li figure {background: #3F4156;}
+
+.new-dynamics ul li {padding:0;}
 
 .foot-news {padding: 8rem 0 9.25rem;color: #fff;}
 .foot-news ul li {padding: 2.2rem 0 2.5rem;border-bottom: 1px solid rgba(227,227,227,.5);}

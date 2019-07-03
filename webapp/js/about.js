@@ -58,4 +58,6 @@ $(function () {
 function closeMask() {
   $("#aboutMask").css("display", "none")
   $("body").removeClass('ov-h')
+  $("#iptReason").val("")
+  $("#iptLength").text('0')
 }

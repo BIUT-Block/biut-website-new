@@ -1,4 +1,9 @@
 $(function () {
+  let sts = sessionStorage.getItem("status");
+  if (sts == 1) {
+    $(".headerImg").css("display","block")
+    $(".login").css("display","none")
+  }
   //点击切换中文
   $("#i18nZh").click(function () {
     sessionStorage.setItem("lang", 'zh');
@@ -9,6 +14,7 @@ $(function () {
     getNes(0)
     getMember(0)
     getTimeList(0)
+    getDateilsTime(0, 0)
   })
 
   //点击切换英文
@@ -21,6 +27,7 @@ $(function () {
     getNes(1)
     getMember(1)
     getTimeList(1)
+    getDateilsTime(0, 1)
   })
 
   //移动端导航栏
@@ -39,6 +46,7 @@ $(function () {
     getNes(0)
     getMember(0)
     getTimeList(0)
+    getDateilsTime(0, 0)
     loadProperties('zh')
   } else {
     $("#i18nZh").removeClass("check-color")
@@ -47,6 +55,7 @@ $(function () {
     getNes(1)
     getMember(1)
     getTimeList(1)
+    getDateilsTime(0, 1)
     loadProperties(' ')
   }
 
@@ -67,11 +76,11 @@ $(function () {
   })
 
   //微信图片点击效果
-  $("#biutWx").click(function(){
+  $("#biutWx").click(function () {
     $('#biutWxActiveImg').slideDown();
-  }),$("#biutWxActiveImg").click(function(e){
+  }), $("#biutWxActiveImg").click(function (e) {
     e.stopPropagation(),
-    $('#biutWxActiveImg').slideUp();
+      $('#biutWxActiveImg').slideUp();
   })
 
   //微信图片hover效果
@@ -123,12 +132,36 @@ $(function () {
     $('#biutMkImg').attr('src', '../images/index/monkey.png')
   })
 
+  //懒加载
   $("img").lazyload({
     threshold: 200,
     effect: "fadeIn",
     failure_limit: 20,
     skip_invisible: false
   });
+
+  //时间列表
+  $("#timeLists li").click(function () {
+    $(this).siblings().removeClass("time-check").find("img").attr("src", "../images/about/aboutRs.png")
+    $("#timeLists").children(":first").find("img").attr("src", "../images/about/aboutR.png")
+    $(this).addClass("time-check").find("img").attr("src", "../images/about/aboutC.png")
+    let idx = $(this).index()
+    let lang = 1
+    if (sessionStorage.getItem("lang") == "zh") {
+      lang = 0
+    }
+    getDateilsTime(idx, lang)
+  })
+
+  //点击上一页
+  $("#prevNews").click(function(){
+    alert("点击了上一页")
+  })
+
+  //点击下一页
+  $("#nextNews").click(function(){
+    alert("点击了下一页")
+  })
 });
 
 $(window).scroll(function (event) {
@@ -144,12 +177,12 @@ $(window).scroll(function (event) {
     }
   } else {
     if (winTop > 80) {
-      $("#header-nav").fadeOut(1000)
+      $("#header-nav").addClass('nav-bg')
     } else {
-      $("#header-nav").fadeIn(1500)
+      $("#header-nav").removeClass('nav-bg')
     }
   }
-  
+
 });
 
 //获取新闻数据
@@ -246,6 +279,7 @@ function getNes(lang) {
   });
 }
 
+//获取成员列表
 function getMember(lang) {
   $.get("../data/member.json", function (data) {
     $("#memberList").html("")
@@ -255,10 +289,10 @@ function getMember(lang) {
       for (var i = 1; i < item.length; i = i + 2) {
         html += '<li class="col-md-3 col-sm-4 col-xs-6 wow bounceInUp"  data-wow-delay=' + .05 * i + 's>'
           + '<figure>'
-          + '<img src="'+ item[i].img +'" alt="">'
+          + '<img src="' + item[i].img + '" alt="">'
           + '<figcaption>'
-          + '<h4>'+ item[i].tit +'</h4>'
-          + '<p>'+ item[i].txt +'</p>'
+          + '<h4>' + item[i].tit + '</h4>'
+          + '<p>' + item[i].txt + '</p>'
           + '</figcaption>'
           + '</figure>'
           + '</li>';
@@ -267,10 +301,10 @@ function getMember(lang) {
       for (var k = 0; k < item.length; k = k + 2) {
         html += '<li class="col-md-3 col-sm-4 col-xs-6 wow bounceInUp"  data-wow-delay=' + .05 * k + 's>'
           + '<figure>'
-          + '<img src="'+ item[k].img +'" alt="">'
+          + '<img src="' + item[k].img + '" alt="">'
           + '<figcaption>'
-          + '<h4>'+ item[k].tit +'</h4>'
-          + '<p>'+ item[k].txt +'</p>'
+          + '<h4>' + item[k].tit + '</h4>'
+          + '<p>' + item[k].txt + '</p>'
           + '</figcaption>'
           + '</figure>'
           + '</li>'
@@ -280,6 +314,7 @@ function getMember(lang) {
   })
 }
 
+//获取时间列表
 function getTimeList(lang) {
   $.get("../data/timeList.json", function (data) {
     $("#timeList").html("")
@@ -287,27 +322,64 @@ function getTimeList(lang) {
     var html = ""
     if (lang == 0) {
       for (var i = 1; i < item.length; i = i + 2) {
-          html += '<li class="">'
+        html += '<li>'
           + '<section>'
-          + '<p class="foot-history-time">'+ item[i].time +'</p>'
-          + '<p class="foot-history-txt">'+ item[i].version +'</p>'
-          + '<p class="foot-history-txt">'+ item[i].txt +'</p>'
+          + '<p class="foot-history-time">' + item[i].time + '</p>'
+          + '<p class="foot-history-txt">' + item[i].txt + '</p>'
           + '</section>'
           + '</li>'
       }
     } else {
       for (var k = 0; k < item.length; k = k + 2) {
-        html += '<li class="">'
+        html += '<li>'
           + '<section>'
-          + '<p class="foot-history-time">'+ item[k].time +'</p>'
-          + '<p class="foot-history-txt">'+ item[k].version +'</p>'
-          + '<p class="foot-history-txt">'+ item[k].txt +'</p>'
+          + '<p class="foot-history-time">' + item[k].time + '</p>'
+          + '<p class="foot-history-txt">' + item[k].txt + '</p>'
           + '</section>'
           + '</li>'
       }
     }
     $("#timeList").append(html);
   })
+}
+
+//获取详情的时间列表 idx 0 2017 1 2018 2 2019
+function getDateilsTime(idx, lang) {
+  $.get("../data/timdDetails.json", function (data) {
+    let item = data.time2017
+    if (idx == 1) {
+      item = data.time2018
+      test(item, lang)
+      return
+    } else if (idx == 2) {
+      item = data.time2019
+      test(item, lang)
+    } else {
+      item = data.time2017
+      test(item, lang)
+    }
+  })
+}
+
+function test(item, lang) {
+  $("#timeDetails").html("")
+  var html = ""
+  if (lang == 0) {
+    for (var i = 1; i < item.length; i = i + 2) {
+      html += '<li>'
+        + '<span>' + item[i].time + '</span>'
+        + '<span>' + item[i].txt + '</span>'
+        + '</li>'
+    }
+  } else {
+    for (var k = 0; k < item.length; k = k + 2) {
+      html += '<li>'
+        + '<span>' + item[k].time + '</span>'
+        + '<span>' + item[k].txt + '</span>'
+        + '</li>'
+    }
+  }
+  $("#timeDetails").append(html);
 }
 
 //查看新闻详情
@@ -341,15 +413,15 @@ function newsDetails(params) {
 var ModalHelper = (function (bodyCls) {
   var scrollTop;
   return {
-      afterOpen: function () {
-          scrollTop = document.scrollingElement.scrollTop;
-          document.body.classList.add(bodyCls);
-          document.body.style.top = -scrollTop + 'px';
-      },
-      beforeClose: function () {
-          document.body.classList.remove(bodyCls);
-          document.scrollingElement.scrollTop = scrollTop;
-      }
+    afterOpen: function () {
+      scrollTop = document.scrollingElement.scrollTop;
+      document.body.classList.add(bodyCls);
+      document.body.style.top = -scrollTop + 'px';
+    },
+    beforeClose: function () {
+      document.body.classList.remove(bodyCls);
+      document.scrollingElement.scrollTop = scrollTop;
+    }
   };
 })('modal-open');
 

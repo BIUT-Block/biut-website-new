@@ -1,9 +1,12 @@
-.login-content {padding: 5rem  2.7rem 5.5rem;display: none;}
+.login-content {padding: 5rem  2.7rem 5.5rem;}
 h2 {font-size: 1.2rem;}
-.login-content h2 {padding-bottom: 1.7rem;}
 
+/* 登录 */
+.login-content h2 {padding-bottom: 1.7rem;}
+.login-content .public-flex-list {padding-right: .8rem;}
+.login-content .public-flex-list img {display: none;}
+.login-content .login-btn {color: #434561;margin: 2.4rem 0 1rem;width: 100%;}
 .public-flex-list input {background: none;border: 0;flex: 1;text-indent: 1.2rem;}
-.login-btn {color: #434561;margin: 2.4rem 0 1rem;}
 .create-list {display: flex;align-items: center;justify-content: space-between;}
 .create-list a {flex: 1;display: flex;align-items: center;justify-content: center;background: #45485A;
   border: 0;}
@@ -12,10 +15,20 @@ h2 {font-size: 1.2rem;}
 .create-list a:last-child {border-top-left-radius: 0;border-bottom-left-radius: 0;}
 .create-list a:hover {color: #fff;}
 
-
-.phone-content {padding: 3.5rem  2.7rem;}
+/* 手机号码登录 */
+.phone-content {padding: 3.5rem  2.7rem;display: none;}
 .phone-content h2 {padding: 0;}
 .phone-content p {padding: 1rem 0 1.4rem;color:rgba(255,255,255,.2);}
+.error-content {width: 16.8rem;text-align: center;font-size: .6rem;padding-top: 1.4rem;
+  margin: 0 auto;display: none;}
+.error-content span {display: block;line-height: 2;}
 
-.error-txt {width: 16.8rem;text-align: center;font-size: .6rem;padding-top: 1.4rem;}
-.error-txt span {display: block;line-height: 2;}
+/* 手机号码验证 */
+.code-content {padding: 3.5rem  2.7rem;display: none;}
+.code-content .send {font-size: .7rem;color: rgba(255,255,255,.2);padding: 1rem 0 1.5rem;display: none;}
+
+/* 用户名登录 */
+.name-content {padding: 3.5rem  2.7rem;display: none;}
+.name-content button {width: 100%;margin: 1rem 0 2rem;color: #434561;}
+.name-content section {padding: 1rem 0 1.2rem;}
+.name-content section span:first-child {color: rgba(255,255,255,.4);padding-right: .5rem;}

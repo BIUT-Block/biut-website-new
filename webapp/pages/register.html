@@ -78,6 +78,11 @@
         <li>
           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
         </li>
+        <li class="headerImg">
+          <a href="center.html">
+            <img src="../images/header.png" alt="" class="header-img">
+          </a>
+        </li>
         <li class="login">
           <a href="login.html" data-locale="nav-login">登陆</a>
         </li>
@@ -92,15 +97,17 @@
 
   <!-- 网页前部分内容 -->
   <main class="public-container">
+    <!-- 注册 -->
     <section class="register-content public-cnt">
-      <h2>注册</h2>
+      <h2 data-locale="r-tit">注册</h2>
 
+      <!-- 手机号码 -->
       <section class="public-flex-list phone-list">
         <figure>
           <img src="../images/login/china.png" alt="">
           <img src="../images/login/checkDown.png" alt="">
         </figure>
-        <input type="text" placeholder="请输入电话号码" />
+        <input type="text" data-placeholder="r-phone" id="regPhone" maxlength="11" autocomplete="off" />
         <img src="../images/login/tipsImg.png" alt="" class="error-img">
         <section style="display: none">
           <ul>
@@ -108,17 +115,47 @@
           </ul>
         </section>
       </section>
+      <p class="error-txt" id="phoneError" data-locale="r-phone-error"></p>
 
+      <!-- 验证码 -->
       <section class="public-flex-list code-list public-margin">
-        <input type="text" placeholder="请输入验证码" />
-        <button type="button">点击获取</button>
+        <input type="text" data-placeholder="r-code" id="regCode" maxlength="6" autocomplete="off" />
+        <button type="button" id="getCode" data-locale="r-get-code">点击获取</button>
       </section>
-      
-      <input type="text" class="public-ipt public-margin" id="phone" placeholder="请输入用户名" />
-      <input type="text" class="public-ipt public-margin" placeholder="请输入密码" />
-      <button type="button" class="reg-btn public-btn">确认注册</button>
-      <a href="login.html">去登录</a>
+      <p class="error-txt" id="codeError" data-locale="r-code-error"></p>
+
+      <!-- 用户名 -->
+      <input type="text" class="public-ipt public-margin" id="regName" autocomplete="off" data-placeholder="r-name"
+        maxlength="11" />
+      <p class="error-txt" id="nameError" data-locale="r-name-error"></p>
+
+      <!-- 密码 -->
+      <input type="text" class="public-ipt public-margin" id="regPass" data-placeholder="r-pass" maxlength="30" />
+      <p class="error-txt" id="passError" data-locale="r-pass-error"></p>
+
+      <button type="button" class="reg-btn public-btn" id="submitReg" data-locale="r-btn">确认注册</button>
+      <a href="login.html" data-locale="r-go-login">去登录</a>
     </section>
+
+    <!-- 注册成功 -->
+    <section class="public-cnt register-success">
+      <section>
+        <h2 data-locale="r-success">注册成功</h2>
+        <img src="../images/successImg.png" alt="">
+      </section>
+      <p>
+        <span data-locale="r-account">账户</span>
+        <span id="regAccount"></span>
+        <span data-locale="r-success">注册成功</span>
+      </p>
+      <p data-locale="r-login" class="register-login">您可以使用账户和密码登录网站了。</p>
+      <button type="button" class="public-btn" id="goLogin" data-locale="r-go-login">去登录</button>
+    </section>
+
+    <!-- 公共底部 -->
+    <footer class="login-foot">
+      COPYRIGHT © 2017 SEC TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.
+    </footer>
   </main>
 
 
@@ -130,4 +167,5 @@
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
 <script src="../js/register.js"></script>
+
 </html>

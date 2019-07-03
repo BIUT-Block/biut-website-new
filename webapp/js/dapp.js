@@ -1,5 +1,10 @@
 $(function(){
   $("#downClient").click(function(){
-    $(".dapp-down").toggleClass('down-show')
+    let flg = $("#downApp").is(":visible")
+    if (flg) {
+      $("#downApp").fadeOut(1200)
+    } else {
+      $("#downApp").fadeIn(1200)
+    }
   })
 })

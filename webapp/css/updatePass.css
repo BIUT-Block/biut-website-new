@@ -12,9 +12,11 @@
 
 /* 用户名重置成功 */
 .name-success {padding: 2.8rem 2.7rem 3rem;display: none;}
+.name-success h2 {padding-right: .5rem;}
 .name-success section {display: flex;align-items: center;}
 .name-success p {font-size: .7rem;color: #868599;text-align: center;padding: 1.6rem 0 1.1rem;}
 .name-success .name-phone {display: flex;font-size: .7rem;padding: 1.9rem 0 .9rem;color:rgba(255,255,255,.8);}
 .name-success .name-phone span:first-child {color: #868599;}
 .name-success .name-phone span:nth-child(2) {padding: 0 .75rem;}
 .name-success .public-flex-list {text-indent: 1.5rem;color:rgba(255,255,255,.8);}
+.name-success button {width: 100%;}

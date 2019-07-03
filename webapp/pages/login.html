@@ -78,6 +78,11 @@
         <li>
           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
         </li>
+        <li class="headerImg">
+          <a href="center.html">
+            <img src="../images/header.png" alt="" class="header-img">
+          </a>
+        </li>
         <li class="login">
           <a href="login.html" data-locale="nav-login">登陆</a>
         </li>
@@ -94,46 +99,85 @@
   <main class="public-container">
     <!-- 重置用户名 -->
     <section class="login-content public-cnt">
-      <h2>登录</h2>
-      <section class="public-flex-list">
-        <input type="text" placeholder="请输入用户名或电话号码" />
-        <img src="" alt="">
+      <h2 data-locale="l-tit">登录</h2>
+      <section class="public-flex-list input-error">
+        <input type="text" data-placeholder="l-ipt" id="loginIpt" autocomplete="off" maxlength="11" />
+        <img src="../images/login/tipsImg.png" alt="" class="error-img" id="loginError" />
       </section>
-      <button type="button" class="public-btn login-btn">确认登陆</button>
+      <p class="error-txt" id="loginError" data-locale="l-login-error"></p>
+      <button type="button" id="submitLogin" class="public-btn login-btn" data-locale="l-btn">确认登陆</button>
       <section class="create-list">
-        <a href="" class="public-btn">没有账户？创建一个！</a>
-        <a href="" class="public-btn">忘记用户名</a>
+        <a href="register.html" class="public-btn" data-locale="l-register">没有账户？创建一个！</a>
+        <a href="updateName.html" class="public-btn" data-locale="l-update">忘记用户名</a>
       </section>
     </section>
 
     <!-- 确认电话号码 -->
     <section class="phone-content public-cnt">
-      <h2>确认电话号码</h2>
-      <p>请验证国家/地区代码</p>
+      <h2 data-locale="l-phone">确认电话号码</h2>
+      <p data-locale="l-confirim-phone">请验证国家/地区代码</p>
       <section class="public-flex-list phone-list">
         <figure>
           <img src="../images/login/china.png" alt="">
           <img src="../images/login/checkDown.png" alt="">
         </figure>
-        <input type="text" placeholder="请输入电话号码" />
-        <img src="../images/login/tipsImg.png" alt="" class="error-img">
+        <input type="text" data-placeholder="r-phone" id="confirmPhone" autocomplete="off" maxlength="11" />
+        <img src="../images/login/tipsImg.png" alt="" class="error-img" id="phoneErrorImg" />
         <section style="display: none">
           <ul>
             <li>1</li>
           </ul>
         </section>
       </section>
-      <section class="error-txt">
-        <span>此电话号码看起来不正确，请检查国家/地区代码和电话号码</span>
-        <span>该账户不存在，请输入其它账户或 <a href="" class="public-blur">获取新账户</a></span>
+      <section class="error-content">
+        <span data-locale="l-error-txt1">此电话号码看起来不正确，请检查国家/地区代码和电话号码</span>
+        <section>
+          <sapn data-locale="l-error-txt2">该账户不存在，请输入其它账户或 </sapn>
+          <a href="register.html" class="public-blur" data-locale="l-error-txt3">获取新账户</a>
+        </section>
       </section>
       <section class="public-btn-list">
-        <button type="button" class="public-btn">上一步</button>
-        <button type="button" class="public-btn">下一步</button>
+        <button type="button" class="public-btn" data-locale="u-prev-btn">上一步</button>
+        <button type="button" class="public-btn" data-locale="u-next-btn" id="nextLogin">下一步</button>
       </section>
     </section>
-  </main>
 
+    <!-- 验证码验证码 -->
+    <section class="code-content public-cnt">
+      <h2>确认验证码</h2>
+      <p class="send">已向账户发送验证码，10分钟内输入有效</p>
+      <!-- 验证码 -->
+      <section class="public-flex-list code-list public-margin">
+        <input type="text" data-placeholder="r-code" id="code" maxlength="6" autocomplete="off" />
+        <button type="button" id="getCode" data-locale="r-get-code">点击获取</button>
+      </section>
+      <p class="error-txt" id="codeError" data-locale="r-code-error"></p>
+      <section class="public-btn-list">
+        <button type="button" class="public-btn" data-locale="u-prev-btn">上一步</button>
+        <button type="button" class="public-btn" data-locale="u-next-btn" id="loginFrom">下一步</button>
+      </section>
+    </section>
+
+    <!-- 用户名登录 -->
+    <section class="name-content public-cnt">
+      <h2 data-locale="l-tit">登录</h2>
+      <section>
+        <span data-locale="l-user-name">用户名</span>
+        <span id="loginName">1212</span>
+      </section>
+      <!-- 密码 -->
+      <input type="text" class="public-ipt" id="pass" data-placeholder="r-pass" maxlength="30" />
+      <p class="error-txt" id="passError" data-locale="r-pass-error"></p>
+
+      <button type="button" id="confirmLogin" class="public-btn login-btn" data-locale="l-btn">确认登陆</button>
+      <a href="updatePass.html" class="public-blur" data-locale="l-update-pass">忘记密码？</a>
+    </section>
+
+    <!-- 公共底部 -->
+    <footer class="login-foot">
+      COPYRIGHT © 2017 SEC TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.
+    </footer>
+  </main>
 
 </body>
 <script src="../dist/jq/jquery-3.4.1.min.js"></script>

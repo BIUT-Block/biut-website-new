@@ -1,0 +1,259 @@
+{
+  "time2017": [
+    {
+      "id": "0",
+      "time": "May 2017",
+      "version": "发布1.0版",
+      "txt": "Completion of the main chain formula algorithm and trust algorithm model"
+    },
+    {
+      "id": "1",
+      "time": "2017年5月",
+      "version": "发布1.0版",
+      "txt": "完成主链的公式算法以及信任算法模型"
+    },
+    {
+      "id": "2",
+      "time": "July 2017",
+      "version": "发布1.0版",
+      "txt": "MAIZUO social e-commerce business model test"
+    },
+    {
+      "id": "3",
+      "time": "2017年7月",
+      "version": "发布1.0版",
+      "txt": "卖座网社交电商业务模式测试"
+    },
+    {
+      "id": "4",
+      "time": "December 2017",
+      "version": "发布1.0版",
+      "txt": "Complete the design of the main chain network architecture"
+    },
+    {
+      "id": "5",
+      "time": "2017年12月",
+      "version": "发布1.0版",
+      "txt": "完成主链网络架构方案设计"
+    }
+  ],
+  "time2018": [
+    {
+      "id": "0",
+      "time": "February 2018",
+      "version": "发布1.0版",
+      "txt": "Main chain starts research and development"
+    },
+    {
+      "id": "1",
+      "time": "2018年2月",
+      "version": "发布1.0版",
+      "txt": "主链开发启动"
+    },
+    {
+      "id": "2",
+      "time": "March 2018",
+      "version": "发布1.0版",
+      "txt": "Technical cooperation with MAIZUO social e-commerce project,3.25 Shenzhen Community Thousand People Sharing Meeting"
+    },
+    {
+      "id": "3",
+      "time": "2018年3月",
+      "version": "发布1.0版",
+      "txt": "与卖座网社交电商项目技术合作，3.25深圳社区千人分享会"
+    },
+    {
+      "id": "4",
+      "time": "April 2018",
+      "version": "发布1.0版",
+      "txt": "FOUNDATION technology invests in TOKEN TECHNOLOGY, Singapore, to provide enterprise customers with the development of social Electronics Mall relying on the main chain.Main Chain Develops bottom Peer-to-Peer Network Protocol Set to Realize Special Merkel Tree Base and Random Number Algorithms"
+    },
+    {
+      "id": "5",
+      "time": "2018年4月",
+      "version": "发布1.0版",
+      "txt": "基金会技术入股新加坡通证科技，为企业客户提供基于主链的社交电子商城开发。主链开发开发底层对等网络协议集，实现专用梅克尔树库及随机数算法"
+    },
+    {
+      "id": "6",
+      "time": "May 2018",
+      "version": "发布1.0版",
+      "txt": "Manila Project Promotion Conference, Philippines, Complete grouping algorithm and round robin mechanism of node community"
+    },
+    {
+      "id": "7",
+      "time": "2018年5月",
+      "version": "发布1.0版",
+      "txt": "菲律宾马尼拉项目推广会，完成节点群落分组算法和轮循机制"
+    },
+    {
+      "id": "8",
+      "time": "July 2018",
+      "version": "发布1.0版",
+      "txt": "Project Promotion Fair in Paris, France and Stuttgart, Germany"
+    },
+    {
+      "id": "9",
+      "time": "2018年7月",
+      "version": "发布1.0版",
+      "txt": "法国巴黎、德国斯图加特项目推广会"
+    },
+    {
+      "id": "10",
+      "time": "August 2018",
+      "version": "发布1.0版",
+      "txt": "Complete the POW algorithm in the node community"
+    },
+    {
+      "id": "11",
+      "time": "2018年8月",
+      "version": "发布1.0版",
+      "txt": "完成群落内POW算法"
+    },
+    {
+      "id": "12",
+      "time": "September 2018",
+      "version": "发布1.0版",
+      "txt": "Complete the development of PC wallet"
+    },
+    {
+      "id": "13",
+      "time": "2018年9月",
+      "version": "发布1.0版",
+      "txt": "完成客户端钱包开发"
+    },
+    {
+      "id": "14",
+      "time": "October 2018",
+      "version": "发布1.0版",
+      "txt": "Global deployment test node to complete PC wallet function update"
+    },
+    {
+      "id": "15",
+      "time": "2018年10月",
+      "version": "发布1.0版",
+      "txt": "全球部署测试节点，完成客户端钱包热更新功能"
+    },
+    {
+      "id": "16",
+      "time": "December 2018",
+      "version": "发布1.0版",
+      "txt": "Test network (transaction accounting and transfer function) online, testing"
+    },
+    {
+      "id": "17",
+      "time": "2018年12月",
+      "version": "发布1.0版",
+      "txt": "测试网（交易记账和转账功能）上线、测试"
+    }
+  ],
+  "time2019": [
+    {
+      "id": "0",
+      "time": "January 2019",
+      "version": "发布1.0版",
+      "txt": "SEC test network, browser and full-node wallet go online together"
+    },
+    {
+      "id": "1",
+      "time": "2019年1月",
+      "version": "发布1.0版",
+      "txt": "SEC测试网络上线，同步上线浏览器、客户端全节点钱包"
+    },
+    {
+      "id": "2",
+      "time": "March 2019",
+      "version": "发布1.0版",
+      "txt": "Web wallet, Android mobile wallet, iOS mobile wallet development completed"
+    },
+    {
+      "id": "3",
+      "time": "2019年3月",
+      "version": "发布1.0版",
+      "txt": "Web钱包、安卓、苹果手机端钱包开发完成"
+    },
+    {
+      "id": "4",
+      "time": "April 2019",
+      "version": "发布1.0版",
+      "txt": "Test network upgrade, browser, and all terminal wallet optimization, SEC main network system went online"
+    },
+    {
+      "id": "5",
+      "time": "2019年4月",
+      "version": "发布1.0版",
+      "txt": "测试网升级、浏览器及各终端钱包优化、主网上线"
+    },{
+      "id": "6",
+      "time": "May 2019",
+      "version": "发布1.0版",
+      "txt": "Honeycomb all-node wallet went online, start to develop nodes"
+    },
+    {
+      "id": "7",
+      "time": "2019年5月",
+      "version": "发布1.0版",
+      "txt": "蜂巢全节点钱包上线，发展节点"
+    }
+    ,{
+      "id": "8",
+      "time": "June 2019",
+      "version": "发布1.0版",
+      "txt": "SECs eco-partners will launch decentralized digital currency OTC trading applications, starting to support BTC transactions in August"
+    },
+    {
+      "id": "9",
+      "time": "2019年6月",
+      "version": "发布1.0版",
+      "txt": "生态开发者将推出去中心化的数字货币OTC交易应用,8月支持BTC交易"
+    },
+    {
+      "id": "10",
+      "time": "July 2019",
+      "version": "发布1.0版",
+      "txt": "The foundation development team upgraded the demo economic model and launched a social e-commerce type application"
+    },
+    {
+      "id": "11",
+      "time": "2019年7月",
+      "version": "发布1.0版",
+      "txt": "基金会开发团队升级完成demo经济模型，推出社交电商应用"
+    },
+    {
+      "id": "12",
+      "time": "August 2019",
+      "version": "发布1.0版",
+      "txt": "One-click Customization Main Chain Function Development Completed"
+    },
+    {
+      "id": "13",
+      "time": "2019年8月",
+      "version": "发布1.0版",
+      "txt": "一键定制主链功能开发完成"
+    },
+    {
+      "id": "14",
+      "time": "September 2019",
+      "version": "发布1.0版",
+      "txt": "Complete the development of the crowdfunding investment collaboration application of the ecological development team"
+    },
+    {
+      "id": "15",
+      "time": "2019年9月",
+      "version": "发布1.0版",
+      "txt": "生态开发团队的众筹投资协作应用"
+    },
+    {
+      "id": "16",
+      "time": "December 2019",
+      "version": "发布1.0版",
+      "txt": "Complete the development of live streaming application based on the main chain for the eco-development team"
+    },
+    {
+      "id": "17",
+      "time": "2019年12月",
+      "version": "发布1.0版",
+      "txt": "生态开发团队基于主链的直播应用"
+    }
+  ]
+}

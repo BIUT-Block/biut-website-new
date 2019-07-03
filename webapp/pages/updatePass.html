@@ -78,6 +78,11 @@
         <li>
           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
         </li>
+        <li class="headerImg">
+          <a href="center.html">
+            <img src="../images/header.png" alt="" class="header-img">
+          </a>
+        </li>
         <li class="login">
           <a href="login.html" data-locale="nav-login">登陆</a>
         </li>
@@ -94,14 +99,14 @@
   <main class="public-container">
     <!-- 重置密码 -->
     <section class="pass-content public-cnt">
-      <h2>找回密码</h2>
-      <p>我们可以帮助你找回用户名。首先，请输入你的 BIUT 绑定的手机号，然后按照下面的说明操作。</p>
+      <h2 data-locale="">重置密码</h2>
+      <p data-locale="">我们可以帮助你重置密码和安全信息。首先，请输入你的BIUT 帐户，然后按照下面的说明操作。</p>
       <section class="public-flex-list phone-list">
         <figure>
           <img src="../images/login/china.png" alt="">
           <img src="../images/login/checkDown.png" alt="">
         </figure>
-        <input type="text" placeholder="请输入电话号码" />
+        <input type="text" data-placeholder="r-phone" />
         <img src="../images/login/tipsImg.png" alt="" class="error-img">
         <section style="display: none">
           <ul>
@@ -111,27 +116,32 @@
       </section>
 
       <section class="public-flex-list code-list public-margin">
-        <input type="text" placeholder="请输入验证码" />
-        <button type="button">点击获取</button>
+        <input type="text" data-placeholder="r-code" />
+        <button type="button" data-locale="r-get-code">点击获取</button>
       </section>
 
-      <input type="text" class="public-ipt public-margin" placeholder="请输入密码" />
-      
+      <input type="text" class="public-ipt public-margin" data-placeholder="r-pass" />
+
       <section class="public-btn-list">
-        <button type="button" class="public-btn">上一步</button>
-        <button type="button" class="public-btn">下一步</button>
+        <button type="button" class="public-btn" data-locale="u-prev-btn">上一步</button>
+        <button type="button" class="public-btn" data-locale="u-next-btn">下一步</button>
       </section>
     </section>
 
     <!-- 重置密码成功 -->
     <section class="pass-success public-cnt">
       <section>
-        <h2>成功重置密码</h2>
+        <h2 data-locale="">成功重置密码</h2>
         <img src="" alt="">
       </section>
       <p>帐户12312345678的密码已重置您可以使用新密码登录网站。</p>
-      <button type="button" class="public-btn">去登录</button>
+      <button type="button" class="public-btn" data-locale="r-go-login">去登录</button>
     </section>
+
+    <!-- 公共底部 -->
+    <footer class="login-foot">
+      COPYRIGHT © 2017 SEC TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.
+    </footer>
   </main>
 
 
@@ -143,4 +153,5 @@
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
 <script src="../js/updatePass.js"></script>
+
 </html>

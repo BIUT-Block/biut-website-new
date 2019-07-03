@@ -1,13 +1,15 @@
 
-.dapp-container {background: rgb(63, 65, 86);color: #fff;}
+.dapp-container {background: url('../images/dapp/test.png') center no-repeat;background-size: cover;
+  color: #fff;}
 .dapp-content {padding-left: 8.7rem;}
 
-h2 {padding: 15.2rem 0 2.8rem;color: #00D69B;font-size: 1.5rem;}
+h2 {padding: 14.15rem 0 2.8rem;color: #00D69B;font-size: 1.5rem;}
 .dapp-details {width: 24.5rem;margin-bottom: 4.4rem;}
 .dapp-details img {width: .55rem;height: .45rem;}
 .dapp-details p {padding: 1.9rem 0 2.3rem;font-size: .8rem;line-height: 2;}
 
-.dapp-down {display: none;align-items: center;justify-content: space-between;width: 24.3rem;
+#downApp {display: none;}
+.dapp-down {align-items: center;justify-content: space-between;width: 24.3rem;display: flex;
   background:rgba(125,128,147,1);border-radius: .5rem;height: 3.4rem;border:.1rem solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 .8rem 1.45rem 0 rgba(69,72,90,0.26);}
 .dapp-down a {flex: 1;display: flex;align-items: center;justify-content: center;height: 3.4rem;
@@ -22,12 +24,11 @@ h2 {padding: 15.2rem 0 2.8rem;color: #00D69B;font-size: 1.5rem;}
 .down-client figure {display: flex;align-items: center;}
 .down-client figure img {margin-right: .6rem;}
 
-.dapp-wallet {padding-bottom: 11.35rem;display: flex;}
+.dapp-wallet {padding-bottom: 10rem;display: flex;}
 .dapp-wallet span {display: flex;align-items: center;justify-content: center;margin-left: 1rem;
   background:rgba(238,240,249,1);color: #434661;font-size: .7rem;width: 7.5rem;border: 0;}
 .dapp-wallet span:first-child {margin: 0;}
 
-.down-show {display: flex;}
 
 .footer-list {margin-top: 7.35rem;}
 

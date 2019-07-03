@@ -78,6 +78,11 @@
         <li>
           <a href="dapp.html" data-locale="nav-dapp">DApp</a>
         </li>
+        <li class="headerImg">
+          <a href="center.html">
+            <img src="../images/header.png" alt="" class="header-img">
+          </a>
+        </li>
         <li class="login">
           <a href="login.html" data-locale="nav-login">登陆</a>
         </li>
@@ -94,14 +99,14 @@
   <main class="public-container">
     <!-- 重置用户名 -->
     <section class="pass-content public-cnt">
-      <h2>找回用户名</h2>
-      <p>我们可以帮助你找回用户名。首先，请输入你的 BIUT 绑定的手机号，然后按照下面的说明操作。</p>
+      <h2 data-locale="u-tit">找回用户名</h2>
+      <p data-locale="u-txt">我们可以帮助你找回用户名。首先，请输入你的 BIUT 绑定的手机号，然后按照下面的说明操作。</p>
       <section class="public-flex-list phone-list">
         <figure>
           <img src="../images/login/china.png" alt="">
           <img src="../images/login/checkDown.png" alt="">
         </figure>
-        <input type="text" placeholder="请输入电话号码" />
+        <input type="text" data-placeholder="r-phone" id="phone" maxlength="11" autocomplete="off" />
         <img src="../images/login/tipsImg.png" alt="" class="error-img">
         <section style="display: none">
           <ul>
@@ -109,35 +114,41 @@
           </ul>
         </section>
       </section>
+      <p class="error-txt" id="phoneError" data-locale="r-phone-error"></p>
 
       <section class="public-flex-list code-list public-margin">
-        <input type="text" placeholder="请输入验证码" />
-        <button type="button">点击获取</button>
+        <input type="text" data-placeholder="r-code" id="code" maxlength="6" autocomplete="off" />
+        <button type="button" id="getCode" data-locale="r-get-code">点击获取</button>
       </section>
+      <p class="error-txt" id="codeError" data-locale="r-code-error"></p>
 
       <section class="public-btn-list">
-        <button type="button" class="public-btn">上一步</button>
-        <button type="button" class="public-btn">下一步</button>
+        <button type="button" class="public-btn" data-locale="u-prev-btn">上一步</button>
+        <button type="button" class="public-btn" data-locale="u-next-btn" id="submitFrom">下一步</button>
       </section>
     </section>
 
     <!-- 用户名重置成功 -->
     <section class="name-success public-cnt">
       <section>
-        <h2>找回用户名</h2>
-        <img src="" alt="">
+        <h2 data-locale="u-tit">找回用户名</h2>
+        <img src="../images/successImg.png" alt="">
       </section>
       <section class="name-phone">
-        <span>手机号</span>
-        <span>12312345678</span>
-        <span>的用户名为</span>
+        <span data-locale="u-phone">手机号</span>
+        <span id="userPhone"></span>
+        <span data-locale="u-name">的用户名为</span>
       </section>
       <section class="public-flex-list">123456</section>
-      <p>你可以使用账号密码登录网站了。</p>
-      <button type="button" class="public-btn">去登录</button>
+      <p data-locale="u-login">你可以使用账号密码登录网站了。</p>
+      <button type="button" class="public-btn" id="goLogin" data-locale="r-go-login">去登录</button>
     </section>
-  </main>
 
+    <!-- 公共底部 -->
+    <footer class="login-foot">
+      COPYRIGHT © 2017 SEC TECHNOLOGY CO, LTD.ALL RIGHTS RESERVED.
+    </footer>
+  </main>
 
 </body>
 <script src="../dist/jq/jquery-3.4.1.min.js"></script>
@@ -146,5 +157,6 @@
 <script src="../dist/jq/jquery.i18n.properties-min-1.0.9.js"></script>
 <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/public.js"></script>
-<script src="../js/updatePass.js"></script>
+<script src="../js/updateName.js"></script>
+
 </html>
