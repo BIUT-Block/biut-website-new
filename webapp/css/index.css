@@ -125,7 +125,7 @@ html {font-size: 20px;}
   .content-head .head-logo figcaption .moible-tit {display: block;}
   .content-head .head-list {display: none;}
 
-  .content-head .head-down {margin: 0;position: fixed;bottom: 3%;z-index: 999;left: 0;right: 0;
+  .content-head .head-down {margin: 0;position: fixed;bottom: 3%;z-index: 9;left: 0;right: 0;
     display: flex;width: 100%;align-items: center;justify-content: center;}
    
   .about-project {padding-top: 4.5rem;}

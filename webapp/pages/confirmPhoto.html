@@ -108,25 +108,26 @@
             <span id="name"></span>
           </li>
           <li>
-            <span data-locale="kyc-from-card">绑定手机号码</span>
-            <span id="phone"></span>
-          </li>
-          <li>
-            <span data-locale="kyc-from-time">注册时间</span>
-            <span id="rgTime"></span>
+            <section>
+              <span data-locale="kyc-from-card">绑定手机号码</span>
+              <span id="phone"></span>
+            </section>
+            <section>
+              <span data-locale="kyc-from-time">注册时间</span>
+              <span id="rgTime"></span>
+            </section>
           </li>
         </ul>
         <ul class="ipt-list">
           <li>
-            <p><span>*</span data-locale="kyc-ipt-name">真实姓名</p>
-            <input type="text" data-placeholder="kyc-ipt-name-e" maxlength="10" id="userName" autocomplete="off"
-              class="errorBorder" />
-            <label data-locale="kyc-ipt-name-e">请输入真实姓名</label>
+            <p><span>*</span><span data-locale="kyc-ipt-name">真实姓名</span></p>
+            <input type="text" data-placeholder="kyc-ipt-name" maxlength="10" id="userName" autocomplete="off" />
+            <label data-locale="kyc-ipt-name-e" id="nameError">请输入真实姓名</label>
           </li>
           <li>
-            <p><span>*</span data-locale="kyc-ipt-card">身份证号码</p>
-            <input type="text" data-placeholder="kyc-ipt-card-e" maxlength="18" id="userCard" autocomplete="off" />
-            <label data-locale="kyc-ipt-card-e">请输入身份证号码</label>
+            <p><span>*</span><span data-locale="kyc-ipt-card">身份证号码</span></p>
+            <input type="text" data-placeholder="kyc-ipt-card" maxlength="18" id="userCard" autocomplete="off" />
+            <label data-locale="kyc-ipt-card-e" id="cardError">请输入身份证号码</label>
           </li>
         </ul>
       </section>

@@ -103,8 +103,8 @@
           <h4 data-locale="c-left-tit">个人中心</h4>
           <ul class="left-list1">
             <li><img src="../images/center/centerImg1.png" alt=""></li>
-            <li>张智超</li>
-            <li>139234567835</li>
+            <li class="kycName"></li>
+            <li class="kycPhone"></li>
           </ul>
 
           <ul class="left-list2" id="dataNavList">
@@ -128,61 +128,64 @@
         </section>
 
         <!-- 修改头像内容 -->
-        <section class="center-update center-flex" id="centerUpdate">
-          <!-- 修改头像 -->
-          <section class="center-center">
-            <h4 data-locale="c-center-tit">修改头像</h4>
-            <p data-locale="c-center-txt">支持jpg、jpeg、gif、png、bmp格式的图片</p>
-            <section class="center-btn-list">
-              <section class="upload-button">
-                <img src="../images/confirmPhoto/uploadImg1.png" alt="">
-                <span data-locale="c-center-upload">选择你要上传的头像</span>
-                <input type="file" id="uploadBtn1" />
+        <section class="center-update" id="centerUpdate">
+          <section class="update-content">
+            <!-- 修改头像 -->
+            <section class="center-center">
+              <h4 data-locale="c-center-tit">修改头像</h4>
+              <p data-locale="c-center-txt">支持jpg、jpeg、gif、png、bmp格式的图片</p>
+              <section class="center-btn-list">
+                <section class="upload-button">
+                  <img src="../images/confirmPhoto/uploadImg1.png" alt="">
+                  <span data-locale="c-center-upload">选择你要上传的头像</span>
+                  <input type="file" id="uploadBtn1" />
+                </section>
+                <button type="button" class="public-btn center-btn" data-locale="c-center-reset-btn">重新上传</button>
               </section>
-              <button type="button" class="public-btn center-btn" data-locale="c-center-reset-btn">重新上传</button>
-            </section>
 
-            <section class="default-img">
-              <img src="../images/confirmPhoto/topLeft.png" class="topLeft">
-              <img src="../images/confirmPhoto/bottomLeft.png" class="bottomLeft">
-              <img src="../images/confirmPhoto/topRight.png" class="topRight">
-              <img src="../images/confirmPhoto/bottomRight.png" class="bottomRight">
-            </section>
+              <section class="default-img">
+                <img src="../images/confirmPhoto/topLeft.png" class="topLeft">
+                <img src="../images/confirmPhoto/bottomLeft.png" class="bottomLeft">
+                <img src="../images/confirmPhoto/topRight.png" class="topRight">
+                <img src="../images/confirmPhoto/bottomRight.png" class="bottomRight">
+              </section>
 
-            <button type="button" class="public-btn center-btn" data-locale="c-center-save-btn">保存</button>
-            <h5 data-locale="c-center-head">推荐头像</h5>
-            <ul>
-              <li><img src="../images/center/listImg1.png" alt=""></li>
-              <li><img src="../images/center/listImg2.png" alt=""></li>
-              <li><img src="../images/center/listImg3.png" alt=""></li>
-              <li><img src="../images/center/listImg2.png" alt=""></li>
-              <li><img src="../images/center/listImg1.png" alt=""></li>
-            </ul>
-          </section>
-          <!-- 效果预览 -->
-          <section class="center-right">
-            <h4 data-locale="c-right-tit">效果预览</h4>
-            <ul>
-              <li data-locale="c-right-txt">你上传的图片会自动生成2种尺寸,请注意小尺寸的头像是否清晰</li>
-              <li>
-                <figure>
-                  <img src="../images/center/centerImg2.png" alt="">
-                  <figcaption data-locale="c-right-img1">
-                    100 x 100像素
-                  </figcaption>
-                </figure>
-              </li>
-              <li>
-                <figure>
-                  <img src="../images/center/centerImg2.png" alt="">
-                  <figcaption data-locale="c-right-img2">
-                    65 x 65像素
-                  </figcaption>
-                </figure>
-              </li>
-            </ul>
+              <button type="button" class="public-btn center-btn" data-locale="c-center-save-btn">保存</button>
+              <h5 data-locale="c-center-head">推荐头像</h5>
+              <ul>
+                <li><img src="../images/center/listImg1.png" alt=""></li>
+                <li><img src="../images/center/listImg2.png" alt=""></li>
+                <li><img src="../images/center/listImg3.png" alt=""></li>
+                <li><img src="../images/center/listImg2.png" alt=""></li>
+                <li><img src="../images/center/listImg1.png" alt=""></li>
+              </ul>
+            </section>
+            <!-- 效果预览 -->
+            <section class="center-right">
+              <h4 data-locale="c-right-tit">效果预览</h4>
+              <ul>
+                <li data-locale="c-right-txt">你上传的图片会自动生成2种尺寸,请注意小尺寸的头像是否清晰</li>
+                <li>
+                  <figure>
+                    <img src="../images/center/centerImg2.png" alt="">
+                    <figcaption data-locale="c-right-img1">
+                      100 x 100像素
+                    </figcaption>
+                  </figure>
+                </li>
+                <li>
+                  <figure>
+                    <img src="../images/center/centerImg2.png" alt="">
+                    <figcaption data-locale="c-right-img2">
+                      65 x 65像素
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </section>
           </section>
         </section>
+
 
         <!-- 我的上榜信息，还没有申请 -->
         <section class="center-begin center-info" id="noApply">
@@ -194,15 +197,43 @@
           </section>
         </section>
 
-        <!-- 我的上榜信息，申请中、申请失败 -->
-        <section class="center-ongoing center-info" id="applyFailure">
+        <!-- 我的上榜信息，申请中 -->
+        <section class="center-ongoing center-info" id="application">
           <h4 data-locale="c-info-tit">我的上榜信息</h4>
           <!-- 申请中的状态查询 -->
           <section class="info-contetn center-info-bg">
             <section class="ongoing-list">
-              <button type="button" class="public-btn error-btn" data-locale="c-info-go">进行中</button>
+              <button type="button" class="public-btn success-btn" data-locale="c-info-go">进行中</button>
               <span data-locale="c-info-no-txt2">申请成功后，你的个人信息将会显示在网站中让更多的人看到</span>
             </section>
+            <p class="info-txt1" data-locale="c-info-session">申请信息</p>
+            <figure class="mask-head">
+              <img src="../images/about/maskHead.png" id="maskHead" alt="">
+              <figcaption>
+                <span data-locale="a-mask-name">昵称</span>
+                <span class="kycName"></span>
+              </figcaption>
+            </figure>
+            <p class="info-txt2" data-locale="a-mask-txt2">上榜理由</p>
+            <section class="info-txt-list center-info-bg" id="reason"></section>
+            <section>
+              <span class="public-white" data-locale="c-info-begin-time">申请时间</span>
+              <span class="info-txt3 kycApplyTime"></span>
+            </section>
+            <section class="info-top">
+              <span class="public-white" data-locale="c-info-end-time">申请结果时间</span>
+              <span class="info-txt3 public-red kycApplyEndTime"></span>
+            </section>
+            <button type="button" class="public-btn reset-btn" id="cancelApply"
+              data-locale="c-info-close-btn">取消申请</button>
+          </section>
+        </section>
+
+        <!-- 我的上榜信息，申请失败 -->
+        <section class="center-ongoing center-failure center-info" id="applyFailure">
+          <h4 data-locale="c-info-tit">我的上榜信息</h4>
+          <!-- 申请中的状态查询 -->
+          <section class="info-contetn center-info-bg">
             <button type="button" class="public-btn error-btn" data-locale="c-info-error">申请失败</button>
 
             <p class="info-txt1" data-locale="c-info-session">申请信息</p>
@@ -210,20 +241,21 @@
               <img src="../images/about/maskHead.png" id="maskHead" alt="">
               <figcaption>
                 <span data-locale="a-mask-name">昵称</span>
-                <span id="maskName">张智超</span>
+                <span class="kycName"></span>
               </figcaption>
             </figure>
             <p class="info-txt2" data-locale="a-mask-txt2">上榜理由</p>
             <section class="info-txt-list center-info-bg"></section>
             <section>
               <span class="public-white" data-locale="c-info-begin-time">申请时间</span>
-              <span class="info-txt3">2019/02/11 15:27:30</span>
+              <span class="info-txt3 kycApplyTime"></span>
             </section>
             <section class="info-top">
               <span class="public-white" data-locale="c-info-end-time">申请结果时间</span>
-              <span class="info-txt3 public-red">2019/02/11 15:27:30</span>
+              <span class="info-txt3 public-red kycApplyEndTime"></span>
             </section>
-            <button type="button" class="public-btn reset-btn" data-locale="c-info-reset-btn">重新申请</button>
+            <button type="button" class="public-btn reset-btn" id="resetApply"
+              data-locale="c-info-reset-btn">重新申请</button>
           </section>
         </section>
 
@@ -242,17 +274,15 @@
                 <p class="public-white" data-locale="c-info-ranking">我的排名</p>
                 <figure>
                   <img src="../images/center/rising.png" alt="">
-                  <figcaption class="txt">
-                    10
-                  </figcaption>
+                  <figcaption class="txt" id="kycSuccessRank"></figcaption>
                 </figure>
               </li>
               <li>
                 <p class="public-white" data-locale="a-h-time-txt1">时间</p>
-                <span class="txt">2019/02/11 15:27:30</span>
+                <span class="txt" id="kycSuccessTime"></span>
               </li>
               <li>
-                <button type="button" class="public-btn" data-locale="c-info-goLoook">去官网查看</button>
+                <button type="button" class="public-btn" id="successLook" data-locale="c-info-goLoook">去官网查看</button>
               </li>
             </ul>
           </section>
@@ -269,22 +299,22 @@
                   <section class="basis-list1">
                     <section>
                       <span data-locale="kyc-from-name">用户名</span>
-                      <span class="public-f">TEST123456</span>
+                      <span class="public-f" id="kycUserName"></span>
                     </section>
                     <section>
                       <span class="l-s" data-locale="a-mask-name">昵称</span>
-                      <span class="public-white">张智超</span>
+                      <span class="public-white kycName"></span>
                       <span class="public-blur" data-locale="c-basis-update-txt">修改昵称</span>
                     </section>
                   </section>
                   <section class="basis-list2">
                     <section>
                       <span class="l-s" data-locale="kyc-from-time">注册时间</span>
-                      <span class="public-f public-white">2019-01-22</span>
+                      <span class="public-f public-white" id="kycRegTime"></span>
                     </section>
                     <section>
                       <span data-locale="kyc-from-card">绑定手机号码</span>
-                      <span class="public-f public-white">139234567835</span>
+                      <span class="public-f public-white kycPhone"></span>
                     </section>
                   </section>
                 </figcaption>
@@ -292,49 +322,64 @@
             </section>
             <h5 data-locale="c-basis-service">安全服务</h5>
             <ul>
-              <li>
-                <figure>
-                  <img src="../images/center/successImg.png" alt="">
-                  <figcaption class="public-white" data-locale="c-base-success">
-                    已完成
-                  </figcaption>
-                </figure>
-                <span data-locale="c-base-kyc">KYC验证</span>
-                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
-                <span class="public-blur" data-locale="c-base-look">查看</span>
+              <!-- kyc验证完成 -->
+              <li class="kyc-success">
+                <section>
+                  <figure>
+                    <img src="../images/center/successImg.png" alt="">
+                    <figcaption class="public-white" data-locale="c-base-success">
+                      已完成
+                    </figcaption>
+                  </figure>
+                  <span data-locale="c-base-kyc">KYC验证</span>
+                  <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                  <a href="confirmPhoto.html" class="public-blur" data-locale="c-base-look">查看</a>
+                </section>
               </li>
-              <li>
-                <figure>
-                  <img src="../images/center/errorImg.png" alt="">
-                  <figcaption class="public-white" data-locale="c-base-error">
-                    校验失败
-                  </figcaption>
-                </figure>
-                <span data-locale="c-base-kyc">KYC验证</span>
-                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
-                <span class="public-blur" data-locale="c-base-going">重新校验</span>
+
+              <!-- kyc验证失败 -->
+              <li class="kyc-error">
+                <section>
+                  <figure>
+                    <img src="../images/center/errorImg.png" alt="">
+                    <figcaption class="public-white" data-locale="c-base-error">
+                      校验失败
+                    </figcaption>
+                  </figure>
+                  <span data-locale="c-base-kyc">KYC验证</span>
+                  <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                  <a href="confirmPhoto.html" class="public-blur" data-locale="c-base-going">重新校验</a>
+                </section>
               </li>
-              <li>
-                <figure>
-                  <img src="../images/center/goImg.png" alt="">
-                  <figcaption class="public-white" data-locale="c-base-go">
-                    校验中
-                  </figcaption>
-                </figure>
-                <span data-locale="c-base-kyc">KYC验证</span>
-                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
-                <span class="public-blur" data-locale="c-base-look">查看</span>
+
+              <!-- kyc验证中 -->
+              <li class="kyc-go">
+                <section>
+                  <figure>
+                    <img src="../images/center/goImg.png" alt="">
+                    <figcaption class="public-white" data-locale="c-base-go">
+                      校验中
+                    </figcaption>
+                  </figure>
+                  <span data-locale="c-base-kyc">KYC验证</span>
+                  <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                  <a href="confirmPhoto.html" class="public-blur" data-locale="c-base-look">查看</a>
+                </section>
               </li>
-              <li>
-                <figure>
-                  <img src="../images/center/noImg.png" alt="">
-                  <figcaption class="public-white" data-locale="c-base-no">
-                    未校验
-                  </figcaption>
-                </figure>
-                <span data-locale="c-base-kyc">KYC验证</span>
-                <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
-                <span class="public-blur" data-locale="c-base-gos">校验</span>
+
+              <!-- kyc未验证 -->
+              <li class="kyc-no">
+                <section>
+                  <figure>
+                    <img src="../images/center/noImg.png" alt="">
+                    <figcaption class="public-white" data-locale="c-base-no">
+                      未校验
+                    </figcaption>
+                  </figure>
+                  <span data-locale="c-base-kyc">KYC验证</span>
+                  <span class="basis-pading public-white" data-locale="c-basis-txt">用于提升账号的安全性和信任级别。</span>
+                  <a href="confirmPhoto.html" class="public-blur" data-locale="c-base-gos">校验</a>
+                </section>
               </li>
             </ul>
           </section>

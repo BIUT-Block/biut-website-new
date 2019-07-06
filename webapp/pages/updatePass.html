@@ -99,8 +99,8 @@
   <main class="public-container">
     <!-- 重置密码 -->
     <section class="pass-content public-cnt">
-      <h2 data-locale="">重置密码</h2>
-      <p data-locale="">我们可以帮助你重置密码和安全信息。首先，请输入你的BIUT 帐户，然后按照下面的说明操作。</p>
+      <h2 data-locale="up-txt">重置密码</h2>
+      <p data-locale="up-tit">我们可以帮助你重置密码和安全信息。首先，请输入你的BIUT 帐户，然后按照下面的说明操作。</p>
       <section class="public-flex-list phone-list">
         <figure>
           <img src="../images/login/china.png" alt="">
@@ -108,11 +108,7 @@
         </figure>
         <input type="text" data-placeholder="r-phone" />
         <img src="../images/login/tipsImg.png" alt="" class="error-img">
-        <section style="display: none">
-          <ul>
-            <li>1</li>
-          </ul>
-        </section>
+        
       </section>
 
       <section class="public-flex-list code-list public-margin">
@@ -131,10 +127,14 @@
     <!-- 重置密码成功 -->
     <section class="pass-success public-cnt">
       <section>
-        <h2 data-locale="">成功重置密码</h2>
-        <img src="" alt="">
+        <h2 data-locale="up-success">成功重置密码</h2>
+        <img src="../images/successImg.png" alt="">
       </section>
-      <p>帐户12312345678的密码已重置您可以使用新密码登录网站。</p>
+      <p>
+        <span data-locale="">已重置账户</span>
+        <span>12312345678</span>
+        <span data-locale="">的密码</span>
+      </p>
       <button type="button" class="public-btn" data-locale="r-go-login">去登录</button>
     </section>
 

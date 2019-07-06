@@ -1,5 +1,7 @@
 //定义全局变量 -- 验证码
 code = ""
+phoneReg = /^1[3456789]\d{9}$/
+codeReg = /^\d{6}$/	
 
 $(function() {
   $("#submitFrom").click(function(){
@@ -11,15 +13,13 @@ $(function() {
   })
 
   $("#goLogin").click(function(){
-    $("#phoneError").css("display","none")
-    $(".phone-list").removeClass('errorBorder')
-    $("#codeError").css("display","none")
-    $(".code-list").removeClass('errorBorder')
+    $("#phoneError,#codeError,.name-success").css("display","none")
+    $(".phone-list,.code-list").removeClass('errorBorder')
 
-    $(".name-success").css("display","none")
     $(".pass-content").css("display","block")
-    $("#code").val("")
-    $("#phone").val("")
+    $("#code,#phone").val("")
+
+    window.location.href = 'login.html'
   })
 })
 
@@ -30,23 +30,21 @@ function updateName () {
   if (phone == "") {
     $("#phoneError").css("display","block")
     $(".phone-list").addClass('errorBorder')
-  } else if (phone != 123456) {
-    alert("手机号码不对")
+  } else if (!phoneReg.test(phone)) {
+    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $(".phone-list").addClass('errorBorder')
   } else if (codes == "") {
     $("#codeError").css("display","block")
     $(".code-list").addClass('errorBorder')
   } else if (codes != code) {
-    alert("验证码不对")
+    $("#codeError").css("display","block").text("验证码不正确")
+    $(".code-list").addClass('errorBorder')
   } else {
-    $("#phoneError").css("display","none")
-    $(".phone-list").removeClass('errorBorder')
-    $("#codeError").css("display","none")
-    $(".code-list").removeClass('errorBorder')
+    $("#phoneError,#codeError,.pass-content").css("display","none")
+    $(".phone-list,.code-list").removeClass('errorBorder')
 
     $(".name-success").css("display","block")
-    $(".pass-content").css("display","none")
-    $("#code").val("")
-    $("#phone").val("")
+    $("#code,#phone").val("")
 
     // $.ajax({
     //   type: "POST",
@@ -75,7 +73,14 @@ function updateName () {
 function getCode() {
   let phone = $("#phone").val().trim()
   if (phone == "") {
-    alert("请输入电话号码")
+    $("#phoneError").css("display","block")
+    $(".phone-list").addClass('errorBorder')
+    $("#phone").focus()
+    return
+  } else if (!phoneReg.test(phone)) {
+    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $(".phone-list").addClass('errorBorder')
+    $("#phone").focus()
     return
   }
   /** 
@@ -111,4 +116,40 @@ function getCode() {
   //     console.log(e)
   //   }
   // });
+}
+
+//电话号码
+$("#phone").on("input propertychange", debounce(function(){
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if (phoneReg.test(ipt)) {
+    $("#phoneError").css("display","none")
+    $(".phone-list").removeClass('errorBorder')
+  }
+}, 300))
+
+//验证码
+$("#code").on("input propertychange", debounce(function() {
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if(code != ipt) {
+    $("#codeError").css("display","block").text("验证码不正确")
+    $(".code-list").addClass('errorBorder')
+  }
+  if (codeReg.test(ipt) && code == ipt) {
+    $("#codeError").css("display","none")
+    $(".code-list").removeClass('errorBorder')
+  }
+}, 300))
+
+function debounce(func,wait){
+  var timeout;
+  return function(){
+      var context=this;//用来保存this的正确指向
+      var args=arguments;//用来保存触发的事件类型，例如keyboard event
+      clearTimeout(timeout);//每次都重新开始计时
+      timeout=setTimeout(function(){
+          func.apply(context,args);
+      },wait);
+  }
 }

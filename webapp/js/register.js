@@ -1,5 +1,8 @@
 //定义全局变量 -- 验证码
 code = ""
+phoneReg = /^1[3456789]\d{9}$/
+passReg = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{8,30}$/
+codeReg = /^\d{6}$/	
 
 $(function () {
   $("#submitReg").click(function () {
@@ -15,6 +18,7 @@ $(function () {
     $(".register-content").css("display","block")
     window.location.href = 'login.html'
   })
+
 })
 
 //注册
@@ -26,35 +30,35 @@ function register() {
   if (regPhone == "") {
     $("#phoneError").css("display","block")
     $(".phone-list").addClass('errorBorder')
-  } else if (regPhone != 123456) {
-    alert("电话号码格式不对")
+  } else if (!phoneReg.test(regPhone)) {
+    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $(".phone-list").addClass('errorBorder')
   } else if (regCode == "") {
     $("#codeError").css("display","block")
     $(".code-list").addClass('errorBorder')
   } else if (regCode != code) {
-    alert("验证码不对")
+    $("#codeError").css("display","block").text("验证码不正确")
+    $(".code-list").addClass('errorBorder')
   } else if (regName == "") {
     $("#nameError").css("display","block")
     $("#regName").addClass('errorBorder')
   } else if (regPass == "") {
     $("#passError").css("display","block")
     $("#regPass").addClass('errorBorder')
+  } else if (!passReg.test(regPass)) {
+    $("#passError").css("display","block").text("密码格式不正确")
+    $("#regPass").addClass('errorBorder')
   } else {
-    $("#phoneError").css("display","none")
-    $("#codeError").css("display","none")
-    $("#nameError").css("display","none")
-    $("#passError").css("display","none")
-    $("#regPass").removeClass('errorBorder').val("")
-    $("#regName").removeClass('errorBorder').val("")
-    $(".code-list").removeClass('errorBorder')
-    $(".phone-list").removeClass('errorBorder')
-    $("#regCode").val("")
-    $("#regPhone").val("")
+    $("#phoneError,#codeError,#nameError,#passError,.register-content").css("display","none")
+    
+    $("#regPass,#regName").removeClass('errorBorder').val("")
+    $(".code-list,.phone-list").removeClass('errorBorder')
+    $("#regCode,#regPhone").val("")
+
+    
+    $(".register-success").css("display","block")
 
     $("#regAccount").html("123456")
-
-    $(".register-success").css("display","block")
-    $(".register-content").css("display","none")
   }
 }
 
@@ -62,7 +66,14 @@ function register() {
 function getCode() {
   let regPhone = $("#regPhone").val().trim()
   if (regPhone == "") {
-    alert("请输入电话号码")
+    $("#phoneError").css("display","block")
+    $(".phone-list").addClass('errorBorder')
+    $("#regPhone").focus()
+    return
+  } else if (!phoneReg.test(regPhone)) {
+    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $(".phone-list").addClass('errorBorder')
+    $("#regPhone").focus()
     return
   }
   /** 
@@ -99,3 +110,50 @@ function getCode() {
   //   }
   // });
 }
+
+//电话号码
+$("#regPhone").on("input propertychange", debounce(function(){
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if (phoneReg.test(ipt)) {
+    $("#phoneError").css("display","none")
+    $(".phone-list").removeClass('errorBorder')
+  }
+}, 300))
+
+//验证码
+$("#regCode").on("input propertychange", debounce(function() {
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if(code != ipt) {
+    $("#codeError").css("display","block").text("验证码不正确")
+    $(".code-list").addClass('errorBorder')
+  }
+  if (codeReg.test(ipt) && code == ipt) {
+    $("#codeError").css("display","none")
+    $(".code-list").removeClass('errorBorder')
+  }
+}, 300))
+
+//密码
+$("#regPass").on("input propertychange",debounce(function() {
+  let ipt = $(this).val().replace(/[\u4E00-\u9FA5]/g, '').replace(/\s+/g, '')
+  $(this).val(ipt)
+  if (passReg.test(ipt)) {
+    $("#passError").css("display","none")
+    $(this).removeClass('errorBorder')
+  }
+}, 300))
+
+function debounce(func,wait){
+  var timeout;
+  return function(){
+      var context=this;//用来保存this的正确指向
+      var args=arguments;//用来保存触发的事件类型，例如keyboard event
+      clearTimeout(timeout);//每次都重新开始计时
+      timeout=setTimeout(function(){
+          func.apply(context,args);
+      },wait);
+  }
+}
+

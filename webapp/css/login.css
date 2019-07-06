@@ -19,9 +19,8 @@ h2 {font-size: 1.2rem;}
 .phone-content {padding: 3.5rem  2.7rem;display: none;}
 .phone-content h2 {padding: 0;}
 .phone-content p {padding: 1rem 0 1.4rem;color:rgba(255,255,255,.2);}
-.error-content {width: 16.8rem;text-align: center;font-size: .6rem;padding-top: 1.4rem;
-  margin: 0 auto;display: none;}
-.error-content span {display: block;line-height: 2;}
+.error-content {width: 20rem;text-align: center;font-size: .6rem;padding-top: 1.4rem;
+  margin: 0 auto;display: none;line-height: 2;}
 
 /* 手机号码验证 */
 .code-content {padding: 3.5rem  2.7rem;display: none;}

@@ -45,12 +45,12 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 
 .public-head ul li:hover,.content-head .head-down img:hover,.suggest-from span:hover,.foot-members-cont .members-tab:hover,
 .public-title figure:hover,.mask-close:hover,.down-client:hover,.close-mask img:hover,.foot-news .foot-news-more:hover,
-.upload-button:hover,.upload-button input[type='file']:hover,.public-blur:hover,.public-cnt:hover,
+.upload-button:hover,.upload-button input[type='file']:hover,.public-blur:hover,.public-cnt:hover,.success-txt span:last-child:hover,
 .public-cnt ul li:hover,.time-list li:hover,.news-mask .left-container img:hover,.left-list2 li:hover,
 .news-mask .right-container img:hover {cursor: pointer;}
 
 /* 首页公共子导航 */
-.public-title {display: flex;align-items: center;justify-content: space-between;box-sizing: border-box;
+.public-title {display: flex;justify-content: space-between;box-sizing: border-box;
   padding: 0 1.8rem 1.6rem 2.8rem;border-bottom: .2rem solid #787380;}
 .public-title h3 {font-size: 1.2rem;color: #fff;font-family: ceraPRO;}
 .public-title figure {display: flex;font-size: .6rem;color: rgba(255,255,255,.8);}
@@ -105,6 +105,13 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
   background: url('../images/index/dynamics-bg.png');background-size: 100% 100%;}
 .new-dynamics ul li figure img {width: 19.1rem;height: 11.5rem;}
 .new-dynamics ul li figure .dynamics-active {position: absolute;top: 0;right: 0;left: 0;}
+
+.new-dynamics ul li figure .tipsTxt {position: absolute;right: .4rem;top: 9.6rem;display: inline-block;
+  padding: .25rem .7rem;color: #fff;background: #59DCB4;border-radius: .1rem;font-size: .7rem;}
+.new-dynamics ul li:nth-child(2) figure .tipsTxt {background: #DCA059;}
+.new-dynamics ul li:nth-child(3) figure .tipsTxt {background: #8587B4;}
+
+.index-news ul li figure .tipsTxt {display: none!important;}
 
 .new-dynamics ul li figure figcaption {text-align: center;font-size: .5rem;}
 .new-dynamics ul li figure figcaption section:first-child {padding: 3rem 0 1rem;}
@@ -173,7 +180,8 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 
 /* 登陆、注册、重置密码 */
 .public-container {padding: 19.3rem 0 18.4rem;display: flex;align-items: center;justify-content: center;
-  background: url('../images/login/publicLoginBg.png') center no-repeat;background-size: cover;position: relative;}
+  background: url('../images/login/publicLoginBg.png') center no-repeat;background-size: cover;
+  position: relative;}
 
 .public-cnt {background:rgba(0,0,0,.5);border-radius: .25rem;display: flex;flex-direction: column;
   color: #fff;width: 25.4rem;}
@@ -184,15 +192,10 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
   display: flex;align-items: center;justify-content: flex-end;color:rgba(255,255,255,.5);font-size: .6rem;}
 
 /* 电话输入选择 */
-.phone-list {padding: 0 .8rem 0 1rem;position: relative;}
+.phone-list {padding: 0 .8rem 0 1rem;}
 .phone-list input {background: none;border: 0;text-indent: .9rem;flex: 1;}
 .phone-list figure img:first-child {margin-right: .45rem;}
 .phone-list .error-img {display: none;}
-.phone-list section {position: absolute;top: 3.1rem;right: 0;left: 0;background:rgba(40,39,55,.97);
-  border-radius: .5rem;padding: .8rem .7rem .8rem 1rem;}
-.phone-list ul {height: 12.9rem;overflow: auto;padding: .2rem 0;}
-.phone-list ul li {padding-bottom: 1.3rem;}
-.phone-list ul li:last-child {padding-bottom: 0;}
    
 .phone-list ul::-webkit-scrollbar { width: .25rem;}
 .phone-list ul::-webkit-scrollbar-thumb { -webkit-box-shadow: inset 0 0 .05rem #fff;background: #fff;border-radius: .5rem;}
@@ -214,6 +217,28 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .public-btn-list button {flex: 1;height: 2rem;border: 0;color: #434561;}
 .public-btn-list button:first-child {margin-right: 1rem;background: #45485A;color: #fff;}
 
+
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: .6rem;
+  color:rgba(255,255,255,.5);
+}
+input:-moz-placeholder,textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: .6rem;
+  color:rgba(255,255,255,.5);
+}
+input::-moz-placeholder,textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: .6rem;
+  color:rgba(255,255,255,.5);
+}
+input::-ms-input-placeholder,textarea::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: .6rem;
+  color:rgba(255,255,255,.2);
+}
 
 /* 媒体查询 适配 */
 html {font-size: 20px;}
@@ -237,6 +262,8 @@ html {font-size: 20px;}
   .public-head figure  .open span:last-child {transform: rotate(-45deg);top: .8rem;}
   .public-head figure  .open span:nth-child(2) {display: none;}
   .public-head ul {flex-direction: column;}
+  .public-head ul .login a {width: 5.25rem;height: 2.1rem;}
+
   .public-head ul li,.public-head ul li:last-child {margin: 2rem 0 0;font-size: 1.2rem;}
   .public-head ul li:first-child {margin-top: 0;}
   .public-head nav {flex: 1;display: flex;align-content: center;justify-content: center;
@@ -244,6 +271,7 @@ html {font-size: 20px;}
     background: url('../images/index/header-mask-bg.png') center no-repeat;background-size: 100% 100%;} 
   .public-head  .tab-nav {display: flex!important;}
   .public-head nav ul {width: 100%;justify-content: center;}
+
 
   .new-dynamics {margin-top: 5.075rem;height: 89.85rem;}
   .new-dynamics ul li:first-child {padding-top: 3.175rem;}
@@ -268,6 +296,10 @@ html {font-size: 20px;}
   .footer-list .footer-flex {flex-direction: column;}
   .footer-list .footer-last {text-align: center;padding-top: 2.5rem;}
   .footer-last-list .wxActive {top: 25%;right: 14%;}
+
+  .public-container {padding: 5rem 0;height: 100%;}
+  .public-cnt {width: 90%;}
+  .login-foot {padding: 0 15px;}
 }
 
 @media (min-width: 768px) {

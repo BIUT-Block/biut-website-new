@@ -1,64 +1,4 @@
 $(function () {
-  let sts = sessionStorage.getItem("status");
-  if (sts == 1) {
-    $(".headerImg").css("display","block")
-    $(".login").css("display","none")
-  }
-  //点击切换中文
-  $("#i18nZh").click(function () {
-    sessionStorage.setItem("lang", 'zh');
-    $(this).addClass("check-color")
-    $("#i18nEn").removeClass("check-color")
-    loadProperties('zh');
-    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
-    getNes(0)
-    getMember(0)
-    getTimeList(0)
-    getDateilsTime(0, 0)
-  })
-
-  //点击切换英文
-  $("#i18nEn").click(function () {
-    sessionStorage.setItem("lang", ' ');
-    $(this).addClass("check-color")
-    $("#i18nZh").removeClass("check-color")
-    loadProperties(' ');
-    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
-    getNes(1)
-    getMember(1)
-    getTimeList(1)
-    getDateilsTime(0, 1)
-  })
-
-  //移动端导航栏
-  $('#navbar-toggle').on('click', function (event) {
-    $(this).toggleClass('open');
-    $("#toggle-head").toggleClass('open-nav')
-    $("#tabNav").toggleClass('tab-nav')
-  });
-
-  //刷新页面保持中英文切换高亮文字
-  let langS = sessionStorage.getItem("lang")
-  if (langS == "zh") {
-    $("#i18nZh").addClass("check-color")
-    $("#i18nEn").removeClass("check-color")
-    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
-    getNes(0)
-    getMember(0)
-    getTimeList(0)
-    getDateilsTime(0, 0)
-    loadProperties('zh')
-  } else {
-    $("#i18nZh").removeClass("check-color")
-    $("#i18nEn").addClass("check-color")
-    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
-    getNes(1)
-    getMember(1)
-    getTimeList(1)
-    getDateilsTime(0, 1)
-    loadProperties(' ')
-  }
-
   //新闻列表页面hover
   $("#newsList").on("mouseenter", ".new-list", function () {
     $(this).children("figure").addClass("news-active")
@@ -153,6 +93,66 @@ $(function () {
     getDateilsTime(idx, lang)
   })
 
+  let sts = sessionStorage.getItem("status");
+  if (sts == 1) {
+    $(".headerImg").css("display","block")
+    $(".login").css("display","none")
+  }
+  //点击切换中文
+  $("#i18nZh").click(function () {
+    sessionStorage.setItem("lang", 'zh');
+    $(this).addClass("check-color")
+    $("#i18nEn").removeClass("check-color")
+    loadProperties('zh');
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    getNes(0)
+    getMember(0)
+    getTimeList(0)
+    getDateilsTime(0, 0)
+  })
+
+  //点击切换英文
+  $("#i18nEn").click(function () {
+    sessionStorage.setItem("lang", ' ');
+    $(this).addClass("check-color")
+    $("#i18nZh").removeClass("check-color")
+    loadProperties(' ');
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    getNes(1)
+    getMember(1)
+    getTimeList(1)
+    getDateilsTime(0, 1)
+  })
+
+  //移动端导航栏
+  $('#navbar-toggle').on('click', function (event) {
+    $(this).toggleClass('open');
+    $("#toggle-head").toggleClass('open-nav')
+    $("#tabNav").toggleClass('tab-nav')
+  });
+
+  //刷新页面保持中英文切换高亮文字
+  let langS = sessionStorage.getItem("lang")
+  if (langS == "zh") {
+    $("#i18nZh").addClass("check-color")
+    $("#i18nEn").removeClass("check-color")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
+    getNes(0)
+    getMember(0)
+    getTimeList(0)
+    getDateilsTime(0, 0)
+    loadProperties('zh')
+  } else {
+    $("#i18nZh").removeClass("check-color")
+    $("#i18nEn").addClass("check-color")
+    $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
+    getNes(1)
+    getMember(1)
+    getTimeList(1)
+    getDateilsTime(0, 1)
+    loadProperties(' ')
+  }
+
   //点击上一页
   $("#prevNews").click(function(){
     alert("点击了上一页")
@@ -182,7 +182,6 @@ $(window).scroll(function (event) {
       $("#header-nav").removeClass('nav-bg')
     }
   }
-
 });
 
 //获取新闻数据
@@ -202,6 +201,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[l].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<span class="tipsTxt">'+ "公告" +'</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[l].title + '</p>'
@@ -220,6 +220,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[k].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<span class="tipsTxt">'+ "公告" +'</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[k].title + '</p>'
@@ -241,6 +242,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[i].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<span class="tipsTxt">'+ "公告" +'</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[i].title + '</p>'
@@ -259,6 +261,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[a].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
+              + '<span class="tipsTxt">'+ "公告" +'</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[a].title + '</p>'
@@ -272,7 +275,6 @@ function getNes(lang) {
             '</li>'
           }
         }
-
       }
       $("#newsList").append(html);
     }

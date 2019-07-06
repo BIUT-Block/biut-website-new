@@ -1,5 +1,8 @@
 //定义全局变量 -- 验证码
 code = ""
+phoneReg = /^1[3456789]\d{9}$/
+passReg = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{8,30}$/
+codeReg = /^\d{6}$/	
 
 $(function () {
   //默认登录
@@ -38,7 +41,7 @@ function login() {
     /**
      * 如果输入成功接口判断返回的是 电话号码登录 还是 用户名登录
      * 
-     * 123456 电话号码登录  2 用户名登录
+     * 123456 电话号码登录  其他 用户名登录
      * 
      */
     $("#loginError,#loginError").css("display", "none")
@@ -48,7 +51,9 @@ function login() {
       $(".phone-content").css("display", "block")
       $("#confirmPhone").val(ipt)
 
-      $(".error-content").css("display", "none")
+      if (!phoneReg.test(ipt)) {
+        $(".error-content").css("display", "block")
+      }
     } else {
       $(".login-content").css("display", "none")
       $(".name-content").css("display", "block")
@@ -61,14 +66,13 @@ function login() {
 //电话号码登录继续下一步
 function nextLogin() {
   let val = $("#confirmPhone").val().trim()
-  if (val == "" || val != 123456) {
+  if (val == "" || !phoneReg.test(val)) {
     $(".error-content,#phoneErrorImg").css("display", "block")
     $(".phone-list").addClass("errorBorder")
   } else {
     $(".error-content,#phoneErrorImg,.login-content,.phone-content").css("display", "none")
     $(".code-content").css("display", "block")
     $(".phone-list").removeClass("errorBorder")
-    //window.location.href = '../index.html'
   }
 }
 
@@ -79,7 +83,7 @@ function codeLogin() {
     $(".code-list").addClass('errorBorder')
     $("#codeError").css("display","block")
   } else if (codes != code) {
-    alert("验证码不正确")
+    $("#codeError").css("display","block").text("验证码不正确")
     $(".code-list").addClass('errorBorder')
   } else {
     $(".code-list").removeClass('errorBorder')
@@ -135,22 +139,71 @@ function nameLogin() {
   if (pass == "") {
     $("#passError").css("display","block")
     $("#pass").addClass('errorBorder')
-  } else if (pass != 123456) {
-    alert("密码格式不正确")
+  } else if (!passReg.test(pass)) {
+    $("#passError").css("display","block").text("密码格式不正确")
+    $("#pass").addClass('errorBorder')
   } else {
+    /**
+     * 密码格式正确之后、接口判断密码是否正确
+     * 
+     * 登录成功之后需要缓存用户的登录状态 或者缓存token  进入相关界面通过token去获取对应的状态
+     * 
+     * status  登录状态 (1 已登录)  userPhone    电话号码 
+     * userName 用户姓名 userNickName 用户昵称
+     * kyc 认证状态 
+     * 
+     */
     $("#pass").removeClass('errorBorder')
     $(".name-content,#passError").css("display","none")
     $(".login-content").css("display", "block")
     window.location.href = '../index.html'
 
-    /**
-     * 登录成功之后需要缓存用户的登录状态 或者缓存token  进入相关界面通过token去获取对应的状态
-     * 
-     * status  登录状态  userPhone    电话号码 
-     * userName 用户姓名 userNickName 用户昵称
-     * kyc 认证状态 
-     * 
-     */
     sessionStorage.setItem("status", '1');
+  }
+}
+
+//电话号码
+$("#confirmPhone").on("input propertychange", debounce(function(){
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if (phoneReg.test(ipt)) {
+    $(".error-content").css("display","none")
+    $(".phone-list").removeClass('errorBorder')
+  }
+}, 300))
+
+//验证码
+$("#code").on("input propertychange", debounce(function() {
+  let ipt = $(this).val().replace(/[^\d]/g,'')
+  $(this).val(ipt)
+  if(code != ipt) {
+    $("#codeError").css("display","block").text("验证码不正确")
+    $(".code-list").addClass('errorBorder')
+  }
+  if (codeReg.test(ipt) && code == ipt) {
+    $("#codeError").css("display","none")
+    $(".code-list").removeClass('errorBorder')
+  }
+}, 300))
+
+//密码
+$("#pass").on("input propertychange",debounce(function() {
+  let ipt = $(this).val().replace(/[\u4E00-\u9FA5]/g, '').replace(/\s+/g, '')
+  $(this).val(ipt)
+  if (passReg.test(ipt)) {
+    $("#passError").css("display","none")
+    $(this).removeClass('errorBorder')
+  }
+}, 300))
+
+function debounce(func,wait){
+  var timeout;
+  return function(){
+      var context=this;//用来保存this的正确指向
+      var args=arguments;//用来保存触发的事件类型，例如keyboard event
+      clearTimeout(timeout);//每次都重新开始计时
+      timeout=setTimeout(function(){
+          func.apply(context,args);
+      },wait);
   }
 }

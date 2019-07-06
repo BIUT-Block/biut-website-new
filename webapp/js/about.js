@@ -29,10 +29,15 @@ $(function () {
    * 如果没有登陆信息就需要先登陆
    */
   $("#openMask").click(function () {
-    $("#aboutMask").css("display", "block")
-    //$("#maskHead").attr("src",``)
-    //$("#maskName").text("")
-    $("body").addClass('ov-h')
+    let sts = sessionStorage.getItem("status")
+    if (sts == 1) {
+      $("#aboutMask").css("display", "block")
+      $("body").addClass('ov-h')
+      //$("#maskHead").attr("src",``)
+      $("#maskName").text("张智超")
+    } else {
+      alert("请先登录")
+    }
   })
 
   /**
@@ -53,6 +58,13 @@ $(function () {
   $("#closeMask").click(function () {
     closeMask()
   })
+
+  var str = decodeURI(GetQueryString("hash"))
+  if (str == 1) {
+    $("html,body").animate({
+      scrollTop: $("#member").offset().top
+    }, 2000);
+  }
 })
 
 function closeMask() {
@@ -60,4 +72,10 @@ function closeMask() {
   $("body").removeClass('ov-h')
   $("#iptReason").val("")
   $("#iptLength").text('0')
+}
+
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return (r[2]); return null;
 }
