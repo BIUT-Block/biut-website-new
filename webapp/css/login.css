@@ -6,7 +6,8 @@ h2 {font-size: 1.2rem;}
 .login-content .public-flex-list {padding-right: .8rem;}
 .login-content .public-flex-list img {display: none;}
 .login-content .login-btn {color: #434561;margin: 2.4rem 0 1rem;width: 100%;}
-.public-flex-list input {background: none;border: 0;flex: 1;text-indent: 1.2rem;}
+.public-flex-list input {background: none;border: 0;flex: 1;text-indent: 1.2rem;
+  height: 1rem;padding: 1.25rem 0;line-height: 1rem;}
 .create-list {display: flex;align-items: center;justify-content: space-between;}
 .create-list a {flex: 1;display: flex;align-items: center;justify-content: center;background: #45485A;
   border: 0;}
@@ -31,3 +32,25 @@ h2 {font-size: 1.2rem;}
 .name-content button {width: 100%;margin: 1rem 0 2rem;color: #434561;}
 .name-content section {padding: 1rem 0 1.2rem;}
 .name-content section span:first-child {color: rgba(255,255,255,.4);padding-right: .5rem;}
+
+/* 媒体查询 适配 */
+html {font-size: 20px;}
+@media (max-width: 767px) {
+  html { font-size: 17px;}
+  
+  .error-content {width: 80%;}
+}
+
+@media (min-width: 768px) {
+  html { font-size: 18px;} 
+}
+
+@media (min-width: 992px) {
+  html { font-size: 19px;} 
+}
+
+@media (min-width: 1200px) {
+  html { font-size: 20px;}
+  .container {padding: 0;width: 1200px;}
+  .row {margin: 0;}
+}

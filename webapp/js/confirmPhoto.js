@@ -2,6 +2,18 @@ cardReg = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^((1[1-5])|
 
 $(function () {
   /**
+   * 根据id显示kyc认证的标题
+   * 
+   * 4 校验完成
+   * 3 未校验 
+   * 2 校验中 
+   * 1 校验失败 
+   * 
+   */
+  let pageId = GetQueryString("id")
+  console.log(pageId)
+  
+  /**
    * 缓存中获取对应的数据
    * 
    * 用户名、绑定手机号码、注册时间
@@ -46,11 +58,12 @@ $(function () {
     } else if (ipt2 == "") {
       alert("请上传身份证反面")
     } else {
-
+      alert("提交校验成功")
     }
   })
 })
 
+//图片上传
 function uploadImg(id, txt, img1, img2, params) {
   if (params.target.files.length == 1) {
     let file = params.target.files[0] || params.dataTransfer.files[0];
@@ -110,4 +123,10 @@ function debounce(func,wait){
           func.apply(context,args);
       },wait);
   }
+}
+
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return (r[2]); return null;
 }

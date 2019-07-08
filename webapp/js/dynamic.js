@@ -16,6 +16,6 @@ var swiper = new Swiper('.swiper-container', {
   speed: 600,
   //grabCursor : true,
   loop: true,
-  autoplay: 3000,
+  autoplay: 5000,
   autoplayDisableOnInteraction: false,
 });

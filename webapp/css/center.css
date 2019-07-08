@@ -12,14 +12,16 @@
 .left-list1 {padding: 2.9rem 0 2.5rem;text-align: center;font-size: .8rem;color: #fff;}
 .left-list1 li img {margin-bottom: 1.9rem;}
 .left-list1 li:last-child {color:rgba(255,255,255,.5);font-size: .6rem;margin-top: .7rem;}
-.left-list2 {text-align: center;padding-bottom: 3.1rem;}
-.left-list2 li {height: 2rem;margin-bottom: .4rem;line-height: 2rem;}
+.left-list2 {text-align: center;padding-bottom: 4.5rem;}
+.left-list2 li {margin-bottom: .4rem;width: 8.5rem;display: block;margin: 0 auto;}
+.left-list2 li:nth-child(odd) {color:rgba(255,255,255,.1);padding-bottom: .5rem;pointer-events: none;
+  border-bottom: .1rem solid rgba(62,64,78,.4);margin-bottom: 1rem;}
+.left-list2 li:nth-child(2) {padding-bottom: 2rem;}
 .left-list2 li img {display: none;}
-.left-list2 .active-list {background:rgba(18,18,22,.3);}
 .left-list2 .active-list img {display:inline-block;margin: 0 .8rem 0 -1.55rem;}
 
 /* 修改头像内容 */
-.center-update {display: block;}
+.center-update {display: none;}
 .update-content {display: flex;}
 .center-center {width: 20.1rem;margin: 0 4rem 0 3.2rem;}
 .center-center p {font-size: .7rem;color:rgba(255,255,255,.5);padding: 1.2rem 0;}
@@ -82,7 +84,7 @@
 .success-content ul li button {width: 12.75rem;color: #434561;}
 
 /* 基础信息 */
-.center-basis {display: none;}
+.center-basis {display: block;}
 .basis-content {height: 28.1rem;padding: 2.85rem 2.8rem 0 3.2rem;font-size: .75rem;}
 .basis-head figure,.basis-head figure figcaption {display: flex;align-items: center;}
 .basis-list1 {padding-left: 2.3rem;}

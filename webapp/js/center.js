@@ -90,16 +90,12 @@ $(function(){
     $(this).addClass("active-list").siblings().removeClass("active-list")
     let idx = $(this).index()
     if (idx == 1) {
-
-    } else if (idx == 2) {
-
-    } else if (idx == 3) {
+      $("#noApply").css("display","none")
+      $("#centerBasis").css("display","block")
+    } else {
       // 进入榜上有名的界面 根据条件判断显示 什么信息
       $("#noApply").css("display","block")
       $("#centerBasis").css("display","none")
-    } else {
-      $("#noApply").css("display","none")
-      $("#centerBasis").css("display","block")
     }
     
   })

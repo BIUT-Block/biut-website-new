@@ -66,3 +66,7 @@ html {font-size: 20px;}
   .container {padding: 0;width: 1200px;}
   .row {margin: 0;}
 }
+
+@media (min-width: 1920px) {
+  .foot-news {margin: 0 auto;width: 1200px;}
+}

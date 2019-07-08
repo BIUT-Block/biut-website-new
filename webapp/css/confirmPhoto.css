@@ -1,4 +1,5 @@
-.confirm-container {background: rgba(70, 74, 99,1);padding: 12.7rem 0 10rem;}
+.confirm-container {background: url('../images/confirmPhoto/photoBg.png') center no-repeat;
+  padding: 12.7rem 0 10rem;background-size: cover;}
 
 .confirm-content1 {padding: 2.1rem 3rem  1.6rem 2.5rem;}
 .confirm-content2 {padding: 2rem 1.5rem  3.5rem 2.5rem;}
@@ -70,8 +71,6 @@ html {font-size: 20px;}
   .requirr-list li:first-child {padding: 0 0 1rem 0;}
   .requirr-list li span {display: block;text-indent: 2em;}
 
-  
-
   .topRight {top: -100%;}
   .bottomLeft {bottom: -100%;}
 
@@ -79,18 +78,4 @@ html {font-size: 20px;}
   .card-list li:first-child figure .centerTop {bottom: 0;right: 0;transform:rotate(90deg);top: 99%;}
 
   .card-list li:last-child {border-left: 0;border-top: .05rem solid rgba(120,115,128,.3)}
-}
-
-@media (min-width: 768px) {
-  html { font-size: 18px;} 
-}
-
-@media (min-width: 992px) {
-  html { font-size: 19px;} 
-}
-
-@media (min-width: 1200px) {
-  html { font-size: 20px;}
-  .container {padding: 0;width: 1200px;}
-  .row {margin: 0;}
 }

@@ -95,8 +95,8 @@ $(function () {
 
   let sts = sessionStorage.getItem("status");
   if (sts == 1) {
-    $(".headerImg").css("display","block")
-    $(".login").css("display","none")
+    $(".headerImg").css("display", "block")
+    $(".login").css("display", "none")
   }
   //点击切换中文
   $("#i18nZh").click(function () {
@@ -154,12 +154,12 @@ $(function () {
   }
 
   //点击上一页
-  $("#prevNews").click(function(){
+  $("#prevNews").click(function () {
     alert("点击了上一页")
   })
 
   //点击下一页
-  $("#nextNews").click(function(){
+  $("#nextNews").click(function () {
     alert("点击了下一页")
   })
 });
@@ -193,7 +193,7 @@ function getNes(lang) {
     success: function (result) {
       $("#newsList").html("")
       let res = result.data.docs
-      var html = ""
+      var html = "";
       if (res.length > 6) {
         if (lang == 0) {
           for (var l = 1; l < 6; l = l + 2) {
@@ -201,7 +201,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[l].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
-              + '<span class="tipsTxt">'+ "公告" +'</span>'
+              + '<span class="tipsTxt">' + res[l].tags[1].name + '</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[l].title + '</p>'
@@ -220,7 +220,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[k].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
-              + '<span class="tipsTxt">'+ "公告" +'</span>'
+              + '<span class="tipsTxt">' + res[k].tags[1].name + '</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[k].title + '</p>'
@@ -234,15 +234,15 @@ function getNes(lang) {
             '</li>'
           }
         }
-
       } else {
+        // 弹窗新闻
         if (lang == 0) {
           for (var i = 1; i < res.length; i = i + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * i + 's onclick="newsDetails(`' + res[i].id + '`)">'
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[i].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
-              + '<span class="tipsTxt">'+ "公告" +'</span>'
+              + '<span class="tipsTxt">' + res[i].tags[1].name + '</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[i].title + '</p>'
@@ -261,7 +261,7 @@ function getNes(lang) {
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[a].sImg + '" alt=""/>'
               + '<img src="../images/index/dynamicsActive.png" class="dynamics-active" alt="" hidden/>'
-              + '<span class="tipsTxt">'+ "公告" +'</span>'
+              + '<span class="tipsTxt">' + res[a].tags[1].name + '</span>'
               + '<figcaption>'
               + '<section>'
               + '<p class="newstitle">' + res[a].title + '</p>'
@@ -277,6 +277,62 @@ function getNes(lang) {
         }
       }
       $("#newsList").append(html);
+
+      // 新闻列表
+      $("#footNewsList").html("")
+      var htmls = ""
+      if (lang == 0) {
+        for (var tim = 1; tim < res.length; tim = tim + 2) {
+          htmls += '<li onclick="newsDetails(`' + res[tim].id + '`)">'
+            + "<section class='foot-news-tit'>"
+            + '<h4>' + res[tim].title + '</h4>'
+            + '<time>' + res[tim].date + '</time>'
+            + '</section>'
+            + "<p class='foot-news-txt'>" + res[tim].stitle + '</p>'
+            + '</li>'
+        }
+      } else {
+        for (var tims = 0; tims < res.length; tims = tims + 2) {
+          htmls += '<li onclick="newsDetails(`' + res[tims].id + '`)">'
+            + "<section class='foot-news-tit'>"
+            + '<h4>' + res[tims].title + '</h4>'
+            + '<time>' + res[tims].date + '</time>'
+            + '</section>'
+            + "<p class='foot-news-txt'>" + res[tims].stitle + '</p>'
+            + '</li>'
+        }
+      }
+      $("#footNewsList").append(htmls);
+
+    }
+  });
+}
+
+
+//查看新闻详情
+function newsDetails(params, id1, id2) {
+  $("#newsMask").css("display", "block")
+  $("body").addClass('ov-h')
+  $.ajax({
+    url: 'https://biut.io:18080/api/v0/content/getContent?id=' + params,
+    type: 'GET',
+    data: 'json',
+    success: function (result) {
+      var doc = result.data.doc;
+      var docTitle = doc.title; //标题
+      var docSubTitle = doc.stitle; //副标题
+      var clickNum = doc.clickNum;//点击次数
+      var newsTime = doc.date;//时间
+      var commentsHTML = doc.comments;
+      
+      $("#newsTitle").html(docTitle)
+      $("#reading").html(clickNum)
+      $("#newsTime").html(newsTime)
+      $("#newsContent").html(commentsHTML)
+      $("#newsMaskContent img").each(function () {
+        let imgUrl = $(this).attr("src")
+        $(this).attr("src", `http://biut.io:8080` + imgUrl)
+      })
     }
   });
 }
@@ -351,19 +407,19 @@ function getDateilsTime(idx, lang) {
     let item = data.time2017
     if (idx == 1) {
       item = data.time2018
-      test(item, lang)
+      detailsList(item, lang)
       return
     } else if (idx == 2) {
       item = data.time2019
-      test(item, lang)
+      detailsList(item, lang)
     } else {
       item = data.time2017
-      test(item, lang)
+      detailsList(item, lang)
     }
   })
 }
 
-function test(item, lang) {
+function detailsList(item, lang) {
   $("#timeDetails").html("")
   var html = ""
   if (lang == 0) {
@@ -382,34 +438,6 @@ function test(item, lang) {
     }
   }
   $("#timeDetails").append(html);
-}
-
-//查看新闻详情
-function newsDetails(params) {
-  $("#newsMask").css("display", "block")
-  $("body").addClass('ov-h')
-  $.ajax({
-    url: 'https://biut.io:18080/api/v0/content/getContent?id=' + params,
-    type: 'GET',
-    data: 'json',
-    success: function (result) {
-      var doc = result.data.doc;
-      var docTitle = doc.title; //标题
-      var docSubTitle = doc.stitle; //副标题
-      var clickNum = doc.clickNum;//点击次数
-      var newsTime = doc.date;//时间
-      var commentsHTML = doc.comments;
-
-      $("#newsTitle").html(docTitle)
-      $("#reading").html(clickNum)
-      $("#newsTime").html(newsTime)
-      $("#newsContent").html(commentsHTML)
-      $("#newsMaskContent img").each(function () {
-        let imgUrl = $(this).attr("src")
-        $(this).attr("src", `http://biut.io:8080` + imgUrl)
-      })
-    }
-  });
 }
 
 var ModalHelper = (function (bodyCls) {

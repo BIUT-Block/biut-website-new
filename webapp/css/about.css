@@ -6,7 +6,7 @@
 .advantage-list .advantage-list-border1 li {border: .15rem solid rgba(255,255,255,.1);border-top:0;border-left: 0;}
 .advantage-list .advantage-list-border1 li:last-child,.advantage-list .advantage-list-border2 li:last-child {border-right:0;}
 .advantage-list .advantage-list-border2 li {border-right: .15rem solid rgba(255,255,255,.1);}
-.advantage-list ul li figure {width: 13.5rem;margin: 0 auto;}
+.advantage-list ul li figure {width: 15rem;margin: 0 auto;}
 .advantage-list ul li figure img {width: 5.65rem;height: 5.65rem;}
 .advantage-list ul li figure figcaption h3 {font-size: .9rem;color: #fff;padding: 2.1rem 0 1.4rem 0;}
 
@@ -14,9 +14,7 @@
 .apply-list ul li {display: flex;border-right: 0.15rem solid rgba(255,255,255,.1);margin-top: 2.6rem;padding: 1.7rem 0 0;
   height: 17.4rem;text-align: center;}
 .apply-list ul li:last-child {border: 0;}
-.apply-list ul li figure {width: 12rem;margin: 0 auto;}
-.apply-list ul li:nth-child(2) figure {width: 13.6rem;}
-.apply-list ul li:last-child figure {width: 14rem;}
+.apply-list ul li figure {width: 15rem;margin: 0 auto;}
 .apply-list ul li figure img {width: 3.75rem;height: 3.75rem;}
 .apply-list ul li figure figcaption h3 {font-size: .9rem;color: #fff;padding: 2.4rem 0 1.4rem 0;}
 .apply-list ul li figure figcaption span,.advantage-list ul li figure figcaption span {display: block;font-size: .7rem;color:rgba(255,255,255,.4);
@@ -27,28 +25,9 @@
 .use-list ul li:last-child {padding-left: 2rem;}
 .use-list ul li figure {display: flex;}
 .use-list ul li figure img {width: 7.8rem;height: 7.8rem;}
-.use-list ul li figure figcaption {font-size: .8rem;color: #fff;padding: 1.2rem 0 0 1.5rem;width: 17.85rem;
+.use-list ul li figure figcaption {font-size: .75rem;color: #fff;padding: 1.2rem 0 0 1.5rem;width: 17.85rem;
   line-height: 1.5;}
 .use-list ul li:last-child figure figcaption {width: 16.5rem;}
-
-.about-mask {overflow: auto;height: 100vh;-ms-overflow-style: none;display: flex;align-items: center;
-  overflow: -moz-scrollbars-none;padding: 8rem;flex-direction: column;}
-.about-mask::-webkit-scrollbar { width: 0 !important;}
-.close-mask {width: 25.55rem;text-align: right;margin-right: -5.6rem;}
-.close-mask img {width: 2.65rem;height: 2.65rem;}
-
-.mask-content {background: #87899B;box-shadow:0 .35rem .4rem 0 rgba(69,72,90,0.14);width: 25.55rem;
-  padding: 3rem 2.7rem 3.6rem;border-radius: .25rem;color: #fff;}
-.mask-content h4 {font-size: 1.2rem;}
-.mask-content .mask-txt1 {color:rgba(255,255,255,.2);padding: 1rem 0 2.1rem;}
-.mask-content .mask-txt2 {padding: 1.6rem 0 .7rem;}
-.mask-content textarea {width: 100%;height: 8.1rem;resize:none;background:rgba(18,17,22,.3);border-radius: .5rem;
-  color:rgba(255,255,255,.8);font-size: .7rem;border: 0;padding: 1.1rem;}
-.mask-content button {border: 0;width: 100%;height: 2.6rem;color: #434561;margin-top: 1.3rem;}
-.mask-ipt {position: relative;}
-.mask-ipt section {position: absolute;bottom: .6rem;right: 1.6rem;color:rgba(255,255,255,.2);font-size: .6rem;}
-
-
 
 .footer {background: #2C2D37;}
 .foot-members {display: flex;}
@@ -58,11 +37,11 @@
 .foot-members .container-last {flex: 1;background: #363740;margin-top: -9.8rem;}
 
 .foot-members-cont {padding-top: 2.7rem;}
-.foot-members-cont ul li {padding: 2.1rem 2.5rem 2.5rem;}
+.foot-members-cont ul li {padding: 2.1rem 2.1rem 0;height: 23.2rem;}
 .foot-members-cont ul li:hover {background:rgba(62,63,73,1);box-shadow:0 .7rem 3.4rem 0 rgba(69,72,90,0.09);}
 .foot-members-cont ul li  figure {text-align: center;}
 .foot-members-cont ul li  figure img {width: 7.1rem;height: 7.1rem;}
-.foot-members-cont ul li  figure h4 {font-size: .9rem;color: #fff;padding: 2.7rem 0 1.3rem;}
+.foot-members-cont ul li  figure h4 {font-size: .9rem;color: #fff;padding: 2.2rem 0 1.3rem;}
 .foot-members-cont ul li  figure p {font-size: .6rem;line-height: 2;color:rgba(255,255,255,.4);}
 .foot-members-cont .members-tab {padding-top: 1rem;}
 .foot-members-cont .members-tab figure {display: flex;align-items: center;justify-content: center;
@@ -106,11 +85,7 @@ html {font-size: 20px;}
   .use-list ul li {padding: 1rem 0 0 0;}
   .use-list ul li:last-child {padding-left: 0;}
 
-  .close-mask {margin-right: 0;width: 100%;}
-  .close-mask img {width: 1rem;height: 1rem;margin-bottom: 1rem;}
-  .mask-content {width: 100%;}
-  .about-mask {width: 90%;padding: 0; margin: 0 auto;height: 100%;
-    display: flex;align-items: center;justify-content: center;}
+  
 
   .foot-history {margin: 7.5rem 0 5rem;}
   
@@ -141,4 +116,9 @@ html {font-size: 20px;}
   html { font-size: 20px;}
   .container {padding: 0;width: 1200px;}
   .row {margin: 0;}
+}
+
+@media (min-width: 1920px) {
+  .public-footer .foot-members .container {width: 1200px;}
+  .public-footer .container .foot-history {width: 1200px;margin: 7.5rem auto 10rem;}
 }

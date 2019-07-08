@@ -7,14 +7,14 @@
 .container-list li {display: flex;}
 .container-list li span {padding: .9rem 0 .8rem;font-size: .7rem;}
 .container-list li span:first-child {width: 7.25rem;text-align: center;color:rgba(255,255,255,.3);
-  border-right: .1rem solid #2A2C38;box-sizing: border-box;font-size: .7rem;display: flex;
+  border-right: .1rem solid #2A2C38;box-sizing: border-box;font-size: .6rem;display: flex;
   align-items: center;justify-content: center;}
 .container-list li span:last-child {display: flex;color: #fff;padding: .9rem 1.6rem .8rem;flex: 1;
   line-height: 2;}
 .container-list li:nth-child(odd) {background: #242634;}
 .container-list li:nth-child(even) {background: #21222C;}
 .container-bg li {background: #21222C!important;}
-.container-bg li span {font-size: .8rem!important;color:#fff!important;}
+.container-bg li span {font-size: .7rem!important;color:#fff!important;justify-content: center;}
 
 .time-list li {display: flex;color:rgba(255,255,255,.1);margin-bottom: .1rem;}
 
@@ -41,6 +41,6 @@ h2 {font-size: 18px;color: #fff;padding-bottom: 1rem;border-bottom: 4px solid #0
 
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1920px) {
   .about-container .last-cnt {padding-left: 1.2rem;}
 }

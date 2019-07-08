@@ -1,12 +1,5 @@
 $(function () {
   $("#submitEmail").click(function () {
-    $(".toastCnt").slideDown()
-    setTimeout(function () {
-      $(".toastCnt").slideUp()
-    }, 3000)
-  })
-
-  $("#submitEmail").click(function () {
     $(".toast-content").slideDown()
     setTimeout(function () {
       $(".toast-content").slideUp()
@@ -14,15 +7,15 @@ $(function () {
   })
 
   //更多项目
-  $("#projectMore").click(function(){
-    location.href='./pages/about.html';
+  $("#projectMore").click(function () {
+    location.href = './pages/about.html';
   })
 
   //更多新闻
-  $("#newsMore").click(function(){
-    location.href='/pages/dynamic.html';
+  $("#newsMore").click(function () {
+    location.href = '/pages/dynamic.html';
   })
-  
+
   //价格数据
   $("#btcPrice").html("-")
   $(".btcRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
@@ -36,7 +29,7 @@ $(function () {
   $(".usdTRiseFall").html("-" + '%') //需要传递参数判断涨跌  + 涨  - 跌
   $(".usdTRiseFalls").html("-" + '%')
 
-  //默认所有的数据为0
+  //默认所有的数据为-
   $("#idxNetwork").html("-")
   $("#idxAccount").html("-")
   $("#idxCurrent").html("-")
@@ -135,7 +128,7 @@ $(document).ready(function () {
   $('.scrollContent').each(function () {
     mTop.push($(this).offset().top)
   });
-  
+
   $('#downLoad').click(function () {
     $("html,body").stop().animate({
       scrollTop: mTop[index] + 1
@@ -164,6 +157,7 @@ $(document).ready(function () {
   }
 })
 
+//echart图表
 function generateChart(param1, param2, colors) {
   //基于准备好的DOM，初始化echarts实例
   var myChart = echarts.init(document.getElementById('main'));
@@ -401,15 +395,8 @@ function getNow(s) {
   return s < 10 ? '0' + s : s;
 }
 
-function onOpen(ws) {
-
-}
 
 function rd(n, m) {
   var c = m - n + 1;
   return Math.floor(Math.random() * c + n);
-}
-
-function heartPackage(ws) {
-
 }
