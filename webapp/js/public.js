@@ -1,3 +1,5 @@
+var maxNewsItems = 6
+var lang = 0
 $(function () {
   //新闻列表页面hover
   $("#newsList").on("mouseenter", ".new-list", function () {
@@ -86,7 +88,6 @@ $(function () {
     $("#timeLists").children(":first").find("img").attr("src", "../images/about/aboutR.png")
     $(this).addClass("time-check").find("img").attr("src", "../images/about/aboutC.png")
     let idx = $(this).index()
-    let lang = 1
     if (sessionStorage.getItem("lang") == "zh") {
       lang = 0
     }
@@ -101,11 +102,12 @@ $(function () {
   //点击切换中文
   $("#i18nZh").click(function () {
     sessionStorage.setItem("lang", 'zh');
+    lang = 0
     $(this).addClass("check-color")
     $("#i18nEn").removeClass("check-color")
     loadProperties('zh');
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
-    getNes(0)
+    getNews(0)
     getMember(0)
     getTimeList(0)
     getDateilsTime(0, 0)
@@ -114,11 +116,12 @@ $(function () {
   //点击切换英文
   $("#i18nEn").click(function () {
     sessionStorage.setItem("lang", ' ');
+    lang = 1
     $(this).addClass("check-color")
     $("#i18nZh").removeClass("check-color")
     loadProperties(' ');
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
-    getNes(1)
+    getNews(1)
     getMember(1)
     getTimeList(1)
     getDateilsTime(0, 1)
@@ -134,19 +137,21 @@ $(function () {
   //刷新页面保持中英文切换高亮文字
   let langS = sessionStorage.getItem("lang")
   if (langS == "zh") {
+    lang = 0
     $("#i18nZh").addClass("check-color")
     $("#i18nEn").removeClass("check-color")
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72.pdf")
-    getNes(0)
+    getNews(0)
     getMember(0)
     getTimeList(0)
     getDateilsTime(0, 0)
     loadProperties('zh')
   } else {
+    lang = 1
     $("#i18nZh").removeClass("check-color")
     $("#i18nEn").addClass("check-color")
     $(".whitepaper").attr("href", "https://www.secblock.io/themes/dorawhite/doc/biut-whitepaper-v3.72-english.pdf")
-    getNes(1)
+    getNews(1)
     getMember(1)
     getTimeList(1)
     getDateilsTime(0, 1)
@@ -190,18 +195,18 @@ $(window).scroll(function (event) {
 });
 
 //获取新闻数据
-function getNes(lang) {
+function getNews(lang) {
   $.ajax({
-    url: "https://biut.io:18080/api/v0/content/getList",
+    url: "https://biut.io:18080/api/v0/content/getList?pageSize=" + maxNewsItems,
     type: "GET",
     dataType: "json",
     success: function (result) {
       $("#newsList").html("")
       let res = result.data.docs
       var html = "";
-      if (res.length > 6) {
-        if (lang == 0) {
-          for (var l = 1; l < 6; l = l + 2) {
+      if (res.length > maxNewsItems) {
+        if (lang === 0 || lang === 'zh') {
+          for (var l = 1; l < maxNewsItems; l = l + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * l + 's onclick="newsDetails(`' + res[l].id + '`)">'
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[l].sImg + '" alt=""/>'
@@ -220,7 +225,7 @@ function getNes(lang) {
             '</li>'
           }
         } else {
-          for (var k = 0; k < 5; k = k + 2) {
+          for (var k = 0; k < maxNewsItems - 1; k = k + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * k + 's onclick="newsDetails(`' + res[k].id + '`)">'
               + '<figure>'
               + '<img src="https://biut.io:18080' + res[k].sImg + '" alt=""/>'
@@ -241,7 +246,7 @@ function getNes(lang) {
         }
       } else {
         // 弹窗新闻
-        if (lang == 0) {
+        if (lang === 0 || lang === 'zh') {
           for (var i = 1; i < res.length; i = i + 2) {
             html += '<li class="col-md-4 col-sm-12 col-xs-12 new-list wow cntanimate2" data-wow-delay=' + .5 * i + 's onclick="newsDetails(`' + res[i].id + '`)">'
               + '<figure>'
@@ -284,35 +289,50 @@ function getNes(lang) {
       $("#newsList").append(html);
 
       // 新闻列表
+
+      if (res.length > maxNewsItems) {
+        loadMoreNews(maxNewsItems)
+      } else {
+        loadMoreNews(res.length)
+      }
+    }
+  });
+}
+
+function loadMoreNews (top) {
+  $.ajax({
+    url: "https://biut.io:18080/api/v0/content/getList?pageSize=" + top,
+    type: "GET",
+    dataType: "json",
+    success: function (result) {
+      let res = result.data.docs
       $("#footNewsList").html("")
       var htmls = ""
-      if (lang == 0) {
+      if (lang === 0 || lang === 'zh') {
         for (var tim = 1; tim < res.length; tim = tim + 2) {
           htmls += '<li onclick="newsDetails(`' + res[tim].id + '`)">'
-            + "<section class='foot-news-tit'>"
-            + '<h4>' + res[tim].title + '</h4>'
-            + '<time>' + res[tim].date + '</time>'
-            + '</section>'
-            + "<p class='foot-news-txt'>" + res[tim].stitle + '</p>'
-            + '</li>'
+          + "<section class='foot-news-tit'>"
+          + '<h4>' + res[tim].title + '</h4>'
+          + '<time>' + res[tim].date + '</time>'
+          + '</section>'
+          + "<p class='foot-news-txt'>" + res[tim].stitle + '</p>'
+          + '</li>'
         }
       } else {
-        for (var tims = 0; tims < res.length; tims = tims + 2) {
-          htmls += '<li onclick="newsDetails(`' + res[tims].id + '`)">'
+          for (var tims = 0; tims < res.length; tims = tims + 2) {
+            htmls += '<li onclick="newsDetails(`' + res[tims].id + '`)">'
             + "<section class='foot-news-tit'>"
             + '<h4>' + res[tims].title + '</h4>'
             + '<time>' + res[tims].date + '</time>'
             + '</section>'
             + "<p class='foot-news-txt'>" + res[tims].stitle + '</p>'
             + '</li>'
-        }
+          }
       }
       $("#footNewsList").append(htmls);
-
     }
-  });
+  })
 }
-
 
 //查看新闻详情
 function newsDetails(params, id1, id2) {
@@ -348,7 +368,7 @@ function getMember(lang) {
     $("#memberList").html("")
     let item = data.list
     var html = ""
-    if (lang == 0) {
+    if (lang === 0 || lang === 'zh') {
       for (var i = 1; i < item.length; i = i + 2) {
         html += '<li class="col-md-3 col-sm-4 col-xs-6 wow bounceInUp"  data-wow-delay=' + .05 * i + 's>'
           + '<figure>'
@@ -383,7 +403,7 @@ function getTimeList(lang) {
     $("#timeList").html("")
     let item = data.dateList
     var html = ""
-    if (lang == 0) {
+    if (lang === 0 || lang === 'zh') {
       for (var i = 1; i < item.length; i = i + 2) {
         html += '<li>'
           + '<section>'

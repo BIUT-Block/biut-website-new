@@ -1,3 +1,11 @@
+var _top = 6
+$(function(){
+  $("#newsMore").click(function(){
+    _top = _top + 6;
+    loadMoreNews(_top)
+  })
+})
+
 /**
  * 轮播图
  */
