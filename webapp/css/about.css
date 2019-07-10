@@ -32,17 +32,23 @@
 .footer {background: #2C2D37;}
 .foot-members {display: flex;}
 .foot-members .public-title {padding-top: 5rem;}
-.foot-members .container {background: #363740;margin-top: -9.8rem;padding-bottom: 3.1rem;}
+.foot-members .container {background: #363740;margin-top: -9.8rem;padding-bottom: 6rem;}
 .foot-members .container-fisrt {flex: 1;margin-top: -9.8rem;}
 .foot-members .container-last {flex: 1;background: #363740;margin-top: -9.8rem;}
 
+.team-list {padding-left: 2.8rem;}
+.team-list li {display: flex;padding: 2.5rem 0 0;flex-wrap: wrap;}
+.team-list li section {display: flex;flex-direction: column;width: 50%;}
+.team-list li section h5 {font-size: .9rem;color: #fff;padding-bottom: 1.3rem;}
+.team-list li section p {width: 24.4rem;color:rgba(255,255,255,.4);font-size: ..6rem;}
+
 .foot-members-cont {padding-top: 2.7rem;}
-.foot-members-cont ul li {padding: 2.1rem 2.1rem 0;height: 23.2rem;}
+.foot-members-cont ul li {padding: 2.1rem 1.3rem 0;height: 26.2rem;}
 .foot-members-cont ul li:hover {background:rgba(62,63,73,1);box-shadow:0 .7rem 3.4rem 0 rgba(69,72,90,0.09);}
 .foot-members-cont ul li  figure {text-align: center;}
 .foot-members-cont ul li  figure img {width: 7.1rem;height: 7.1rem;}
 .foot-members-cont ul li  figure h4 {font-size: .9rem;color: #fff;padding: 2.2rem 0 1.3rem;}
-.foot-members-cont ul li  figure p {font-size: .6rem;line-height: 2;color:rgba(255,255,255,.4);}
+.foot-members-cont ul li  figure p {font-size: .6rem;line-height: 2;color:rgba(255,255,255,.4);text-align: left;}
 .foot-members-cont .members-tab {padding-top: 1rem;}
 .foot-members-cont .members-tab figure {display: flex;align-items: center;justify-content: center;
     color:rgba(255,255,255,.9);font-size: .8rem;}
@@ -85,7 +91,12 @@ html {font-size: 20px;}
   .use-list ul li {padding: 1rem 0 0 0;}
   .use-list ul li:last-child {padding-left: 0;}
 
-  
+  .foot-members-cont ul {display: flex;flex-wrap: wrap;}
+  .foot-members-cont ul li {height: auto;}
+
+  .team-list {padding-left: 0;}
+  .team-list li section,.team-list li section p  {width: 100%;}
+  .team-list li section:last-child {margin-top: 2.5rem;}
 
   .foot-history {margin: 7.5rem 0 5rem;}
   

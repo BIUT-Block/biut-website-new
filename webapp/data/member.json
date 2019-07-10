@@ -2,147 +2,99 @@
   "list": [
     {
       "id":"0",
-      "img":"../images/about/memberHeaderImg.png",
-      "tit":"顾浩1",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "img":"../images/about/memberHeaderImg1.png",
+      "tit":"Collin Chu",
+      "txt": "he has been the world’s third largest FinTech project leader for more than 20 years in China.North America bank application systems, financial software system design and research and development experience.Nanyang Polytechnic University, Singapore"
     },
     {
       "id":"1",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
+      "tit":"储炀",
+      "img":"../images/about/memberHeaderImg1.png",
       "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
     },
     {
       "id":"2",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Oliver Gu",
+      "img":"../images/about/memberHeaderImg2.png",
+      "txt": "chairman of the North American E-Commerce Forum,co-founder of the Center for International Productivity Cooperation,Co-founder of the CAPC-China Business High-Tech Alliance and Co-Chair of the China-Canada E-Commerce High-Tech Summit.Master of Science in computer Science, Bridgewater State University, Massachusetts, USA"
     },
     {
       "id":"3",
       "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "img":"../images/about/memberHeaderImg2.png",
+      "txt": "北美电商论坛主席、国际产能合作中心共同创建人、加中电商高科技联盟共同创建人、加中电子商务高科技峰会共同主席，美国麻省Bridgewater州立大学电脑科学硕士"
     },
     {
       "id":"4",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Rain Liu",
+      "img":"../images/about/memberHeaderImg3.png",
+      "txt": "winner of the Ontario Outstanding Women Award.China and Canada Electronic Commerce Association Director, Li Sun and IBM Certified Senior engineer of Canadian multinational corporations.Former program host and planner of Canadian National Television, Canadian Chinese Radio and Fujian Zhangzhou TV Station"
     },
     {
       "id":"5",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"刘莹",
+      "img":"../images/about/memberHeaderImg3.png",
+      "txt": "安大略省杰出女性奖获奖人，中加电子商务协会长、Sun与IBM认证加拿大跨国公司高级工程师，加拿大国家电视台、加拿大中文电台、福建漳州电视台前节目主持人兼策划。"
     },
     {
       "id":"6",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Chen siyu",
+      "img":"../images/about/memberHeaderImg4.png",
+      "txt": "Graduated from the University of California.Los Angeles (UCLA) computer department, in Amazon, Baidu and unicorn Procore Technologies,love block chain project development"
     },
     {
       "id":"7",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"陈思宇",
+      "img":"../images/about/memberHeaderImg4.png",
+      "txt": "毕业于加州大学洛杉矶分校(UCLA)计算机系，在亚马逊,百度和独角兽Procore Tech nologies，负责过机器学习，大数据挖掘和计算机视觉自动识别相关项目，热爱区块链项目开发"
     },
     {
       "id":"8",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Li Yuan",
+      "img":"../images/about/memberHeaderImg5.png",
+      "txt": "Developer of Axxel-Discovery-Protocol project, Developer of background system in Deister Electronic. Technical leader of Allhaha shopping platform. Focused on the BlockChain since 2016 and now committed to BlockChain research and development."
     },
     {
       "id":"9",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"李渊",
+      "img":"../images/about/memberHeaderImg5.png",
+      "txt": "高速通讯点对点协议Axxel-Discory-Protocol项目开发者；Deister安全公司后台系统开发，研发人员；Allhaha购物平台，技术负责人；2016年开始关注区块链，现致力于区块链研究与开发。"
     },
     {
       "id":"10",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Zu Weihan",
+      "img":"../images/about/memberHeaderImg6.png",
+      "txt": "Master degree in Embedded Systems, Eindhoven University of Technology, Netherlands. Previously worked at Bird Control Group as a hardware algorithm R&D engineer. Familiar with Linux system, C++, code testing and debugging. Long-term research on Blockchain consensus algorithm. "
     },
     {
       "id":"11",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"俎维翰",
+      "img":"../images/about/memberHeaderImg6.png",
+      "txt": "荷兰埃因霍温理工大学硕士，曾工作于Bird Control Group, 担任硬件算法研发工程师，精通Linux环境以及C++。擅长代码测试和debugging, 长期研究区块链共识算法。"
     },
     {
       "id":"12",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Guo Zhaopeng",
+      "img":"../images/about/memberHeaderImg7.png",
+      "txt": "Master degree, University of Stuttgart, Germany. Main research includes communication and artificial intelligence. Previously worked at Robert Bosch GmbH Center for research and development in Renningen and Robert Bosch Battery Systems, participated in the development of DGS software testing and electric vehicle battery software system. Long-term research on the storage area design and cryptography of BlockChain."
     },
     {
       "id":"13",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"郭兆鹏",
+      "img":"../images/about/memberHeaderImg7.png",
+      "txt": "德国斯图加特大学硕士，主攻通信和人工智能方向，曾在博世有限公司雷宁根全球研发总部以及罗伯特博世电池系统小组实习和工作，参与DGS软件测试开发和电动车电池软件系统的研发。长期关注区块链，对区块链储存区设计及密码学有所研究。"
     },
     {
       "id":"14",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"Fei Wenhao",
+      "img":"../images/about/memberHeaderImg8.png",
+      "txt": " Master degree, University Stuttgart, Germany. Previously worked at Fraunhofer Institute for Mechanics of Materials (IWM). Also worked at Daimler AG and SAP as a software development engineer. Has many years of experience in application software development. "
     },
     {
       "id":"15",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"16",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"17",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"18",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"19",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"20",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"21",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"22",
-      "tit":"顾浩1",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
-    },
-    {
-      "id":"23",
-      "tit":"顾浩",
-      "img":"../images/about/memberHeaderImg.png",
-      "txt": "曾任世界第三大FinTech公司项目负责人，20多年中国及北美银行应用系统、金融软件系统设计和研发经验，新加坡南洋理工大学计算机博士"
+      "tit":"费旻昊",
+      "img":"../images/about/memberHeaderImg8.png",
+      "txt": "德国斯图加特大学硕士，曾在弗劳恩霍夫应用研究所进行研究性工作，曾工作于戴姆勒奔驰和SAP，担任软件开发工程师，具有多年应用软件开发经验。"
     }
   ]
 }
