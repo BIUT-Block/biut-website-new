@@ -21,26 +21,31 @@
 .left-list2 .active-list img {display:inline-block;margin: 0 .8rem 0 -1.55rem;}
 
 /* 修改头像内容 */
-.center-update {display: none;}
+.center-update {display: block;}
 .update-content {display: flex;}
 .center-center {width: 20.1rem;margin: 0 4rem 0 3.2rem;}
 .center-center p {font-size: .7rem;color:rgba(255,255,255,.5);padding: 1.2rem 0;}
-.center-center h5 {font-size: .7rem;color: #fff;padding: 1.7rem 0 1.6rem;}
-.center-center ul {display: flex;align-items: center;justify-content: space-between;}
+.center-center h5 {font-size: .7rem;color: #fff;padding-top: 1.7rem;}
+.center-center ul {display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;}
+.center-center ul li {padding-top: 1.6rem;}
+.center-center ul li img {border-radius: 50%;border: .15rem solid transparent;}
+.center-center ul .active-img img {border-color: #00d69b;}
 .center-center .default-img {position: relative;max-width: 19.9rem;height:19.9rem;background:rgba(29,30,43,.4);
-  margin: 1.6rem 0;}
+  margin: 1.6rem 0;display: flex;align-items: center;justify-content: center;}
+.center-center .default-img  #uploadImg {max-width: 100%;max-height: 100%;}
 .center-center .center-btn {width: 7.5rem;font-size: .7rem;color: #434661;border: 0;border-radius: .5rem;background: #fff;}
 .center-btn-list {display: flex;font-size: .7rem;}
 .center-btn-list .upload-button {width: 10.75rem;height: 2rem;color: #434561;margin-right: .5rem;}
 .upload-button input[type='file'] {width: 10.75rem;height: 2rem;}
+.upload-button img {margin-right: 1rem;}
 
 .center-right {width: 10.8rem;}
 .center-right ul {padding-top: 1.2rem;}
 .center-right ul li {font-size: .7rem;color:rgba(255,255,255,.5);line-height: 1.5rem;}
-.center-right ul li figure {width: 5rem;text-align: center;margin: 2.7rem 0 1.7rem .45rem;}
-.center-right ul li figure figcaption {padding-top: .8rem;}
-.center-right ul li:last-child figure {width: 4.1rem;text-align: center;margin: 1.7rem 0 0 .9rem;}
-.center-right ul li:last-child figure img {width: 3.25rem;height: 3.25rem;}
+.center-right ul li .head-img1 {width: 5rem;text-align: center;margin: 2.7rem 0 1.7rem .45rem;}
+.center-right ul li .head-img1 figcaption {padding-top: .8rem;}
+.center-right ul li .head-img2 {width: 4.1rem;text-align: center;margin: 1.7rem 0 0 .9rem;}
+.center-right ul li .head-img2 img {width: 3.25rem;height: 3.25rem;}
 
 /* 我的上榜信息 */
 .center-info {width: 42.75rem;margin-left: 3.1rem;}
@@ -84,7 +89,7 @@
 .success-content ul li button {width: 12.75rem;color: #434561;}
 
 /* 基础信息 */
-.center-basis {display: block;}
+.center-basis {display: none;}
 .basis-content {height: 28.1rem;padding: 2.85rem 2.8rem 0 3.2rem;font-size: .75rem;}
 .basis-head figure,.basis-head figure figcaption {display: flex;align-items: center;}
 .basis-list1 {padding-left: 2.3rem;}
@@ -138,11 +143,17 @@ html {font-size: 20px;}
 
   .ongoing-list span {padding: .5rem 0 0;}
 
-  .update-content {padding-top: 2rem;justify-content: space-between;}
-  .center-center {width: 70%;margin: 0;}
-  .center-right {flex: 1;padding-left: 1rem;}
+  .update-content {padding-top: 2rem;justify-content: space-between;flex-wrap: wrap;}
+  
+  .center-center {width: 100%;margin: 0;}
+  .center-center .default-img {margin: 1.6rem auto;}
+  .upload-button input[type='file'] {width: 100%;}
 
-  /* .center-right ul li figure */
+  .center-right {flex: 1;}
+  .center-flex h4 {padding-top: 2rem;}
+  .center-right ul li:last-child {display: flex;align-items: flex-end;margin-top: 1rem;}
+  .center-right ul li:last-child figure {margin: 0;}
+  .center-right ul li:last-child figure:first-child {margin-right: 3rem;}
 }
 
 @media (min-width: 768px) {

@@ -1,7 +1,12 @@
 //定义全局变量 -- 验证码
-code = ""
 phoneReg = /^1[3456789]\d{9}$/
 codeReg = /^\d{6}$/	
+code = ""
+
+phoneErrorTxt = 'Incorrect phone number format'
+codeErrorsTxt = 'The verification code is incorrect'
+getBtn = 'click get'
+resetBtn = 'Reacquire'
 
 $(function() {
   $("#submitFrom").click(function(){
@@ -12,15 +17,17 @@ $(function() {
     getCode()
   })
 
-  $("#goLogin").click(function(){
-    $("#phoneError,#codeError,.name-success").css("display","none")
-    $(".phone-list,.code-list").removeClass('errorBorder')
-
-    $(".pass-content").css("display","block")
-    $("#code,#phone").val("")
-
+  $(".goLogin").click(function(){
     window.location.href = 'login.html'
   })
+
+  let langS = sessionStorage.getItem("lang")
+  if (langS == "zh") {
+    phoneErrorTxt = '手机号码格式不正确'
+    codeErrorsTxt = '验证码不正确'
+    getBtn = '点击获取'
+    resetBtn = '重新获取'
+  }
 })
 
 //找回用户名
@@ -31,13 +38,13 @@ function updateName () {
     $("#phoneError").css("display","block")
     $(".phone-list").addClass('errorBorder')
   } else if (!phoneReg.test(phone)) {
-    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $("#phoneError").css("display","block").text(phoneErrorTxt)
     $(".phone-list").addClass('errorBorder')
   } else if (codes == "") {
     $("#codeError").css("display","block")
     $(".code-list").addClass('errorBorder')
   } else if (codes != code) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   } else {
     $("#phoneError,#codeError,.pass-content").css("display","none")
@@ -78,7 +85,7 @@ function getCode() {
     $("#phone").focus()
     return
   } else if (!phoneReg.test(phone)) {
-    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $("#phoneError").css("display","block").text(phoneErrorTxt)
     $(".phone-list").addClass('errorBorder')
     $("#phone").focus()
     return
@@ -91,12 +98,12 @@ function getCode() {
   timer = setInterval(function () {
     times--;
     if (times <= 0) {
-      $("#getCode").text('点击获取');
+      $("#getCode").text(getBtn);
       clearInterval(timer);
       $("#getCode").attr('disabled', false);
       times = 60;
     } else {
-      $("#getCode").text('重新获取（' + times + '）');
+      $("#getCode").text(resetBtn + '（' + times + '）');
       $("#getCode").attr('disabled', true);
     }
   }, 1000);
@@ -122,9 +129,12 @@ function getCode() {
 $("#phone").on("input propertychange", debounce(function(){
   let ipt = $(this).val().replace(/[^\d]/g,'')
   $(this).val(ipt)
-  if (phoneReg.test(ipt)) {
+  if (phoneReg.test(ipt)  && ipt.length == 11 || ipt.length == 0) {
     $("#phoneError").css("display","none")
     $(".phone-list").removeClass('errorBorder')
+  } else {
+    $("#phoneError").css("display", "block").text(phoneErrorTxt)
+    $(".phone-list").addClass('errorBorder')
   }
 }, 300))
 
@@ -133,7 +143,7 @@ $("#code").on("input propertychange", debounce(function() {
   let ipt = $(this).val().replace(/[^\d]/g,'')
   $(this).val(ipt)
   if(code != ipt) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   }
   if (codeReg.test(ipt) && code == ipt) {

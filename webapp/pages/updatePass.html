@@ -108,20 +108,21 @@
         </figure>
         <input type="text" data-placeholder="r-phone" id="phone" autocomplete="off" maxlength="11"/>
         <img src="../images/login/tipsImg.png" alt="" class="error-img">
-        
       </section>
+      <p class="error-txt" id="phoneError" data-locale="r-pass-error"></p>
 
       <section class="public-flex-list code-list public-margin">
         <input type="text" data-placeholder="r-code" id="code" maxlength="6"/>
         <button type="button" id="getCode" data-locale="r-get-code">点击获取</button>
       </section>
+      <p class="error-txt" id="codeError" data-locale="r-pass-error"></p>
 
-      <input type="text" class="public-ipt public-margin" data-placeholder="r-pass" />
+      <input type="password" class="public-ipt public-margin" maxlength="30" id="pass" data-placeholder="r-pass" />
       <p class="error-txt" id="passError" data-locale="r-pass-error"></p>
 
       <section class="public-btn-list">
-        <button type="button" class="public-btn" id="" data-locale="u-prev-btn">上一步</button>
-        <button type="button" class="public-btn" id="" data-locale="u-next-btn">下一步</button>
+        <button type="button" class="public-btn goLogin" data-locale="u-prev-btn">上一步</button>
+        <button type="button" class="public-btn" id="submitFrom" data-locale="u-next-btn">下一步</button>
       </section>
     </section>
 
@@ -133,10 +134,10 @@
       </section>
       <p>
         <span data-locale="up-success-txt1">已重置账户</span>
-        <span id="">12312345678</span>
+        <span id="userAccunt"></span>
         <span data-locale="up-success-txt2">的密码</span>
       </p>
-      <button type="button" class="public-btn" data-locale="r-go-login">去登录</button>
+      <button type="button" class="public-btn goLogin" data-locale="r-go-login">去登录</button>
     </section>
 
     <!-- 公共底部 -->

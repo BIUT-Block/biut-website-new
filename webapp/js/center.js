@@ -1,5 +1,5 @@
-$(function(){
-  $("#editTxt").click(function(){
+$(function () {
+  $("#editTxt").click(function () {
     $("#editContent").removeAttr("readonly").focus()
   })
 
@@ -26,7 +26,7 @@ $(function(){
   $("#kycRegTime").text("2019-01-22")
   $(".kycPhone").text("139234567835")
 
-  $(".kyc-error").css("display","block")
+  $(".kyc-error").css("display", "block")
 
 
   /**
@@ -59,21 +59,21 @@ $(function(){
   $("#reason").text("1、是的三大")
 
   // 重新申请
-  $("#resetApply").click(function(){
+  $("#resetApply").click(function () {
     window.location.href = 'confirmPhoto.html'
   })
 
   //去官网查看
-  $("#successLook").click(function(){
+  $("#successLook").click(function () {
     window.location.href = 'about.html?hash=1'
   })
 
   //取消申请
-  $("#cancelApply").click(function(){
+  $("#cancelApply").click(function () {
     alert("点击了取消申请")
   })
 
-  $("#dataNavList li").click(function(){
+  $("#dataNavList li").click(function () {
     /**
      * centerUpdate  修改头像
      * 
@@ -90,13 +90,107 @@ $(function(){
     $(this).addClass("active-list").siblings().removeClass("active-list")
     let idx = $(this).index()
     if (idx == 1) {
-      $("#noApply").css("display","none")
-      $("#centerBasis").css("display","block")
+      $("#noApply").css("display", "none")
+      $("#centerBasis").css("display", "block")
     } else {
       // 进入榜上有名的界面 根据条件判断显示 什么信息
-      $("#noApply").css("display","block")
-      $("#centerBasis").css("display","none")
+      $("#noApply").css("display", "block")
+      $("#centerBasis").css("display", "none")
     }
-    
+
+  })
+
+  /**
+   * 多行文本框输入监听文字长度
+   */
+  $("#iptReason").bind("input propertychange", function (event) {
+    let ipt = $(this).val()
+    if (ipt > 0) {
+      $("#reasonError").css("display", "none")
+    }
+    $("#iptLength").text(ipt.length)
+  });
+
+  $("#openMask").click(function () {
+    $("#aboutMask").css("display", "block")
+    $("body").addClass('ov-h')
+    //$("#maskHead").attr("src",``)
+    $("#maskName").text("张智超")
+  })
+
+  /**
+   * 提交榜上有名
+   */
+  $("#maskSubmit").click(function () {
+    let ipt = $("#iptReason").val().trim()
+    if (ipt == "") {
+      $("#reasonError").css("display","block")
+    } else {
+      closeMask()
+    }
+  })
+
+  /**
+   * 关闭弹窗
+   */
+  $("#closeMask").click(function () {
+    closeMask()
+  })
+
+  //头像列表选择
+  $("#recommendList li").click(function(){
+    $(this).addClass('active-img').siblings().removeClass("active-img")
+  })
+
+  //重新上传头像
+  $("#resetImg").click(function(){
+    alert("点击了重新上传头像")
+  })
+
+  //上传头像
+  $("#uploadBtn").change(function(e){
+    uploadImg(e)
+  })
+
+  //确定修改头像
+  $("#saveHead").click(function(){
+    alert("点击了保存头像")
+  })
+
+  //修改名称
+  $("#updateName").click(function(){
+    alert("点击了修改名称")
   })
 })
+
+//图片上传
+function uploadImg(params) {
+  if (params.target.files.length == 1) {
+    let file = params.target.files[0] || params.dataTransfer.files[0];
+    let ext = file.type.split('/')[1]
+    let size = file.size / 1024
+    if (ext !== 'png' && ext !== 'jpg' && ext !== 'jpeg') {
+      alert("请上传正确的图片格式")
+    } else if (size > 4096) {
+      alert("图片不能大于4M")
+    } else {
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          $("#uploadImg").css("display", "block").attr("src", this.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  } else {
+    $("#uploadImg").css("display", "none").attr("src", "");
+  }
+}
+
+//关闭弹窗
+function closeMask() {
+  $("#aboutMask").css("display", "none")
+  $("body").removeClass('ov-h')
+  $("#iptReason").val("")
+  $("#iptLength").text('0')
+}

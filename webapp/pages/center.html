@@ -138,9 +138,9 @@
                 <section class="upload-button">
                   <img src="../images/confirmPhoto/uploadImg1.png" alt="">
                   <span data-locale="c-center-upload">选择你要上传的头像</span>
-                  <input type="file" id="uploadBtn1" />
+                  <input type="file" id="uploadBtn" />
                 </section>
-                <button type="button" class="public-btn center-btn" data-locale="c-center-reset-btn">重新上传</button>
+                <button type="button" class="public-btn center-btn" id="resetImg" data-locale="c-center-reset-btn">重新上传</button>
               </section>
 
               <section class="default-img">
@@ -148,16 +148,17 @@
                 <img src="../images/confirmPhoto/bottomLeft.png" class="bottomLeft">
                 <img src="../images/confirmPhoto/topRight.png" class="topRight">
                 <img src="../images/confirmPhoto/bottomRight.png" class="bottomRight">
+                <img src="" id="uploadImg" />
               </section>
 
-              <button type="button" class="public-btn center-btn" data-locale="c-center-save-btn">保存</button>
+              <button type="button" class="public-btn center-btn" id="saveHead" data-locale="c-center-save-btn">保存</button>
               <h5 data-locale="c-center-head">推荐头像</h5>
-              <ul>
+              <ul id="recommendList">
                 <li><img src="../images/center/listImg1.png" alt=""></li>
                 <li><img src="../images/center/listImg2.png" alt=""></li>
                 <li><img src="../images/center/listImg3.png" alt=""></li>
-                <li><img src="../images/center/listImg2.png" alt=""></li>
-                <li><img src="../images/center/listImg1.png" alt=""></li>
+                <li><img src="../images/center/listImg4.png" alt=""></li>
+                <li><img src="../images/center/listImg5.png" alt=""></li>
               </ul>
             </section>
             <!-- 效果预览 -->
@@ -166,16 +167,14 @@
               <ul>
                 <li data-locale="c-right-txt">你上传的图片会自动生成2种尺寸,请注意小尺寸的头像是否清晰</li>
                 <li>
-                  <figure>
+                  <figure class="head-img1">
                     <img src="../images/center/centerImg2.png" alt="">
                     <figcaption data-locale="c-right-img1">
                       100 x 100像素
                     </figcaption>
                   </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="../images/center/centerImg2.png" alt="">
+                  <figure class="head-img2">
+                    <img src="../images/center/centerImg3.png" alt="">
                     <figcaption data-locale="c-right-img2">
                       65 x 65像素
                     </figcaption>
@@ -192,7 +191,7 @@
           <h4 data-locale="c-info-tit">我的上榜信息</h4>
           <!-- 开始申请 -->
           <section class="info-none center-info-bg">
-            <button type="button" class="public-btn" data-locale="c-info-no-txt1">申请榜上有名</button>
+            <button type="button" id="openMask" class="public-btn" data-locale="c-info-no-txt1">申请榜上有名</button>
             <p data-locale="c-info-no-txt2">申请成功后，你的个人信息将会显示在网站中让更多的人看到</p>
           </section>
         </section>
@@ -304,7 +303,7 @@
                     <section>
                       <span class="l-s" data-locale="a-mask-name">昵称</span>
                       <span class="public-white kycName"></span>
-                      <span class="public-blur" data-locale="c-basis-update-txt">修改昵称</span>
+                      <span class="public-blur" id="updateName" data-locale="c-basis-update-txt">修改昵称</span>
                     </section>
                   </section>
                   <section class="basis-list2">
@@ -382,6 +381,38 @@
                 </section>
               </li>
             </ul>
+          </section>
+        </section>
+      </section>
+
+      <!-- 提交申请mask -->
+      <section class="mask-hidden" id="aboutMask">
+        <section class="mask">
+          <section class="about-mask">
+            <figure class="close-mask" id="closeMask">
+              <img src="../images/close.png" alt="">
+            </figure>
+            <section class="mask-content">
+              <h4 data-locale="a-mask-tit">榜上有名-申请表</h4>
+              <p class="mask-txt1" data-locale="a-mask-txt">申请成功后，你的个人信息将会显示在网站中让更多的人看到</p>
+              <figure class="mask-head">
+                <img src="../images/about/maskHead.png" id="maskHead" alt="">
+                <figcaption>
+                  <span data-locale="a-mask-name">昵称</span>
+                  <span id="maskName"></span>
+                </figcaption>
+              </figure>
+              <p class="mask-txt1" data-locale="a-mask-txt2">上榜理由</p>
+              <section class="mask-ipt">
+                <section>
+                  <span id="iptLength">0</span>
+                  <span>/400</span>
+                </section>
+                <textarea id="iptReason" cols="30" rows="10" data-placeholder="a-mask-ipt" maxlength="400"></textarea>
+                <p class="error-txt" id="reasonError" data-locale="a-mask-ipt"></p>
+              </section>
+              <button type="button" class="public-btn" id="maskSubmit" data-locale="a-mask-btn">提交申请</button>
+            </section>
           </section>
         </section>
       </section>

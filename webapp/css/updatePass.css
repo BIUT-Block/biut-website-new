@@ -6,9 +6,9 @@
 .pass-success {padding: 3.5rem 2.7rem 2.5rem;display: none;}
 .pass-success p {text-align: center;color: #868599;font-size: .7rem;line-height: 2;width: 11rem;
   margin: 1.2rem auto 2.4rem;}
-.pass-success button,.name-success button {color: #434561;}
+.pass-success button,.name-success button {color: #434561;width: 100%;}
 .pass-success section {display: flex;align-items: center;justify-content: center;}
-.pass-success section h2,.name-success section h2 {font-size: 1.2rem;}
+.pass-success section h2,.name-success section h2 {font-size: 1.2rem;padding-right: .5rem;}
 
 /* 用户名重置成功 */
 .name-success {padding: 2.8rem 2.7rem 3rem;display: none;}
@@ -19,4 +19,3 @@
 .name-success .name-phone span:first-child {color: #868599;}
 .name-success .name-phone span:nth-child(2) {padding: 0 .75rem;}
 .name-success .public-flex-list {text-indent: 1.5rem;color:rgba(255,255,255,.8);}
-.name-success button {width: 100%;}

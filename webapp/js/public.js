@@ -162,6 +162,11 @@ $(function () {
   $("#nextNews").click(function () {
     alert("点击了下一页")
   })
+
+  //加载更多
+  $("#newsMore").click(function(){
+    alert("点击了加载更多的新闻列表")
+  })
 });
 
 $(window).scroll(function (event) {

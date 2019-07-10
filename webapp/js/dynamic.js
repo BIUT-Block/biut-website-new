@@ -1,9 +1,3 @@
-$(function(){
-  $("#newsMore").click(function(){
-    alert("点击了加载更多的新闻列表")
-  })
-})
-
 /**
  * 轮播图
  */

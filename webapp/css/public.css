@@ -44,7 +44,7 @@ a:link,a:visited,a:hover,a:active {text-decoration: none;}
 .public-title figure:hover,.mask-close:hover,.down-client:hover,.close-mask img:hover,.foot-news .foot-news-more:hover,
 .upload-button:hover,.upload-button input[type='file']:hover,.public-blur:hover,.public-cnt:hover,.success-txt span:last-child:hover,
 .public-cnt ul li:hover,.time-list li:hover,.news-mask .left-container img:hover,.left-list2 li:nth-child(even):hover,.foot-news ul li:hover,
-.news-mask .right-container img:hover {cursor: pointer;}
+.news-mask .right-container img:hover,.center-center ul li:hover {cursor: pointer;}
 
 /* 首页公共子导航 */
 .public-title {display: flex;justify-content: space-between;box-sizing: border-box;

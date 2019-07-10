@@ -4,6 +4,11 @@ phoneReg = /^1[3456789]\d{9}$/
 passReg = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{8,30}$/
 codeReg = /^\d{6}$/	
 
+codeErrorsTxt = 'The verification code is incorrect'
+passErrorTxt = 'Incorrect password format'
+getBtn = 'click get'
+resetBtn = 'Reacquire'
+
 $(function () {
   //默认登录
   $("#submitLogin").click(function () {
@@ -29,6 +34,14 @@ $(function () {
   $("#confirmLogin").click(function(){
     nameLogin ()
   })
+
+  let langS = sessionStorage.getItem("lang")
+  if (langS == "zh") {
+    codeErrorsTxt = '验证码不正确'
+    passErrorTxt = '密码格式不正确'
+    getBtn = '点击获取'
+    resetBtn = '重新获取'
+  }
 })
 
 //登录
@@ -83,7 +96,7 @@ function codeLogin() {
     $(".code-list").addClass('errorBorder')
     $("#codeError").css("display","block")
   } else if (codes != code) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   } else {
     $(".code-list").removeClass('errorBorder')
@@ -106,12 +119,12 @@ function getCode() {
   timer = setInterval(function () {
     times--;
     if (times <= 0) {
-      $("#getCode").text('点击获取');
+      $("#getCode").text(getBtn);
       clearInterval(timer);
       $("#getCode").attr('disabled', false);
       times = 60;
     } else {
-      $("#getCode").text('重新获取（' + times + '）');
+      $("#getCode").text(resetBtn+'（' + times + '）');
       $("#getCode").attr('disabled', true);
     }
   }, 1000);
@@ -140,7 +153,7 @@ function nameLogin() {
     $("#passError").css("display","block")
     $("#pass").addClass('errorBorder')
   } else if (!passReg.test(pass)) {
-    $("#passError").css("display","block").text("密码格式不正确")
+    $("#passError").css("display","block").text(passErrorTxt)
     $("#pass").addClass('errorBorder')
   } else {
     /**
@@ -170,6 +183,13 @@ $("#confirmPhone").on("input propertychange", debounce(function(){
     $(".error-content").css("display","none")
     $(".phone-list").removeClass('errorBorder')
   }
+  if (phoneReg.test(ipt)  && ipt.length == 11 || ipt.length == 0) {
+    $(".error-content").css("display","none")
+    $(".phone-list").removeClass('errorBorder')
+  }  else {
+    $(".error-content").css("display", "block")
+    $(".phone-list").addClass('errorBorder')
+  }
 }, 300))
 
 //验证码
@@ -177,7 +197,7 @@ $("#code").on("input propertychange", debounce(function() {
   let ipt = $(this).val().replace(/[^\d]/g,'')
   $(this).val(ipt)
   if(code != ipt) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   }
   if (codeReg.test(ipt) && code == ipt) {

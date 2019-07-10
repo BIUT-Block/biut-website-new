@@ -11,6 +11,9 @@ $(function () {
    */
   $("#iptReason").bind("input propertychange", function (event) {
     let ipt = $(this).val()
+    if (ipt > 0) {
+      $("#reasonError").css("display","none")
+    }
     $("#iptLength").text(ipt.length)
   });
 
@@ -46,7 +49,7 @@ $(function () {
   $("#maskSubmit").click(function () {
     let ipt = $("#iptReason").val().trim()
     if (ipt == "") {
-      alert("请输入榜上有名的理由")
+      $("#reasonError").css("display","block")
     } else {
       closeMask()
     }

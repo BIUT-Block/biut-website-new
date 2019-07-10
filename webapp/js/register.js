@@ -2,7 +2,13 @@
 code = ""
 phoneReg = /^1[3456789]\d{9}$/
 passReg = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{8,30}$/
-codeReg = /^\d{6}$/	
+codeReg = /^\d{6}$/
+
+phoneErrorTxt = 'Incorrect phone number format'
+codeErrorsTxt = 'The verification code is incorrect'
+passErrorTxt = 'Incorrect password format'
+getBtn = 'click get'
+resetBtn = 'Reacquire'
 
 $(function () {
   $("#submitReg").click(function () {
@@ -19,6 +25,14 @@ $(function () {
     window.location.href = 'login.html'
   })
 
+  let langS = sessionStorage.getItem("lang")
+  if (langS == "zh") {
+    phoneErrorTxt = '手机号码格式不正确'
+    codeErrorsTxt = '验证码不正确'
+    passErrorTxt = '密码格式不正确'
+    getBtn = '点击获取'
+    resetBtn = '重新获取'
+  }
 })
 
 //注册
@@ -31,13 +45,13 @@ function register() {
     $("#phoneError").css("display","block")
     $(".phone-list").addClass('errorBorder')
   } else if (!phoneReg.test(regPhone)) {
-    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $("#phoneError").css("display","block").text(phoneErrorTxt)
     $(".phone-list").addClass('errorBorder')
   } else if (regCode == "") {
     $("#codeError").css("display","block")
     $(".code-list").addClass('errorBorder')
   } else if (regCode != code) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   } else if (regName == "") {
     $("#nameError").css("display","block")
@@ -46,7 +60,7 @@ function register() {
     $("#passError").css("display","block")
     $("#regPass").addClass('errorBorder')
   } else if (!passReg.test(regPass)) {
-    $("#passError").css("display","block").text("密码格式不正确")
+    $("#passError").css("display","block").text(passErrorTxt)
     $("#regPass").addClass('errorBorder')
   } else {
     $("#phoneError,#codeError,#nameError,#passError,.register-content").css("display","none")
@@ -71,7 +85,7 @@ function getCode() {
     $("#regPhone").focus()
     return
   } else if (!phoneReg.test(regPhone)) {
-    $("#phoneError").css("display","block").text("手机号码格式不正确")
+    $("#phoneError").css("display","block").text(phoneErrorTxt)
     $(".phone-list").addClass('errorBorder')
     $("#regPhone").focus()
     return
@@ -84,12 +98,12 @@ function getCode() {
   timer = setInterval(function () {
     times--;
     if (times <= 0) {
-      $("#getCode").text('点击获取');
+      $("#getCode").text(getBtn);
       clearInterval(timer);
       $("#getCode").attr('disabled', false);
       times = 60;
     } else {
-      $("#getCode").text('重新获取（' + times + '）');
+      $("#getCode").text(resetBtn + '（' + times + '）');
       $("#getCode").attr('disabled', true);
     }
   }, 1000);
@@ -115,9 +129,12 @@ function getCode() {
 $("#regPhone").on("input propertychange", debounce(function(){
   let ipt = $(this).val().replace(/[^\d]/g,'')
   $(this).val(ipt)
-  if (phoneReg.test(ipt)) {
-    $("#phoneError").css("display","none")
+  if (phoneReg.test(ipt) && ipt.length == 11 || ipt.length == 0) {
+    $("#phoneError").css("display", "none")
     $(".phone-list").removeClass('errorBorder')
+  } else {
+    $("#phoneError").css("display", "block").text(phoneErrorTxt)
+    $(".phone-list").addClass('errorBorder')
   }
 }, 300))
 
@@ -126,7 +143,7 @@ $("#regCode").on("input propertychange", debounce(function() {
   let ipt = $(this).val().replace(/[^\d]/g,'')
   $(this).val(ipt)
   if(code != ipt) {
-    $("#codeError").css("display","block").text("验证码不正确")
+    $("#codeError").css("display","block").text(codeErrorsTxt)
     $(".code-list").addClass('errorBorder')
   }
   if (codeReg.test(ipt) && code == ipt) {
